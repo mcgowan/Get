@@ -1,0 +1,1 @@
+This project is a mockup for a potential custom CSR web application.
