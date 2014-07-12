@@ -1,16 +1,12 @@
-var App = angular.module('App', ['ui.router'])
-.config(function($stateProvider) {
-    $stateProvider.state('login', {
-        url: "/login",
-        templateUrl: 'partials/login.html',
-            controllerProvider: function() {
-                return 'LoginCtl';
-            }      
-    }).state('main', {
-        url: "/main",
-        templateUrl: 'partials/main.html',
-            controllerProvider: function() {
-                return 'MainCtl';
-        }      
-    })
+var App = angular.module('App', [])
+.directive('appResize', function($window) {
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            angular.element($window).on('resize', function(e) {
+                scope.$apply(scope.resize(e));
+            });
+        }
+    };
 });
+

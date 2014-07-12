@@ -13,7 +13,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" ng-app="App">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
@@ -1381,6 +1381,89 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- END DASHBOARD STATS -->
 			<div class="clearfix">
 			</div>
+
+
+
+
+			<!-- over here...! -->
+
+			<div class="row">
+<!-- 				<div class="col-md-6 col-sm-6">
+ -->
+ 				<div class="col-md-8 col-sm-8">
+
+
+					<!-- BEGIN PORTLET-->
+					<div class="portlet solid bordered grey-cararra">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-calendar-o"></i>Customer Status Timeline
+							</div>
+						</div>
+						
+						<div class="portlet-body">
+							
+							<!--
+							<div id="customer_timeline_loading">
+								<img src="assets/admin/layout/img/loading.gif" alt="loading"/>
+							</div>
+							-->
+
+							<div id="customer_timeline_content" ng-controller="TimelineCtl">
+								
+								<div id="customer_timeline" app-resize>
+
+									<!-- how do i control the size of this? -->
+									<!-- 
+									<table id="searchTextResults">
+										<tr><th>Name</th><th>Phone</th></tr>
+										<tr ng-repeat="friend in friends">
+											<td>{{friend.name}}</td>
+											<td>{{friend.phone}}</td>
+										</tr>
+									</table>
+									-->
+ 								</div>
+
+							</div>
+
+
+						</div>
+					</div>
+					<!-- END PORTLET-->
+
+
+
+				</div>
+<!-- 				<div class="col-md-6 col-sm-6">
+ -->				<div class="col-md-4 col-sm-4">
+
+
+					<!-- BEGIN PORTLET-->
+					<div class="portlet solid grey-cararra bordered">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-bullhorn"></i>Revenue
+							</div>
+						</div>
+						<div class="portlet-body">
+							<div id="activities_content" class="display-none">
+								<div id="activities" style="height: 228px;">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END PORTLET-->
+
+
+
+				</div>
+			</div>
+			<div class="clearfix">
+			</div>
+
+
+
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
 
@@ -1504,6 +1587,9 @@ License: You must have a valid license purchased only from themeforest(the above
 			
 
 
+
+
+
 			<div class="row ">
 				<div class="col-md-6 col-sm-6">
 					<div class="portlet box purple-wisteria">
@@ -1621,7 +1707,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			</div>
 
 
-			
+
 		</div>
 	</div>
 	<!-- END CONTENT -->
@@ -2335,6 +2421,19 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="assets/admin/pages/scripts/index.js" type="text/javascript"></script>
 <script src="assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
+
+<script src="lib/angular/angular.js"></script>
+<script src="lib/raphael/raphael.2.1.2.js"></script>
+<script src="lib/raphael/raphael.connection.js"></script>
+
+<!-- 
+<script src="lib/angular-ui/ui-bootstrap-tpls.min.js"></script>
+<script src="lib/angular-ui/angular-ui-router.min.js"></script>
+ -->
+<script src="js/app.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/controllers/timeline.js"></script>
+
 <script>
 jQuery(document).ready(function() {    
    Metronic.init(); // init metronic core componets

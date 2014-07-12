@@ -202,7 +202,7 @@ Page Header
   font-size: 16px;
 }
 .page-header.navbar .top-menu .navbar-nav > li.dropdown > .dropdown-toggle > .badge {
-  font-family: "Open Sans", sans-serif;
+  font-family: RobotoL, "Open Sans", sans-serif;
   position: absolute;
   top: 10px;
   right: 20px;
@@ -354,7 +354,7 @@ Page Header
 .page-header.navbar .top-menu .navbar-nav > li.dropdown-tasks .dropdown-menu .task .percent {
   font-size: 14px;
   font-weight: 600;
-  font-family: 'Open Sans', sans-serif;
+  font-family: RobotoL, 'Open Sans', sans-serif;
   float: right;
   display: inline-block;
 }
@@ -1816,7 +1816,7 @@ Page content
   color: #666;
   margin: 0px 0px 15px 0px;
   font-weight: 300;
-  font-family: "Open Sans", sans-serif;
+  font-family: RobotoL, "Open Sans", sans-serif;
   /* subtitle */
 }
 .page-title small {
