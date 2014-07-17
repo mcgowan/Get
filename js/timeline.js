@@ -25,6 +25,24 @@ Timeline.prototype = function() {
             }).translate(0.5, 0.5);
     };
 
+    timeline.drawText = function(text, x, y, font) {
+        var f = font ? font : {
+            fontFamily: 'Arial',
+            fontColor: '#000000',
+            fontSize: '12px',
+            fontBold: false,
+        };
+
+        var d = text.dim(f.fontSize + ' ' + f.fontFamily);
+
+        timeline.paper.text(x + d.w/2, y - d.h/2, text).attr({
+            'font-family': f.fontFamily,
+            'font-size': f.fontSize,
+            'font-weight': f.fontBold === true ? 'bold' : 'normal',
+            'fill': f.fontColor
+        });
+    };
+
     timeline.draw = function(canvas) {
 	    timeline.destroy();
 
@@ -32,7 +50,7 @@ Timeline.prototype = function() {
 
         var lineColor = '#eeeeee';
 
-        var x, y, lineCount = 3;
+        var x, y, lineCount = 2;
         var lineHeight = 25;
         var days = 14;
 
@@ -69,18 +87,15 @@ Timeline.prototype = function() {
             x = minStart;
         }
 
-        // timeline.paper.text(x + (day/2), lineHeight/2, 'Hardware Products').attr({
-        //     'font-family': 'Helvetica',
-        //     'font-size': 12,
-        //     'fill': '#000000'
-        // });
+
+        // draw dates
 
         var day = (right - x) / days;
 
         for (var i = 0; i < days; i++) {
             timeline.paper.text(x + (day/2), lineHeight/2, i).attr({
-                'font-family': 'Helvetica',
-                'font-size': 12,
+                'font-family': 'RobotoL',
+                'font-size': '10px',
                 'fill': '#A6A6A6'
             });
             timeline.drawLine(x, top, x, bottom, lineColor);
@@ -108,6 +123,58 @@ Timeline.prototype = function() {
         // timeline.drawLine(width, 50, width, 150);
 
 
+        var f = {
+            fontFamily: 'Open Sans',
+            fontColor: '#000000',
+            fontSize: '14px',
+            fontBold: true,
+        };
+
+        x = left + 5
+        y = 22;
+        timeline.drawText('Hardware Products', x, y, f);
+
+        f.fontBold = false;
+        f.fontColor = '#428bca';
+
+        y += lineHeight;
+        timeline.drawText('HD Decoder', x, y, f);
+
+        y += lineHeight;
+        timeline.drawText('Smartcard', x, y, f);
+
+        f.fontBold = true;
+        f.fontColor = '#000000';
+
+        y += lineHeight + 10;
+        timeline.drawText('Software Products', x, y, f);
+
+        f.fontBold = false;
+        f.fontColor = '#428bca';
+
+        y += lineHeight;
+        timeline.drawText('Basic', x, y, f);
+
+        y += lineHeight;
+        timeline.drawText('Gold Package', x, y, f);
+
+        f.fontBold = true;
+        f.fontColor = '#000000';
+
+        y += lineHeight + 10;
+        timeline.drawText('Contacts', x, y, f);
+
+        f.fontBold = false;
+        f.fontColor = '#428bca';
+
+        y += lineHeight;
+        timeline.drawText('Phone', x, y, f);
+
+        y += lineHeight;
+        timeline.drawText('Email', x, y, f);
+
+        y += lineHeight;
+        timeline.drawText('Other', x, y, f);
 
     };
 
