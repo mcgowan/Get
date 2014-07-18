@@ -9,18 +9,18 @@ Timeline.prototype = function() {
     var timeline = {};
 
     timeline.drawLine = function(x1, y1, x2, y2, color, width) {
-    	timeline.paper.path('M' + x1 + ' ' + y1 + 'L' + x2 + ' ' + y2).attr({
+    	return timeline.paper.path('M' + x1 + ' ' + y1 + 'L' + x2 + ' ' + y2).attr({
 	            'stroke': color ? color : '#000000',
 	            'stroke-width': width ? width : 1
 	        }).translate(0.5, 0.5);
     };
 
     timeline.drawCell = function(x1, y1, color, fill) {
-        timeline.drawRect(x1, y1, 18, 18, 1, 1, color, fill);
+        return timeline.drawRect(x1, y1, 18, 18, 1, 1, color, fill);
     };
 
     timeline.drawRect = function(x1, y1, w, h, radius, color, width, fill) {
-        timeline.paper.rect(x1, y1, w, h, radius ? radius : 0).attr({
+        return timeline.paper.rect(x1, y1, w, h, radius ? radius : 0).attr({
                 'fill': fill ? fill : undefined,
                 'stroke': color ? color : '#000000',
                 'stroke-width': width ? width : 1
@@ -43,7 +43,7 @@ Timeline.prototype = function() {
         //     'font-weight': f.fontBold === true ? 'bold' : 'normal',
         //     'fill': f.fontColor
         // });
-        timeline.paper.text(x + d.w/2, y, text).attr({
+        return timeline.paper.text(x + d.w/2, y, text).attr({
             'font-family': f.fontFamily,
             'font-size': f.fontSize,
             'font-weight': f.fontBold === true ? 'bold' : 'normal',
@@ -53,38 +53,93 @@ Timeline.prototype = function() {
     };
 
     timeline.drawLineHeader = function(defaults, text, start, days) {
-        var y = start + (defaults.lineHeight/2);
+        var background = timeline.drawRect(0, start + 2, defaults.canvas.width, defaults.lineHeight - 4, 0, '#FAFAFA', 1, '#FAFAFA');
+
+
+        var y = start + (defaults.lineHeight/2) + 1;
         timeline.drawText(text, defaults.leftMargin, y, defaults.itemHeaderFont);
 
         y = start + defaults.lineHeight - 2;
+
         // timeline.drawLine(-1, y, defaults.canvas.width, y, defaults.lineColor, 1);
 
-        timeline.drawRect(0, y, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
+        // timeline.drawLine(0, y - defaults.lineHeight, defaults.canvas.width, y - defaults.lineHeight, defaults.lineColor, 1);
+        // timeline.drawLine(0, y, defaults.canvas.width, y, defaults.lineColor, 1);
 
+        var color = defaults.lineColor;
+        // var color = '#98CAE7';
 
+        timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, color, 1, color);
+        timeline.drawRect(0, y, defaults.canvas.width, 1, 0, color, 1, color);
+
+        
 
         if (days) {
+            // background.remove();
 
-            l = defaults.canvas.width/3; // left
-            r = l * 2; // right
+            var today = new Date();
 
-            if (l > defaults.maxDetailWidth) {
-                r = defaults.canvas.width - defaults.maxDetailWidth; // take rest of space
-            }
+            // var x = defaults.canvas.width - (defaults.days * defaults.cellWidth);
+            var x = defaults.canvas.width;
 
-            days = Math.floor(r/defaults.cellWidth);
+            for (var i = defaults.days - 1; i > 0; i--) {
+                var d = today.getDate();
 
-            x = defaults.canvas.width - (days * defaults.cellWidth);
+                x -= defaults.cellWidth;
 
-            for (var i = 0; i < days - 1; i++) {
+                // if (d === 1) {
+                //     timeline.paper.text(x + (defaults.cellWidth/2), start + 5, 'MAR').attr({
+                //     'font-family': 'RobotoL',
+                //     'font-size': '8px',
+                //     // 'font-weight': 'bold',
+                //         'fill': '#A6A6A6'
+                //     });
 
-                x += defaults.cellWidth;
+                // }
 
-                timeline.paper.text(x + (defaults.cellWidth/2), defaults.lineHeight/2, i).attr({
-                    'font-family': 'RobotoL',
-                    'font-size': '10px',
-                    'fill': '#A6A6A6'
+                // timeline.paper.text(x + (defaults.cellWidth/2), (y/2) + 5, d).attr({
+                //     'font-family': 'RobotoL',
+
+                //         'font-size': '10px',
+
+                //     'fill': '#414141'
+                // });
+
+                console.log(x + ' ' + y);
+
+                // if (i % 2 === 0) {
+                //     // var c = '#87C3F6';
+                //     var c = '#88AED3';
+
+                //     // var c = '#EDF3F9';
+
+                //     // EDF3F9
+
+                //     timeline.drawRect(x + 3, 3, defaults.cellWidth - 6, defaults.lineHeight - 8, 0, c, 1, c);
+                //         }
+
+
+                if (d === 1) {
+                    var c = '#FFAF59';
+                    // var c = '#EDF3F9';
+
+                    timeline.drawRect(x + 3, 3, defaults.cellWidth - 6, defaults.lineHeight - 7, 0, c, 1, c);
+                        }
+
+                timeline.paper.text(x + (defaults.cellWidth/2), y - defaults.lineHeight/2 + 2, d).attr({
+                    // 'font-family': 'RobotoL',
+
+                    'font-family': 'Open Sans',
+
+                        'font-size': '11.5px',
+
+                    // 'fill': '#414141'
+                    // 'fill': '#80898e'
+                    'fill': '#000000'
                 });
+
+                today.setDate(today.getDate() - 1);
+
 
 
 
@@ -99,24 +154,16 @@ Timeline.prototype = function() {
 
         y = start + defaults.lineHeight;
         timeline.drawLine(0, y, defaults.canvas.width, y, defaults.lineColor);
-        timeline.drawLine(0, start, 0, y, defaults.lineColor);
+        // timeline.drawLine(0, start, 0, y, defaults.lineColor);
+        // timeline.drawLine(defaults.canvas.width, start, defaults.canvas.width, y, defaults.lineColor);
 
-        l = defaults.canvas.width/3; // left
-        r = l * 2; // right
+        var x = defaults.canvas.width - (defaults.days * defaults.cellWidth);
 
-        if (l > defaults.maxDetailWidth) {
-            r = defaults.canvas.width - defaults.maxDetailWidth; // take rest of space
-        }
-
-        days = Math.floor(r/defaults.cellWidth);
-
-        x = defaults.canvas.width - (days * defaults.cellWidth);
-
-        for (var i = 0; i < days - 1; i++) {
+        for (var i = 0; i < defaults.days - 1; i++) {
             x += defaults.cellWidth;
             if (item.history) {
                 var color = '#ffffff';
-                var d = days * -1 + i; 
+                var d = defaults.days * -1 + i; 
                 var history = _.chain(item.history)
                     .filter(function(h) {
                         return (d >= h.day)
@@ -141,6 +188,30 @@ Timeline.prototype = function() {
         }
     };
 
+    timeline.drawVerticalBars = function(defaults) {
+        var x = defaults.canvas.width - (defaults.days * defaults.cellWidth);
+
+        for (var i = 0; i < defaults.days - 1; i++) {
+            x += defaults.cellWidth;
+
+
+            var color = '#FFFFFF';
+
+            // var color = '#EDF3F9';
+
+
+
+            if (i % 2 === 0) {
+                timeline.drawRect(x, 0, defaults.cellWidth, defaults.canvas.height, 0, color, 1, color);
+
+            }
+
+
+
+
+        }
+    };
+
     timeline.draw = function(canvas) {
 	    timeline.destroy();
 
@@ -154,13 +225,13 @@ Timeline.prototype = function() {
 
         var items = [ 
             { type: 'head', text: 'Hardware Products' },
-            { type: 'item', text: 'HD Decoder', history: [ 
-                { day: -8, status: 1 },
-                { day: -5, status: 3 },
-            ] },
             { type: 'item', text: 'Decoder', history: [ 
                 { day: -180, status: 1 },
                 { day: -5, status: 2 },
+            ] },
+            { type: 'item', text: 'HD Decoder', history: [ 
+                { day: -8, status: 1 },
+                { day: -5, status: 3 },
             ] },
             { type: 'item', text: 'Smartcard', history: [ 
                 { day: -180, status: 1 },
@@ -241,22 +312,31 @@ Timeline.prototype = function() {
             height: items.length * defaults.lineHeight
         }
 
-        debug.defaults = defaults;
+        var l = defaults.canvas.width/3; // left
+        var r = l * 2; // right
+
+        if (l > defaults.maxDetailWidth) {
+            r = defaults.canvas.width - defaults.maxDetailWidth; // take rest of space
+        }
+
+        defaults.days = Math.floor(r/defaults.cellWidth);
 
         timeline.paper = Raphael(canvas, defaults.canvas.width, defaults.canvas.height + 5);
 
         defaults.canvas.width = defaults.canvas.width - 5;
 
+        timeline.drawVerticalBars(defaults);
+
+
 
         // debug.timeline = timeline;
-
         for (var i = 0; i < items.length; i++) {
             if (items[i].type === 'head') {
                 timeline.drawLineHeader(defaults, items[i].text, i * defaults.lineHeight, i === 0)                    
             } else if (items[i].type === 'item') {
                 timeline.drawLineItem(defaults, items[i], i * defaults.lineHeight, i === 0)                    
             } else {
-
+                // timeline.drawLineHeader(defaults, '', i * defaults.lineHeight, i === 0)                    
             }
         }
 
