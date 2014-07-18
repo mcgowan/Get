@@ -5,7 +5,7 @@ App.controller('TimelineCtl', function TimelineCtl($scope) {
     };
 
 	$scope.resize = function(event) {
-		$scope.timeline.draw();
+		$scope.timeline.redraw();
 	};
 
     $scope.init();
