@@ -28,16 +28,16 @@ Timeline.prototype = function() {
         { type: 'item', text: 'TV Basic', history: [ 
             { day: -180, status: 1 },
         ] },
-        // { type: 'item', text: 'TV Gold Package', history: [ 
-        //     { day: -180, status: 1 },
-        //     { day: -10, status: 2 },
-        //     { day: -9, status: 5 },
-        //     { day: -3, status: 0 },
-        // ] },
-        // { type: 'item', text: 'TV Silver Package', history: [ 
-        //     { day: -10, status: 4 },
-        //     { day: -9, status: 1 },
-        // ] },
+        { type: 'item', text: 'TV Gold Package', history: [ 
+            { day: -180, status: 1 },
+            { day: -10, status: 2 },
+            { day: -9, status: 5 },
+            { day: -3, status: 0 },
+        ] },
+        { type: 'item', text: 'TV Silver Package', history: [ 
+            { day: -10, status: 4 },
+            { day: -9, status: 1 },
+        ] },
         { type: 'item', text: 'VoIP Basic', history: [ 
             { day: -10, status: 1 },
             { day: -7, status: 2 },

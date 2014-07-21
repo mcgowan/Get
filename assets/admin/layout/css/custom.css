@@ -21,41 +21,41 @@
   margin-bottom: 5px;
 }
 
-.timeline-date-range {
-/*	position: relative;
-	top: -8px;
-	margin-right: -30px;
-	display: none;
-	padding: 8px 9px 8px 9px;
-	cursor: pointer;
-	color: #fff;*/
-	background-color: #bfcad1;
-	
-	/*color: #80898e;*/
-	color: #fff;
+.portlet.solid > .portlet-title > .tools {
+	margin-top: 0px;
+	border: 0px;
+}
 
+.timeline-date-range {
+	background-color: #bfcad1;
+	color: #fff;
 	cursor: pointer;
-	padding: 8px 9px 8px 9px;
+	padding: 10px 9px 9px 9px;
 	font-weight: normal;
 	font-size: 14px;
 }
 
-.portlet > .portlet-title > .caption {
+.timeline-caption {
 	float: left;
 	display: inline-block;
 	font-size: 18px;
 	line-height: 18px;
 	font-weight: 400;
-	margin: 0;
-	padding: 0;
-	margin-bottom: 8px;
-	padding: 8px 9px 8px 9px;
+	padding: 10px;
 	background-color: #E9EDEF;
+}
 
+.timeline-title {
+	background-color: #E9EDEF;
 }
 
 .timeline-dropdown{
 	list-style: none;
+}
+
+.timeline-tools {
+	margin-top: 0px;
+	border: 0px;
 }
 
 @font-face {

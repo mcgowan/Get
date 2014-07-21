@@ -8,20 +8,13 @@ App.controller('TimelineCtl', function TimelineCtl($scope) {
 		$scope.timeline.draw();
 
 		var days = $scope.timeline.getDays();
-		console.log('days ' + days);
-
-		// $scope.dateRange = getDateRangeText($scope.timeline.getDays());
 		$scope.dateRange = getDateRangeText(days);
-
     };
 
 	$scope.resize = function(event) {
 		$scope.timeline.redraw();
 
 		var days = $scope.timeline.getDays();
-		console.log('days ' + days);
-
-		// $scope.dateRange = getDateRangeText($scope.timeline.getDays());
 		$scope.dateRange = getDateRangeText(days);
 	};
 
