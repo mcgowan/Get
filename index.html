@@ -490,6 +490,24 @@ License: You must have a valid license purchased only from themeforest(the above
 </div>
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
+	
+	<!-- tooltip -->
+
+
+<!-- <div id="qtip-0" class="qtip qtip-default  qtip-pos-tr qtip-shadow" tracking="false" role="alert" aria-live="polite" aria-atomic="false" aria-describedby="qtip-0-content" aria-hidden="false" data-qtip-id="0" style="z-index: 15040; display: block; top: 1156px; left: 276.703125px;">
+
+	<div class="qtip-tip" style="border: 0px !important; width: 8px; height: 8px; line-height: 8px; top: 50%; margin-top: -4px; right: -8px; display: none; background-color: transparent !important;">
+		<canvas width="8" height="8" style="border: 0px !important; width: 8px; height: 8px; background-color: transparent !important;"></canvas>
+	</div>
+	<div class="qtip-content" id="qtip-0-content" aria-atomic="true">Move me around using the dropdowns</div>
+</div>
+ -->
+
+	<div ng-controller="TooltipCtl" class="qtip qtip-default qtip-shadow">
+		<div class="qtip-content">{{ text }}</div>
+	</div>
+
+
 	<!-- BEGIN SIDEBAR -->
 	<div class="page-sidebar-wrapper">
 		<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
@@ -1392,31 +1410,18 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- over here...! -->
 
 			<div class="row">
-<!-- 				<div class="col-md-6 col-sm-6">
- -->
  				<div class="col-md-8 col-sm-8">
-
 
 					<!-- BEGIN PORTLET-->
 					<div class="portlet solid bordered grey-cararra" ng-controller="TimelineCtl">
+
 						<div class="portlet-title timeline-title">
 							<div class="timeline-caption">
 								<i class="fa fa-calendar-o"></i> Customer Status Timeline
 							</div>
-							
-
 							<div class="tools timeline-tools">
-
-<!-- 							<div class="btn-group" data-toggle="buttons">
-									<label class="btn grey-steel btn-sm active">
-									<input type="radio" name="options" class="toggle" id="option1">New</label>
-									<label class="btn grey-steel btn-sm">
-									<input type="radio" name="options" class="toggle" id="option2">Returning</label>
-								</div>
- -->
 								<ul class="timeline-dropdown">
 									<li class="pull-right">
-										<!-- <div id="dashboard-report-range" class="dashboard-date-range tooltips" data-placement="top" data-original-title="Change dashboard date range"> -->
 										<div id="dashboard-report-range" class="timeline-date-range">
 											<i class="icon-calendar"></i>
 											<span>{{ dateRange }}</span>
@@ -1424,45 +1429,17 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</li>
 								</ul>
-
  							</div>
-
-
-
-
 						</div>
 						
 						<div class="portlet-body">
-							
-							<!--
-							<div id="customer_timeline_loading">
-								<img src="assets/admin/layout/img/loading.gif" alt="loading"/>
-							</div>
-							-->
-
 							<div id="customer_timeline_content">
-								
 								<div id="customer_timeline" app-resize>
-
-									<!-- how do i control the size of this? -->
-									<!-- 
-									<table id="searchTextResults">
-										<tr><th>Name</th><th>Phone</th></tr>
-										<tr ng-repeat="friend in friends">
-											<td>{{friend.name}}</td>
-											<td>{{friend.phone}}</td>
-										</tr>
-									</table>
-									-->
  								</div>
-
 							</div>
-
-
 						</div>
 					</div>
 					<!-- END PORTLET-->
-
 
 
 				</div>
@@ -2466,6 +2443,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="js/utils.js"></script>
 <script src="js/timeline.js"></script>
 <script src="js/controllers/timeline.js"></script>
+<script src="js/controllers/tooltip.js"></script>
 
 <script>
 jQuery(document).ready(function() {    
@@ -2479,7 +2457,7 @@ jQuery(document).ready(function() {
    Index.initCharts(); // init index page's custom scripts
    Index.initChat();
    Index.initMiniCharts();
-   Index.initIntro();
+   // Index.initIntro();
    Tasks.initDashboardWidget();
 
 	//resize window...

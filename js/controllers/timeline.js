@@ -1,10 +1,10 @@
-App.controller('TimelineCtl', function TimelineCtl($scope) {
+App.controller('TimelineCtl', function TimelineCtl($rootScope, $scope) {
     var getDateRangeText = function(days) {
     	return moment().subtract('days', days).format('MMMM D, YYYY').toUpperCase() + ' - ' + moment().format('MMMM D, YYYY').toUpperCase();
     };
 
     $scope.init = function() {
-		$scope.timeline = new Timeline('customer_timeline');
+		$scope.timeline = new Timeline($rootScope, 'customer_timeline');
 		$scope.timeline.draw();
 
 		var days = $scope.timeline.getDays();

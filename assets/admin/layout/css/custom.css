@@ -58,6 +58,43 @@
 	border: 0px;
 }
 
+.qtip-default {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #F1D031;
+	background-color: #FFFFA3;
+	color: #555;
+}
+
+.qtip {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	max-width: 280px;
+	min-width: 50px;
+	font-size: 10.5px;
+	line-height: 12px;
+	direction: ltr;
+	box-shadow: none;
+	padding: 0;
+	z-index: 9999999;
+	display: block;
+}
+
+.qtip-content {
+	position: relative;
+	padding: 5px 9px;
+	overflow: hidden;
+	text-align: left;
+	word-wrap: break-word;
+}
+
+.qtip-shadow {
+	-webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
 @font-face {
 	font-family: 'RobotoL';
 	font-style: normal;

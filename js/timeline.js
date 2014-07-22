@@ -1,4 +1,7 @@
-var Timeline = function(canvas) {
+var debug = {};
+
+var Timeline = function(scope, canvas) {
+    this.scope = scope;
     this.canvas = document.getElementById(canvas);
 }
 
@@ -289,13 +292,20 @@ Timeline.prototype = function() {
                     });
 
                     if (status.length > 0) {
-                        color = _.filter(defaults.status, function(s){
-                            return s.id === history.status;
-                        })[0].color;
                         
-                        timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 0, color, 1, color).attr({
+                        status = _.filter(defaults.status, function(s){
+                            return s.id === history.status;
+                        })[0];
+                        
+                        var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 0, status.color, 1, status.color).attr({
                             'cursor': 'pointer'
                         });
+
+                        el.status = status;
+
+                        el.hover(function(){
+                            showTooltip(el.status.text);
+                        }, hideTooltip);
 
                     }
                 }
@@ -317,8 +327,10 @@ Timeline.prototype = function() {
         }
     };
 
-    timeline.draw = function(canvas) {
+    timeline.draw = function(scope, canvas) {
 	    timeline.destroy();
+
+        timeline.scope = scope;
 
         // 1   Active
         // 2   Cancelled
@@ -350,7 +362,6 @@ Timeline.prototype = function() {
         timeline.drawVerticalBars(defaults);
 
 
-
         // debug.timeline = timeline;
         for (var i = 0; i < items.length; i++) {
             
@@ -362,8 +373,6 @@ Timeline.prototype = function() {
                 // timeline.drawLineHeader(defaults, '', i * defaults.lineHeight, i === 0)                    
             }
         }
-
-
     };
 
     timeline.destroy = function() {
@@ -374,13 +383,19 @@ Timeline.prototype = function() {
     };
 
     var draw = function() {
-        // console.log('draw');
-    	timeline.draw(this.canvas);
+    	timeline.draw(this.scope, this.canvas);
     };
 
     var redraw = function() {
-        // console.log('redraw');
-        timeline.draw(this.canvas);
+        timeline.draw(this.scope, this.canvas);
+    };
+
+    var showTooltip = function(tip) {
+        timeline.scope.$emit('TOOLTIP_SHOW', tip);
+    };
+
+    var hideTooltip = function() {
+        timeline.scope.$emit('TOOLTIP_HIDE');
     };
 
     // var getDateRange = function() {
@@ -399,6 +414,8 @@ Timeline.prototype = function() {
         draw: draw,
         redraw: redraw,
         getDays: getDays,
+        showTooltip: showTooltip,
+        hideTooltip: hideTooltip,
     }
 
 }();
