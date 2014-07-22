@@ -3,18 +3,18 @@ var App = angular.module('App', [])
     return {
         restrict: 'A',
         link: function(scope, element) {
-            // angular.element($window).on('resize', function(e) {
-            //     scope.$apply(scope.resize(e));
-            // });
-
-            // angular.element().on('resize', function(e) {
-            //     scope.$apply(scope.resize(e));
-            // });
-
 			element.on('resize', function (e) {
 				scope.$apply(scope.resize(e));
 			});            
-			
+        }
+    };
+}).directive('appMouseMove', function($document) {
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            angular.element($document).on('mousemove', function(e) {
+                scope.$apply(scope.mouse = { x: e.pageX, y: e.pageY - $(window).scrollTop() });
+            });
         }
     };
 });

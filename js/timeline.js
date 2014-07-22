@@ -263,6 +263,7 @@ Timeline.prototype = function() {
 
     timeline.drawLineItem = function(defaults, item, start) {
         var y = start + (defaults.lineHeight/2);
+        
         timeline.drawText(item.text, defaults.margin.left, y, defaults.itemFont).attr({
             'cursor': 'pointer'
         });
@@ -304,8 +305,12 @@ Timeline.prototype = function() {
                         el.status = status;
 
                         el.hover(function(){
-                            showTooltip(el.status.text);
+                            showTooltip(this.status.text);
                         }, hideTooltip);
+
+                        el.mousemove(function(){
+                            showTooltip(this.status.text);
+                        });
 
                     }
                 }

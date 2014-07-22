@@ -65,6 +65,12 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN HEADER -->
 
 <div class="page-header navbar navbar-fixed-top">
+	
+	<!-- tooltip -->
+	<div ng-controller="TooltipCtl" class="qtip qtip-default qtip-shadow" ng-style="{top: style.pos.y + 'px', left:style.pos.x + 'px', display:style.display}" app-mouse-move>
+		<div class="qtip-content">{{ text }}</div>
+	</div>
+
 	<!-- BEGIN HEADER INNER -->
 	<div class="page-header-border-top"></div>
 	<div class="page-header-inner">
@@ -490,23 +496,6 @@ License: You must have a valid license purchased only from themeforest(the above
 </div>
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
-	
-	<!-- tooltip -->
-
-
-<!-- <div id="qtip-0" class="qtip qtip-default  qtip-pos-tr qtip-shadow" tracking="false" role="alert" aria-live="polite" aria-atomic="false" aria-describedby="qtip-0-content" aria-hidden="false" data-qtip-id="0" style="z-index: 15040; display: block; top: 1156px; left: 276.703125px;">
-
-	<div class="qtip-tip" style="border: 0px !important; width: 8px; height: 8px; line-height: 8px; top: 50%; margin-top: -4px; right: -8px; display: none; background-color: transparent !important;">
-		<canvas width="8" height="8" style="border: 0px !important; width: 8px; height: 8px; background-color: transparent !important;"></canvas>
-	</div>
-	<div class="qtip-content" id="qtip-0-content" aria-atomic="true">Move me around using the dropdowns</div>
-</div>
- -->
-
-	<div ng-controller="TooltipCtl" class="qtip qtip-default qtip-shadow">
-		<div class="qtip-content">{{ text }}</div>
-	</div>
-
 
 	<!-- BEGIN SIDEBAR -->
 	<div class="page-sidebar-wrapper">

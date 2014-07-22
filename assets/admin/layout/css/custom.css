@@ -16,16 +16,13 @@
 .theme-panel > .theme-options > .theme-option.theme-colors > ul > li.color-get {
   background: #ECBC29;
 }
-
 .portlet.solid.bordered > .portlet-title {
   margin-bottom: 5px;
 }
-
 .portlet.solid > .portlet-title > .tools {
 	margin-top: 0px;
 	border: 0px;
 }
-
 .timeline-date-range {
 	background-color: #bfcad1;
 	color: #fff;
@@ -34,7 +31,6 @@
 	font-weight: normal;
 	font-size: 14px;
 }
-
 .timeline-caption {
 	float: left;
 	display: inline-block;
@@ -44,20 +40,16 @@
 	padding: 10px;
 	background-color: #E9EDEF;
 }
-
 .timeline-title {
 	background-color: #E9EDEF;
 }
-
 .timeline-dropdown{
 	list-style: none;
 }
-
 .timeline-tools {
 	margin-top: 0px;
 	border: 0px;
 }
-
 .qtip-default {
 	border-width: 1px;
 	border-style: solid;
@@ -65,36 +57,32 @@
 	background-color: #FFFFA3;
 	color: #555;
 }
-
 .qtip {
 	position: absolute;
 	left: 10px;
 	top: 10px;
 	max-width: 280px;
-	min-width: 50px;
-	font-size: 10.5px;
+	/*min-width: 50px;*/
+	font-size: 12px;
 	line-height: 12px;
 	direction: ltr;
 	box-shadow: none;
 	padding: 0;
 	z-index: 9999999;
-	display: block;
+	display: none;
 }
-
 .qtip-content {
 	position: relative;
-	padding: 5px 9px;
+	padding: 4px;
 	overflow: hidden;
 	text-align: left;
 	word-wrap: break-word;
 }
-
 .qtip-shadow {
 	-webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
 	-moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
 	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
 }
-
 @font-face {
 	font-family: 'RobotoL';
 	font-style: normal;
@@ -102,8 +90,6 @@
 	src: local('Roboto Light'), local('Roboto-Light'),
 	url(http://themes.googleusercontent.com/static/fonts/roboto/v10/Pru33qjShpZSmG3z6VYwnT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
-
-
 
 /***
 Rounded Portlets
