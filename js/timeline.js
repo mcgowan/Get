@@ -14,17 +14,40 @@ Timeline.prototype = function() {
         { type: 'head', text: 'Hardware Products', showDates: true },
         { type: 'item', text: 'Decoder', history: [ 
             { day: -180, status: 1 },
-            { day: -5, status: 2 },
+            { day: -5, status: 2, events: [
+                { id: 5228, reason: 1, user: 'admin', status: 0, time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', status: 0, time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', status: 0, time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
         ] },
         { type: 'item', text: 'HD Decoder', history: [ 
             { day: -8, status: 1 },
-            { day: -5, status: 3 },
+            { day: -5, status: 3, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+
+            ]},
         ] },
         { type: 'item', text: 'Smartcard', history: [ 
             { day: -180, status: 1 },
-            { day: -5, status: 7 },
-            { day: -4, status: 6 },
-            { day: -3, status: 1 },
+            { day: -5, status: 7, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
+            { day: -4, status: 6, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
+            { day: -3, status: 1, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
         ] },
         // { type: 'none', text: '' },
         { type: 'head', text: 'Software Products', showDates: false },
@@ -33,18 +56,43 @@ Timeline.prototype = function() {
         ] },
         { type: 'item', text: 'TV Gold Package', history: [ 
             { day: -180, status: 1 },
-            { day: -10, status: 2 },
-            { day: -9, status: 5 },
+            { day: -10, status: 2, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
+            { day: -9, status: 5, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
+            { day: -4, status: 5, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
             { day: -3, status: 0 },
         ] },
         { type: 'item', text: 'TV Silver Package', history: [ 
-            { day: -10, status: 4 },
-            { day: -9, status: 1 },
+            { day: -10, status: 4, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
+            { day: -9, status: 1, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
         ] },
         { type: 'item', text: 'VoIP Basic', history: [ 
-            { day: -10, status: 1 },
-            { day: -7, status: 2 },
-            { day: -6, status: 0 },
+            { day: -10, status: 1, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
+            { day: -7, status: 2, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
+            { day: -6, status: 2, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
+            { day: -5, status: 0},
         ] },
         { type: 'none', text: '' },
         { type: 'head', text: 'Contacts', showDates: false },
@@ -177,11 +225,6 @@ Timeline.prototype = function() {
 
     };
 
-                    // timeline.drawLineDate(defaults, i * defaults.lineHeight)
-    timeline.drawLineDate = function(defaults, start) {
-
-    };
-
     timeline.drawLineHeader = function(defaults, text, start, days) {
         var background = timeline.drawRect(0, start + 2, defaults.canvas.width, defaults.lineHeight - 4, 0, '#FAFAFA', 1, '#FAFAFA');
 
@@ -278,8 +321,10 @@ Timeline.prototype = function() {
         for (var i = 0; i < defaults.days - 1; i++) {
             x += defaults.cellWidth;
             if (item.history) {
+                
                 var color = '#ffffff';
                 var d = defaults.days * -1 + i; 
+                
                 var history = _.chain(item.history)
                     .filter(function(h) {
                         return (d >= h.day)
@@ -297,21 +342,78 @@ Timeline.prototype = function() {
                         status = _.filter(defaults.status, function(s){
                             return s.id === history.status;
                         })[0];
+
+                        var set = timeline.paper.set();
                         
+                        var rx = x + 3, ry = start + 3, rw = defaults.cellWidth - 6, rh = defaults.lineHeight - 6;
+
                         var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 0, status.color, 1, status.color).attr({
                             'cursor': 'pointer'
                         });
 
-                        el.status = status;
+                        set.push(el);
 
-                        el.hover(function(){
-                            showTooltip(this.status.text);
-                        }, hideTooltip);
+                        // draw digit in mid of rect
 
-                        el.mousemove(function(){
-                            showTooltip(this.status.text);
+                        // if (d === history.day && history.events && history.events.length > 0) {
+                            
+                        //     // timeline.paper.circle((rx + rw/2) + .5, (ry + rh/2) + .5, 7.5).attr({
+                        //     timeline.paper.circle((rx + rw/2) + .5, (ry + rh/2) + .5, 8).attr({
+                        //     // timeline.paper.circle((rx + rw/2) + .5, (ry + rh/2) + .5, 7).attr({                                
+                        //         'fill': '#ffffff',
+                        //         'stroke': status.color,
+                        //     });
+
+                        //     timeline.paper.text((rx + rw/2) + .25, ry + rh/2, history.events.length).attr({
+                        //     // timeline.paper.text(rx + rw/2, ry + rh/2, history.events.length).attr({
+                        //         'font-family': 'Open Sans',
+                        //         // 'font-family': 'RobotoL',
+                        //         // 'font-family': 'Arial',
+
+                        //         'font-size': '11px',
+                        //         // 'font-weight': 'bold',
+                        //         // 'fill': '#ffffff',
+                        //         // 'fill': status.color,
+                        //         'fill': '#000',
+                                
+                        //         'cursor': 'pointer'
+                        //     });
+                        // }
+
+
+                        if (d === history.day && history.events && history.events.length > 0) {
+                            var px1 = rx + 1, py1 = ry + rh + 1, px2 = rx + rw + 1, py2 = ry + rh + 1, px3 =  rx + rw + 1, py3 = ry + 1;
+
+                            // var px1 = rx + 4, py1 = ry + rh - 4, px2 = rx + rw - 1, py2 = ry + rh - 1, px3 =  rx + rw - 1, py3 = ry + 2;
+
+                            
+                            set.push(timeline.paper.path('M' + px1 + ',' + py2 + ',' + px2 + ',' + py2 + ',' + px3 + ',' + py3 + 'z').attr({
+                                    'fill': '#fff',
+                                    'stroke': '#fff',
+                                    'cursor': 'pointer',
+                                }), timeline.paper.text((rx + rw/2) + 5, (ry + rh/2) + 5, history.events.length).attr({
+                                // }), timeline.paper.text((rx + rw/2) + 5, (ry + rh/2) + 3, history.events.length).attr({
+                                    'font-family': 'Open Sans',
+                                    'font-size': '10px',
+                                    'fill': '#000',
+                                    'cursor': 'pointer',
+                                }));
+                        }
+
+                        _.each(set.items, function(item){
+                            item.status = status;
+                            item.hover(function(){
+                                showTooltip(this.status.text);
+                            }, hideTooltip);
+
+                            item.mousemove(function(){
+                                showTooltip(this.status.text);
+                            });
+
+                            item.click(function(){
+                                showEventip(this.status.events);
+                            });
                         });
-
                     }
                 }
             }
@@ -403,6 +505,14 @@ Timeline.prototype = function() {
         timeline.scope.$emit('TOOLTIP_HIDE');
     };
 
+    var showEventip = function(events) {
+        
+        // console.log('in timeline.showEventip');
+        // timeline.scope.$emit('TOOLTIP_HIDE');
+
+        timeline.scope.$emit('EVENTIP_SHOW', events);
+    };
+
     // var getDateRange = function() {
     //     var today = new Date();
     //     return { 
@@ -421,6 +531,7 @@ Timeline.prototype = function() {
         getDays: getDays,
         showTooltip: showTooltip,
         hideTooltip: hideTooltip,
+        showEventip: showEventip,
     }
 
 }();
