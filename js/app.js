@@ -17,5 +17,18 @@ var App = angular.module('App', [])
             });
         }
     };
+}).directive('appClickOutside', function($document) {
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            angular.element($document).on('mouseup', function(e) {
+                var container = $(scope.selector);
+                if (!container.is(e.target)
+                    && container.has(e.target).length === 0) {
+                    scope.hide();
+                }
+            });
+        }
+    };
 });
 

@@ -9,6 +9,8 @@ App.controller('EventipCtl', function EventipCtl($rootScope, $scope) {
 	    	console.log('EventipCtl.show');
 	    });
 
+	    $scope.selector = '#eventipCtl';
+
 	    // var hide = $rootScope.$on('TOOLTIP_HIDE', function(event, param){
 	    // 	$scope.hide();
 	    // });
@@ -21,19 +23,22 @@ App.controller('EventipCtl', function EventipCtl($rootScope, $scope) {
 	    // $scope.text = '';
     };
 
-	$scope.show = function(tip) {
-		// setText(tip);
+	$scope.show = function(params) {
 		$scope.$apply(function() {
-			$scope.style = { pos: { x: $scope.mouse.x + offset.x, y: $scope.mouse.y + offset.y }, display: 'block' };
+			
+
+			// $scope.style = { pos: { x: $scope.mouse.x + offset.x, y: $scope.mouse.y + offset.y }, display: 'block' };
+			$scope.style = { pos: { x: params.coords.x, y: params.coords.y }, display: 'block' };
+
+
 		});
 	};
 
-	// $scope.hide = function() {
-	// 	setText('');
-	// 	$scope.$apply(function() {
-	// 		$scope.style = { pos: { x: 0, y: 0 }, display: 'none' };
-	// 	});
-	// };
+	$scope.hide = function() {
+		$scope.$apply(function() {
+			$scope.style = { pos: { x: 0, y: 0 }, display: 'none' };
+		});
+	};
 
 	// var setText = function(tip) {
 	// 	$scope.$apply(function() {

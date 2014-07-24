@@ -15,6 +15,24 @@ Timeline.prototype = function() {
         { type: 'item', text: 'Decoder', history: [ 
             { day: -180, status: 1 },
             { day: -5, status: 2, events: [
+
+                                    // <th>
+                                    //      Event#
+                                    // </th>
+                                    // <th>
+                                    //      Date/Time
+                                    // </th>
+                                    // <th>
+                                    //      Event Description
+                                    // </th>
+                                    // <th>
+                                    //      Status
+                                    // </th>
+                                    // <th>
+                                    //      Reason
+                                    // </th>
+
+
                 { id: 5228, reason: 1, user: 'admin', status: 0, time: { hours: 0, minutes: 0, seconds: 0 } },
                 { id: 5228, reason: 1, user: 'admin', status: 0, time: { hours: 0, minutes: 0, seconds: 0 } },
                 { id: 5228, reason: 1, user: 'admin', status: 0, time: { hours: 0, minutes: 0, seconds: 0 } },
@@ -37,6 +55,12 @@ Timeline.prototype = function() {
         ] },
         { type: 'item', text: 'Smartcard', history: [ 
             { day: -180, status: 1 },
+            { day: -22, status: 1, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
+            { day: -12, status: 1, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
             { day: -5, status: 7, events: [
                 { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
             ]},
@@ -48,6 +72,10 @@ Timeline.prototype = function() {
             { day: -3, status: 1, events: [
                 { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
             ]},
+            { day: -2, status: 1, events: [
+                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+            ]},
+
         ] },
         // { type: 'none', text: '' },
         { type: 'head', text: 'Software Products', showDates: false },
@@ -226,7 +254,8 @@ Timeline.prototype = function() {
     };
 
     timeline.drawLineHeader = function(defaults, text, start, days) {
-        var background = timeline.drawRect(0, start + 2, defaults.canvas.width, defaults.lineHeight - 4, 0, '#FAFAFA', 1, '#FAFAFA');
+        // var background = timeline.drawRect(0, start + 2, defaults.canvas.width, defaults.lineHeight - 4, 0, '#FAFAFA', 1, '#FAFAFA');
+        var background = timeline.drawRect(0, start + 2, defaults.canvas.width, defaults.lineHeight - 4, 0, '#F5F5F5', 1, '#F5F5F5');
 
 
         var y = start + (defaults.lineHeight/2) + 1;
@@ -348,7 +377,7 @@ Timeline.prototype = function() {
                         var rx = x + 3, ry = start + 3, rw = defaults.cellWidth - 6, rh = defaults.lineHeight - 6;
 
                         var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 0, status.color, 1, status.color).attr({
-                            'cursor': 'pointer'
+                            'cursor': d === history.day && history.events && history.events.length > 0 ? 'pointer' : 'default',
                         });
 
                         set.push(el);
@@ -383,10 +412,6 @@ Timeline.prototype = function() {
 
                         if (d === history.day && history.events && history.events.length > 0) {
                             var px1 = rx + 1, py1 = ry + rh + 1, px2 = rx + rw + 1, py2 = ry + rh + 1, px3 =  rx + rw + 1, py3 = ry + 1;
-
-                            // var px1 = rx + 4, py1 = ry + rh - 4, px2 = rx + rw - 1, py2 = ry + rh - 1, px3 =  rx + rw - 1, py3 = ry + 2;
-
-                            
                             set.push(timeline.paper.path('M' + px1 + ',' + py2 + ',' + px2 + ',' + py2 + ',' + px3 + ',' + py3 + 'z').attr({
                                     'fill': '#fff',
                                     'stroke': '#fff',
@@ -398,6 +423,51 @@ Timeline.prototype = function() {
                                     'fill': '#000',
                                     'cursor': 'pointer',
                                 }));
+
+                            _.each(set.items, function(item){
+
+                                item.set = set;
+
+                                item.click(function(){
+
+
+                                    var cx = timeline.paper.canvas.offsetLeft;
+                                    var cy = timeline.paper.canvas.offsetTop;
+
+                                    // bottom: 658
+                                    // height: 377
+                                    // left: 67
+                                    // right: 1093.65625
+                                    // top: 281
+                                    // width: 1026.65625
+                                    // __proto__: ClientRect                                    
+
+                                    // var blah = set[0].getBBox();
+                                    var dv = timeline.paper.canvas.parentElement.getBoundingClientRect();
+
+                                    var dx = dv.left, dy = dv.top;
+
+                                    // cx: 1010
+                                    // cy: 106
+                                    // height: 19
+                                    // toString: function x_y_w_h() {
+                                    // width: 19
+                                    // x: 1000.5
+                                    // x2: 1019.5
+                                    // y: 96.5
+                                    // y2: 115.5
+                                    // __proto__: Object
+
+                                    var bx = this.set[0].getBBox();
+
+                                    // showEventip({ coords: { x: dx + cx, y: dy + cy }, events: this.status.events });
+
+                                    var ox = 15, oy = -15;
+
+                                    showEventip({ coords: { x: dx + bx.x2 + ox, y: dy + bx.y + oy }, events: this.status.events });
+
+                                });
+                            });
                         }
 
                         _.each(set.items, function(item){
@@ -408,10 +478,6 @@ Timeline.prototype = function() {
 
                             item.mousemove(function(){
                                 showTooltip(this.status.text);
-                            });
-
-                            item.click(function(){
-                                showEventip(this.status.events);
                             });
                         });
                     }
@@ -505,12 +571,12 @@ Timeline.prototype = function() {
         timeline.scope.$emit('TOOLTIP_HIDE');
     };
 
-    var showEventip = function(events) {
+    var showEventip = function(params) {
         
         // console.log('in timeline.showEventip');
         // timeline.scope.$emit('TOOLTIP_HIDE');
 
-        timeline.scope.$emit('EVENTIP_SHOW', events);
+        timeline.scope.$emit('EVENTIP_SHOW', params);
     };
 
     // var getDateRange = function() {
