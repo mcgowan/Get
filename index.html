@@ -64,125 +64,57 @@ License: You must have a valid license purchased only from themeforest(the above
 <body class="page-header-fixed page-quick-sidebar-over-content">
 
 <!-- tooltip -->
-<div ng-controller="TooltipCtl" class="tip tip-default tip-shadow" ng-style="{top: style.pos.y + 'px', left:style.pos.x + 'px', display:style.display}" app-mouse-move>
+<div ng-controller="TooltipCtl" class="tip tip-default tip-shadow" ng-style="{top: style.pos.y + 'px', left:style.pos.x + 'px', display:style.display}" app-mouse-move app-scroll>
 	<div class="tip-content">{{ text }}</div>
 </div>
 
 <!-- eventip -->
-<div id="eventipCtl" ng-controller="EventipCtl" class="eventip dropdown-menu opensright" ng-style="{top: style.pos.y + 'px', left:style.pos.x + 'px', display:style.display}" app-mouse-move app-click-outside>
+<div id="eventipCtl" ng-controller="EventipCtl" class="eventip dropdown-menu opensright" ng-style="{top: style.pos.y + 'px', left:style.pos.x + 'px', display:style.display}" app-mouse-move app-click-outside app-scroll style="border-left-color:#E6E9EC">
 	<div class="tip-content">
 		<div class="portlet-body">
-			<!-- <div style="background-color:#BFCAD1"> -->
-			<div class="eventip-title" style="background-color:#BFCAD1;height:30px">
-				<div class="eventip-icon eventip-icon-clock" style="font-size:40px">
-					<i class="fa fa-clock-o"></i>&nbspEvents for Decoder on 00/00/000
-				</div>
-				
-				<div class="eventip-icon-close">
-					<i class="icon-remove fa fa-times eventip-icon"></i>
-				</div>
+			<div class="eventip-title">
+				<i class="eventip-icon eventip-icon-bolt"></i>
+				<span>{{ title }}</span>
+				<i class="eventip-icon eventip-icon-close" ng-click="hide()"></i>
 			</div>
 			<div class="table-scrollable table-scrollable-overrides">
-				<table class="table table-striped table-hover">
+				<table class="table table-striped table-hover" style="font-family:'Open Sans'">
 				<thead>
 				<tr>
 					<th>
 						 Event#
 					</th>
 					<th>
-						 Date/Time
+						 Time
 					</th>
 					<th>
 						 Event Description
 					</th>
 					<th>
-						 Status
-					</th>
-					<th>
-						 Reason
+						 Product Status
 					</th>
 				</tr>
 				</thead>
 				<tbody>
-				<tr>
+				<tr ng-repeat="event in events">
 					<td>
-						 1
+						 <a href="#">{{ event.id }}</a>
 					</td>
 					<td>
-						 Mark
+						 {{ event.time.format("hh:mm:ss a") }}
 					</td>
 					<td>
-						 Otto
+						 {{ event.description }}
 					</td>
 					<td>
-						 makr124
-					</td>
-					<td>
-						<span class="label label-sm label-success">
-						Approved </span>
+						 <span style="color:#fff;padding:0 3px 0 3px" ng-style="{backgroundColor: event.status.color}">{{ event.status.text }}</span>
 					</td>
 				</tr>
-				<tr>
-					<td>
-						 2
-					</td>
-					<td>
-						 Jacob
-					</td>
-					<td>
-						 Nilson
-					</td>
-					<td>
-						 jac123
-					</td>
-					<td>
-						<span class="label label-sm label-info">
-						Pending </span>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						 3
-					</td>
-					<td>
-						 Larry
-					</td>
-					<td>
-						 Cooper
-					</td>
-					<td>
-						 lar
-					</td>
-					<td>
-						<span class="label label-sm label-warning">
-						Suspended </span>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						 4
-					</td>
-					<td>
-						 Sandy
-					</td>
-					<td>
-						 Lim
-					</td>
-					<td>
-						 sanlim
-					</td>
-					<td>
-						<span class="label label-sm label-danger">
-						Blocked </span>
-					</td>
-				</tr>
-				</tbody>
+	 				</tbody>
 				</table>
 			</div>
-
-			<!-- <div style="background-color: #ff0000"> -->
-			<div>
-				<a href="#">See all events for this product</a>&nbsp<i class="m-icon-swapright"></i>
+			<div class="eventip-footer" ng-click="hide()">
+				<a href="#">See all events for this product</a><i class="m-icon-swapright eventip-icon-go"></i>
 			</div>
  		</div>
 

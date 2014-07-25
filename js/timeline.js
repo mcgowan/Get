@@ -15,67 +15,41 @@ Timeline.prototype = function() {
         { type: 'item', text: 'Decoder', history: [ 
             { day: -180, status: 1 },
             { day: -5, status: 2, events: [
-
-                                    // <th>
-                                    //      Event#
-                                    // </th>
-                                    // <th>
-                                    //      Date/Time
-                                    // </th>
-                                    // <th>
-                                    //      Event Description
-                                    // </th>
-                                    // <th>
-                                    //      Status
-                                    // </th>
-                                    // <th>
-                                    //      Reason
-                                    // </th>
-
-
-                { id: 5228, reason: 1, user: 'admin', status: 0, time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', status: 0, time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', status: 0, time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { id: 5228, status: 2, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { id: 5228, status: 3, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
         ] },
         { type: 'item', text: 'HD Decoder', history: [ 
             { day: -8, status: 1 },
             { day: -5, status: 3, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
             ]},
         ] },
         { type: 'item', text: 'Smartcard', history: [ 
             { day: -180, status: 1 },
             { day: -22, status: 1, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
             { day: -12, status: 1, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
             { day: -5, status: 7, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
             { day: -4, status: 6, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
             { day: -3, status: 1, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
             { day: -2, status: 1, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
-
         ] },
         // { type: 'none', text: '' },
         { type: 'head', text: 'Software Products', showDates: false },
@@ -85,40 +59,36 @@ Timeline.prototype = function() {
         { type: 'item', text: 'TV Gold Package', history: [ 
             { day: -180, status: 1 },
             { day: -10, status: 2, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
             { day: -9, status: 5, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
             { day: -4, status: 5, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
             { day: -3, status: 0 },
         ] },
         { type: 'item', text: 'TV Silver Package', history: [ 
             { day: -10, status: 4, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
             { day: -9, status: 1, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
         ] },
         { type: 'item', text: 'VoIP Basic', history: [ 
             { day: -10, status: 1, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
             { day: -7, status: 2, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
             { day: -6, status: 2, events: [
-                { id: 5228, reason: 1, user: 'admin', time: { hours: 0, minutes: 0, seconds: 0 } },
+                { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
             ]},
             { day: -5, status: 0},
         ] },
@@ -174,6 +144,9 @@ Timeline.prototype = function() {
             { id: 6, color: '#D9EF8B', text: 'Scheduled Activation' },
             { id: 7, color: '#FDAE61', text: 'Suspended' },
         ],
+        events: [
+            { id: 5228, text: 'Update Product Status' },
+        ]
     };
 
     // timeline.getMonthAbbr = function(month) {
@@ -382,18 +355,34 @@ Timeline.prototype = function() {
 
                         set.push(el);
 
+                        set.history = history;
+                        set.date = moment().add(d + 2, 'day');
+
                         // draw digit in mid of rect
 
                         // if (d === history.day && history.events && history.events.length > 0) {
                             
                         //     // timeline.paper.circle((rx + rw/2) + .5, (ry + rh/2) + .5, 7.5).attr({
-                        //     timeline.paper.circle((rx + rw/2) + .5, (ry + rh/2) + .5, 8).attr({
+                        //     timeline.paper.circle((rx + rw/2) + .5, (ry + rh/2) + .5, 6.5).attr({
                         //     // timeline.paper.circle((rx + rw/2) + .5, (ry + rh/2) + .5, 7).attr({                                
-                        //         'fill': '#ffffff',
-                        //         'stroke': status.color,
+                        //         // 'fill': '#FFC300',
+                        //         'fill': status.color,
+                        //         // 'fill': '#ffff00',
+                        //         // 'stroke': status.color,
+                        //         'stroke': '#fff',
+                        //         'stroke-width': 2
                         //     });
 
-                        //     timeline.paper.text((rx + rw/2) + .25, ry + rh/2, history.events.length).attr({
+                        //     // timeline.paper.circle((rx + rw/2) + .5, (ry + rh/2) + .5, 6.5).attr({
+                        //     // // timeline.paper.circle((rx + rw/2) + .5, (ry + rh/2) + .5, 7).attr({                                
+                        //     //     // 'fill': '#FFC300',
+                        //     //     'fill': status.color,
+                        //     //     // 'fill': '#ffff00',
+                        //     //     // 'stroke': status.color,
+                        //     //     'stroke': '#fff',
+                        //     // });
+
+                        //     timeline.paper.text((rx + rw/2) + .45, ry + rh/2, history.events.length).attr({
                         //     // timeline.paper.text(rx + rw/2, ry + rh/2, history.events.length).attr({
                         //         'font-family': 'Open Sans',
                         //         // 'font-family': 'RobotoL',
@@ -403,7 +392,8 @@ Timeline.prototype = function() {
                         //         // 'font-weight': 'bold',
                         //         // 'fill': '#ffffff',
                         //         // 'fill': status.color,
-                        //         'fill': '#000',
+                        //         // 'fill': '#000',
+                        //         'fill': '#fff',
                                 
                         //         'cursor': 'pointer'
                         //     });
@@ -415,6 +405,9 @@ Timeline.prototype = function() {
                             set.push(timeline.paper.path('M' + px1 + ',' + py2 + ',' + px2 + ',' + py2 + ',' + px3 + ',' + py3 + 'z').attr({
                                     'fill': '#fff',
                                     'stroke': '#fff',
+                                    // 'fill': '#fffacd',
+                                    // 'stroke': '#FFFFE0',
+
                                     'cursor': 'pointer',
                                 }), timeline.paper.text((rx + rw/2) + 5, (ry + rh/2) + 5, history.events.length).attr({
                                 // }), timeline.paper.text((rx + rw/2) + 5, (ry + rh/2) + 3, history.events.length).attr({
@@ -424,11 +417,11 @@ Timeline.prototype = function() {
                                     'cursor': 'pointer',
                                 }));
 
-                            _.each(set.items, function(item){
+                            _.each(set.items, function(element){
 
-                                item.set = set;
+                                element.set = set;
 
-                                item.click(function(){
+                                element.click(function(){
 
 
                                     var cx = timeline.paper.canvas.offsetLeft;
@@ -464,7 +457,28 @@ Timeline.prototype = function() {
 
                                     var ox = 15, oy = -15;
 
-                                    showEventip({ coords: { x: dx + bx.x2 + ox, y: dy + bx.y + oy }, events: this.status.events });
+                                    var events = this.set.history.events;
+
+                                    _.each(events, function(event) {
+                                        event.description = _.chain(defaults.events)
+                                            .filter(function(e) {
+                                                return e.id === event.id;
+                                            }).first().value().text;
+
+                                        if (!event.status.id) {
+                                            event.status = _.chain(defaults.status)
+                                                .filter(function(s) {
+                                                    return s.id === event.status;
+                                                }).first().value();
+                                        }
+                                    });
+
+                                    showEventip({ 
+                                        coords: { x: dx + bx.x2 + ox, y: dy + bx.y + oy }, 
+                                        events: this.set.history.events,
+                                        product: item.text,
+                                        day: this.set.date,
+                                    });
 
                                 });
                             });
@@ -560,6 +574,7 @@ Timeline.prototype = function() {
     };
 
     var redraw = function() {
+        hideEventip();
         timeline.draw(this.scope, this.canvas);
     };
 
@@ -572,11 +587,11 @@ Timeline.prototype = function() {
     };
 
     var showEventip = function(params) {
-        
-        // console.log('in timeline.showEventip');
-        // timeline.scope.$emit('TOOLTIP_HIDE');
-
         timeline.scope.$emit('EVENTIP_SHOW', params);
+    };
+
+    var hideEventip = function(params) {
+        timeline.scope.$emit('EVENTIP_HIDE', params);
     };
 
     // var getDateRange = function() {
@@ -598,6 +613,7 @@ Timeline.prototype = function() {
         showTooltip: showTooltip,
         hideTooltip: hideTooltip,
         showEventip: showEventip,
+        hideEventip: hideEventip,
     }
 
 }();

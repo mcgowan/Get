@@ -63,16 +63,13 @@
 	left: 10px;
 	top: 10px;
 	max-width: 280px;
-	/*min-width: 50px;*/
 	font-size: 12px;
 	line-height: 12px;
 	direction: ltr;
 	box-shadow: none;
 	padding: 0;
 	z-index: 9999999;
-	/*display: none;*/
-
-	display: block;
+	display: none;
 }
 .tip-content {
 	position: relative;
@@ -94,24 +91,6 @@
 	max-width: none;
 	z-index: 9999999;
 }
-/*.dropdown-menu {
-position: absolute;
-top: 100%;
-left: 0;
-z-index: 1000;
-display: none;
-float: left;
-list-style: none;
-text-shadow: none;
-padding: 0px;
-margin: 0px;
-background-color: #ffffff;
-box-shadow: 5px 5px rgba(102, 102, 102, 0.1);
-border: 1px solid #efefef;
-font-size: 14px;
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-*/
 .eventip {
 	position: absolute;
 	background: #fff;
@@ -123,73 +102,81 @@ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
-
 .eventip.opensright:before {
 	position: absolute;
-
 	left:-9px;
 	top: 12px;	
-	/*top: -7px;*/
-	/*right: 9px;*/
 	display: inline-block;
-	/*	
-	border-right: 7px solid transparent;
-	border-bottom: 7px solid #ccc;
-	border-left: 7px solid transparent;
-	border-bottom-color: rgba(0, 0, 0, 0.2);
-	*/	
-
 	border-bottom: 9px solid transparent;
 	border-right: 9px solid #efefef;
 	border-top: 9px solid transparent;
-	/*border-right-color: rgba(0, 0, 0, 0.2);*/
-
-	border-right-color: #efefef;
-
+	border-right-color: #E6E9EC;
 	content: '';
 }
-
 .eventip.opensright:after {
 	position: absolute;
 	left: -8px;
 	top: 13px;
 	display: inline-block;
-	
-
 	border-bottom: 8px solid transparent;
 	border-right: 8px solid #ffffff;
 	border-top: 8px solid transparent;
-	
-	/*border-right-color: rgba(0, 0, 0, 0.2);*/
-	/*border-right-color: '#ff0000';*/
-
-
 	content: '';
 }
-
 .eventip-title {
 	position: relative;
-}
-.eventip-icon {
+	background-color:#BFCAD1;
+	height:30px;
 	color: #fff;
     font-size:16px !important;
-    font-family: "Open Sans"
+	font-family: "Open Sans";
+	font-style: normal;
 }
-.eventip-icon-clock {
+.eventip-title > span {
     position: absolute;
-	left:8px;
+	left:25px;
+	top:4px;
+}
+.eventip-icon {
+    font-size:16px !important;
+	font-family: FontAwesome;
+	font-style: normal;
 	top:5px;
+}
+.eventip-icon-bolt {
+    position: absolute;
+	left:10px;
+}
+.eventip-icon-bolt:before {
+	content: "\f0e7";
 }
 .eventip-icon-close {
+    cursor: pointer;
     position: absolute;
 	right:8px;
-	top:5px;
+}
+.eventip-icon-close:before {
+	content: "\f00d";
+}
+.eventip-icon-go {
+    cursor: pointer;
+    position: absolute;
+	right:2px;
+}
+.eventip-footer{
+    position: relative;
+	cursor: pointer;
+}
+.eventip-footer:hover { 
+	background-color:#F5F5F5;
+}
+.eventip-footer > a:link, :hover, :visited {
+    text-decoration: none;
 }
 
 .table-scrollable-overrides {
 	margin: 5px 0 !important;	
 }
-
 
 @font-face {
 	font-family: 'RobotoL';

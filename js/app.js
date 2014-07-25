@@ -17,6 +17,16 @@ var App = angular.module('App', [])
             });
         }
     };
+}).directive('appScroll', function($window) {
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            scope.scrollTop = $(window).scrollTop();
+            angular.element($window).on('scroll', function(e) {
+                scope.$apply(scope.scrollTop = $(window).scrollTop());
+            });
+        }
+    };
 }).directive('appClickOutside', function($document) {
     return {
         restrict: 'A',

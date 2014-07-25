@@ -22,7 +22,7 @@ App.controller('TooltipCtl', function TooltipCtl($rootScope, $scope) {
 	$scope.show = function(tip) {
 		setText(tip);
 		$scope.$apply(function() {
-			$scope.style = { pos: { x: $scope.mouse.x + offset.x, y: $scope.mouse.y + offset.y }, display: 'block' };
+			$scope.style = { pos: { x: $scope.mouse.x + offset.x, y: $scope.mouse.y + offset.y + $scope.scrollTop }, display: 'block' };
 		});
 	};
 
