@@ -18,19 +18,13 @@ App.controller('EventipCtl', function EventipCtl($rootScope, $scope) {
     };
 
 	$scope.show = function(params) {
-		$scope.$apply(function() {
-			$scope.title = 'Events for ' + params.product + ' on ' + params.day.format('MMMM Do YYYY');
-			$scope.style = { pos: { x: params.coords.x, y: params.coords.y + $scope.scrollTop }, display: 'block' };
-			$scope.events = params.events;
-		});
+		$scope.title = 'Events for ' + params.product + ' on ' + params.day.format('MMMM Do YYYY');
+		$scope.style = { pos: { x: params.coords.x, y: params.coords.y + $scope.scrollTop }, display: 'block' };
+		$scope.events = params.events;
 	};
 
 	$scope.hide = function() {
-		// $scope.$apply(function() {
-		// 	$scope.style = { pos: { x: 0, y: 0 }, display: 'none' };
-		// });
 		$scope.style = { pos: { x: 0, y: 0 }, display: 'none' };
-
 	};
 
     $scope.init();

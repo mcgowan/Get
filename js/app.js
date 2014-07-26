@@ -8,6 +8,16 @@ var App = angular.module('App', [])
 			});            
         }
     };
+}).directive('appEsc', function($window) {
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            angular.element($window).on('keyup', function(e) {
+                if (e.keyCode === 27)
+                    scope.$apply(scope.hide());
+            });
+        }
+    };
 }).directive('appMouseMove', function($document) {
     return {
         restrict: 'A',
