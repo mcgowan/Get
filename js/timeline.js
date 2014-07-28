@@ -9,150 +9,153 @@ Timeline.prototype = function() {
 
     var timeline = {};
 
+    timeline.itemType = Object.freeze({ contact: {}, product: {}, shippingOrder: {}, workOrder: {}, outage: {} });
+    timeline.matchType = Object.freeze({ range: {}, day: {} });
+
     timeline.data = {
         items: [ 
-            { type: 'header', text: 'Account Balance', drawDates: true },
-            { type: 'reserve', lines: 4 }, 
-            { type: 'header', text: 'Hardware Products', drawDates: false },
-            { type: 'item', text: 'Decoder', items: [ 
+            // { type: 'header', text: 'Account Balance', drawDates: true },
+            // { type: 'reserve', lines: 4 }, 
+            { type: 'header', text: 'Hardware Products', drawDates: true },
+            { type: 'item', text: 'Decoder', itemType: timeline.itemType.product, items: [ 
                 { day: -180, status: 1 },
-                { day: -5, status: 2, events: [
+                { day: -5, status: 2, items: [
                     { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 5228, status: 2, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 5228, status: 3, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ] },
-            { type: 'item', text: 'HD Decoder', items: [ 
-                { day: -8, status: 1 },
-                { day: -5, status: 3, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
+            // { type: 'item', text: 'HD Decoder', items: [ 
+            //     { day: -8, status: 1 },
+            //     { day: -5, status: 3, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
 
-                ]},
-            ] },
-            { type: 'item', text: 'Smartcard', items: [ 
-                { day: -180, status: 1 },
-                { day: -22, status: 1, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -12, status: 1, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -5, status: 7, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -4, status: 6, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -3, status: 1, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -2, status: 1, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-            ] },
-            { type: 'header', text: 'Software Products', drawDates: false },
-            { type: 'item', text: 'TV Basic', items: [ 
-                { day: -180, status: 1 },
-            ] },
-            { type: 'item', text: 'TV Gold Package', items: [ 
-                { day: -180, status: 1 },
-                { day: -10, status: 2, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -9, status: 5, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -4, status: 5, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -3, status: 0 },
-            ] },
-            { type: 'item', text: 'TV Silver Package', items: [ 
-                { day: -10, status: 4, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -9, status: 1, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-            ] },
-            { type: 'item', text: 'VoIP Basic', items: [ 
-                { day: -10, status: 1, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -7, status: 2, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -6, status: 2, events: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -5, status: 0},
-            ] },
+            //     ]},
+            // ] },
+            // { type: 'item', text: 'Smartcard', items: [ 
+            //     { day: -180, status: 1 },
+            //     { day: -22, status: 1, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            //     { day: -12, status: 1, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            //     { day: -5, status: 7, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            //     { day: -4, status: 6, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            //     { day: -3, status: 1, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            //     { day: -2, status: 1, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            // ] },
+            // { type: 'header', text: 'Software Products', drawDates: false },
+            // { type: 'item', text: 'TV Basic', items: [ 
+            //     { day: -180, status: 1 },
+            // ] },
+            // { type: 'item', text: 'TV Gold Package', items: [ 
+            //     { day: -180, status: 1 },
+            //     { day: -10, status: 2, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            //     { day: -9, status: 5, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            //     { day: -4, status: 5, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            //     { day: -3, status: 0 },
+            // ] },
+            // { type: 'item', text: 'TV Silver Package', items: [ 
+            //     { day: -10, status: 4, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            //     { day: -9, status: 1, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            // ] },
+            // { type: 'item', text: 'VoIP Basic', items: [ 
+            //     { day: -10, status: 1, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            //     { day: -7, status: 2, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            //     { day: -6, status: 2, items: [
+            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+            //     ]},
+            //     { day: -5, status: 0},
+            // ] },
             { type: 'reserve', lines: 1 }, 
-            { type: 'summary', text: 'Contacts', border: 'top', itemType: 'contact', items: [
-                { day: -10, items: [
+            { type: 'summary', text: 'Contacts', border: 'top', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [
+                { day: -10, status: 1, items: [
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
-                { day: -5, items: [
+                { day: -5, status: 1, items: [
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
-                { day: -4, items: [
+                { day: -4, status: 1, items: [
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ]},
-            { type: 'summary', text: 'Outages', border: 'top', itemType: 'outage', items: [
-                { day: -4, items: [
+            { type: 'summary', text: 'Outages', border: 'top', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [
+                { day: -4, status: 2, items: [
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
-                { day: -3, items: [
+                { day: -3, status: 1, items: [
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ]},
             { type: 'header', text: 'Orders', drawDates: false },
 
-            { type: 'item', text: 'Work Orders', border: 'top', itemType: 'workOrder', items: [
-                { day: -4, items: [
+            { type: 'item', text: 'Work Orders', border: 'top', itemType: timeline.itemType.workOrder, matchType: timeline.matchType.day, items: [
+                { day: -4, status: 1, items: [
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
-                { day: -3, items: [
+                { day: -3, status: 1, items: [
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ]},
-            { type: 'item', text: 'Shipping Orders', border: 'both', itemType: 'shippingOrder', items: [
-                { day: -4, items: [
+            { type: 'item', text: 'Shipping Orders', border: 'both', itemType: timeline.itemType.shippingOrder, matchType: timeline.matchType.day, items: [
+                { day: -4, status: 2, items: [
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
-                { day: -3, items: [
+                { day: -3, status: 2, items: [
                     { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ]},
@@ -203,14 +206,38 @@ Timeline.prototype = function() {
             { id: 10, text: 'NOV', color: '#3FABA4' },
             { id: 11, text: 'DEC', color: '#7F6CA1' },
         ],
-        status: [ 
-                { id: 1, color: '#A6D96A', text: 'Active' },
-                { id: 2, color: '#F46D43', text: 'Cancelled' },
-                { id: 3, color: '#D73027', text: 'Non-pay Disconnect' },
-                { id: 4, color: '#FFFFBF', text: 'Waiting Activation' },
-                { id: 5, color: '#FEE08B', text: 'Pending Removal' },
-                { id: 6, color: '#D9EF8B', text: 'Scheduled Activation' },
-                { id: 7, color: '#FDAE61', text: 'Suspended' },
+        productStatus: [ 
+            { id: 1, color: '#A6D96A', text: 'Active' },
+            { id: 2, color: '#F46D43', text: 'Cancelled' },
+            { id: 3, color: '#D73027', text: 'Non-pay Disconnect' },
+            { id: 4, color: '#FFFFBF', text: 'Waiting Activation' },
+            { id: 5, color: '#FEE08B', text: 'Pending Removal' },
+            { id: 6, color: '#D9EF8B', text: 'Scheduled Activation' },
+            { id: 7, color: '#FDAE61', text: 'Suspended' },
+        ],
+        workOrderStatus: [
+            { id: 1, color: '#A6D96A', text: 'New order' },
+            { id: 2, color: '#FFFFBF', text: 'Assigned' },
+            { id: 3, color: '#A6D96A', text: 'Complete' },
+            { id: 4, color: '#F46D43', text: 'Cancelled' },
+            { id: 5, color: '#D9EF8B', text: 'Reopened' },
+        ],
+        shippingOrderStatus: [
+            { id: 1, color: '#A6D96A', text: 'New Order' },
+            { id: 2, color: '#A6D96A', text: 'Rejected' },
+            { id: 3, color: '#A6D96A', text: 'Cancelled' },
+            { id: 4, color: '#A6D96A', text: 'Approved' },
+            { id: 5, color: '#A6D96A', text: 'Shipped' },
+            { id: 6, color: '#A6D96A', text: 'Delivered' },
+        ],
+        contactStatus: [
+            { id: 1, color: '#D73027', text: 'Active' },
+            { id: 2, color: '#D9EF8B', text: 'Cancelled' },
+            { id: 3, color: '#A6D96A', text: 'Completed' },
+        ],
+        outageStatus: [
+            { id: 1, color: '#D73027', text: 'No Service' },
+            { id: 2, color: '#A6D96A', text: 'Resolved' },
         ],
         events: [
             { id: 5228, text: 'Update Product Status' },
@@ -304,31 +331,11 @@ Timeline.prototype = function() {
 
     };
 
-    // timeline.drawHeader = function(defaults, text, start, days) {
-    //     // var background = timeline.drawRect(0, start + 2, defaults.canvas.width, defaults.lineHeight - 4, 0, '#FAFAFA', 1, '#FAFAFA');
-    //     // var background = timeline.drawRect(0, start + 2, defaults.canvas.width, defaults.lineHeight - 4, 0, '#F5F5F5', 1, '#F5F5F5');
-
-    //     var y = start + (defaults.lineHeight/2) + 1;
-    //     timeline.drawText(text, defaults.margin.left, y, defaults.itemHeaderFont);
-
-    //     y = start + defaults.lineHeight - 2;
-
-    //     // timeline.drawLine(-1, y, defaults.canvas.width, y, defaults.lineColor, 1);
-    //     // timeline.drawLine(0, y - defaults.lineHeight, defaults.canvas.width, y - defaults.lineHeight, defaults.lineColor, 1);
-    //     // timeline.drawLine(0, y, defaults.canvas.width, y, defaults.lineColor, 1);
-
-    //     var color = defaults.lineColor;
-    //     // var color = '#98CAE7';
-
-    //     timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, color, 1, color);
-    //     timeline.drawRect(0, y, defaults.canvas.width, 1, 0, color, 1, color);
-
-        
-    //     if (days) {
-    //     }
-    // };
-
     timeline.drawItem = function(defaults, item, start) {
+        var getMatchType = function(item) {
+           return item.matchType ? item.matchType : timeline.matchType.range; 
+        };
+
         var y = start + (defaults.lineHeight/2);
 
         switch(item.type){
@@ -354,7 +361,7 @@ Timeline.prototype = function() {
                 timeline.drawLine(0, y, defaults.canvas.width, y, defaults.lineColor);
 
                 if (item.items)
-                    timeline.drawItems(defaults, start, item);
+                    timeline.drawItems(defaults, item.itemType, getMatchType(item), item, start);
 
                 break;
             }
@@ -368,6 +375,9 @@ Timeline.prototype = function() {
                 if (item.border === 'bottom' || item.border === 'both' )
                     timeline.drawRect(0, y, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
 
+                if (item.items)
+                    timeline.drawItems(defaults, item.itemType, getMatchType(item), item, start);
+
                 break;
             }
         }
@@ -377,104 +387,172 @@ Timeline.prototype = function() {
     timeline.getItemData = function(items, day, matchType) {
         return _.chain(items)
             .filter(function(i) {
-                return (day >= i.day)
+                if (matchType === timeline.matchType.range)
+                    return (day >= i.day)
+                else
+                    return day === i.day;
             }).sortBy(function(i) {
                 return i.day * -1;
             }).first().value();
     };
 
-    timeline.lookupStatus = function(status) {
-        return _.chain(timeline.defaults.status)
+    timeline.lookupStatus = function(status, itemType) {
+
+        var getStatusByType = function(type) {
+            switch (type) {
+                case timeline.itemType.product:
+                    return timeline.defaults.productStatus;
+                case timeline.itemType.workOrder:
+                    return timeline.defaults.workOrderStatus;
+                case timeline.itemType.shippingOrder:
+                    return timeline.defaults.shippingOrderStatus;
+                case timeline.itemType.contact:
+                    return timeline.defaults.contactStatus;
+                case timeline.itemType.outage:
+                    return timeline.defaults.outageStatus;
+            }
+        };
+        
+        return _.chain(getStatusByType(itemType))
             .filter(function(s) {
                 return s.id === status;
             }).first().value();
     };
 
-    timeline.drawItems = function(defaults, start, item) {
+    timeline.drawItems = function(defaults, itemType, matchType, item, start) {
         var x = defaults.canvas.width - (defaults.days * defaults.cellWidth);
 
         for (var i = 0; i < defaults.days - 1; i++) {
             x += defaults.cellWidth;
             var day = defaults.days * -1 + i; 
-            var data = timeline.getItemData(item.items, day); //TODO: add matchType
+            var data = timeline.getItemData(item.items, day, matchType);
 
             if (data) {
-                var status = timeline.lookupStatus(data.status);
+                var status = timeline.lookupStatus(data.status, itemType);
 
                 if (status) {
                     var set = timeline.paper.set();
                     var rx = x + 3, ry = start + 3, rw = defaults.cellWidth - 6, rh = defaults.lineHeight - 6;
                     var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 0, status.color, 1, status.color).attr({
-                        'cursor': day === data.day && data.events && data.events.length > 0 ? 'pointer' : 'default',
+                        'cursor': day === data.day && data.items && data.items.length > 0 ? 'pointer' : 'default',
                     });
 
                     set.push(el);
                     set.data = data;
                     set.date = moment().add(day + 2, 'day');
+                    set.status = status;
 
-                    if (day === data.day && data.events && data.events.length > 0) {
+                    if (day === data.day && data.items && data.items.length > 0) {
                         var px1 = rx + 1, py1 = ry + rh + 1, px2 = rx + rw + 1, py2 = ry + rh + 1, px3 =  rx + rw + 1, py3 = ry + 1;
                         set.push(timeline.paper.path('M' + px1 + ',' + py2 + ',' + px2 + ',' + py2 + ',' + px3 + ',' + py3 + 'z').attr({
                                 'fill': '#fff',
                                 'stroke': '#fff',
                                 'cursor': 'pointer',
-                            }), timeline.paper.text((rx + rw/2) + 5, (ry + rh/2) + 5, data.events.length).attr({
+                            }), timeline.paper.text((rx + rw/2) + 5, (ry + rh/2) + 5, data.items.length).attr({
                                 'font-family': 'Open Sans',
                                 'font-size': '10px',
                                 'fill': '#000',
                                 'cursor': 'pointer',
                             }));
 
-                        _.each(set.items, function(element){
-                            element.set = set;
-                            element.click(function(){
-                                var cx = timeline.paper.canvas.offsetLeft;
-                                var cy = timeline.paper.canvas.offsetTop;
-                                var dv = timeline.paper.canvas.parentElement.getBoundingClientRect();
-                                var dx = dv.left, dy = dv.top;
-                                var bx = this.set[0].getBBox();
-                                var ox = 15, oy = -15;
-                                var events = this.set.data.events;
+                        
+                        // _.each(set.items, function(element){
+                        //     element.set = set;
 
-                                _.each(events, function(event) {
-                                    event.description = _.chain(defaults.events)
-                                        .filter(function(e) {
-                                            return e.id === event.id;
-                                        }).first().value().text;
+                            
+                        //     element.click(function(){
 
-                                    if (!event.status.id) {
-                                        event.status = _.chain(defaults.status)
-                                            .filter(function(s) {
-                                                return s.id === event.status;
-                                            }).first().value();
-                                    }
-                                });
+                        //         console.log('element click');
 
-                                showEventip({ 
-                                    coords: { x: dx + bx.x2 + ox, y: dy + bx.y + oy }, 
-                                    events: this.set.data.events,
-                                    product: item.text,
-                                    day: this.set.date,
-                                });
+                        //         var cx = timeline.paper.canvas.offsetLeft;
+                        //         var cy = timeline.paper.canvas.offsetTop;
+                        //         var dv = timeline.paper.canvas.parentElement.getBoundingClientRect();
+                        //         var dx = dv.left, dy = dv.top;
+                        //         var bx = this.set[0].getBBox();
+                        //         var ox = 15, oy = -15;
+                                
+                        //         // _.each(this.set.data.items, function(item) {
+                        //         //     item.description = _.chain(defaults.events)
+                        //         //         .filter(function(e) {
+                        //         //             return e.id === item.id;
+                        //         //         }).first().value().text;
 
-                            });
-                        });
+                        //         //     if (!item.status.id) {
+                        //         //         item.status = _.chain(defaults.status)
+                        //         //             .filter(function(s) {
+                        //         //                 return s.id === item.status;
+                        //         //             }).first().value();
+                        //         //     }
+                        //         // });
+
+                        //         showPopup({ 
+                        //             coords: { x: dx + bx.x2 + ox, y: dy + bx.y + oy }, 
+                        //             // events: this.set.data.items,
+                        //             // product: item.text,
+                        //             // day: this.set.date,
+                        //         });
+
+                        //     });
+
+
+                        // });
+
+
                     }
 
-                    _.each(set.items, function(item){
-                        item.status = status;
-                        item.hover(function(){
-                            showTooltip(this.status.text);
-                        }, hideTooltip);
+                    timeline.setEvents(set);
 
-                        item.mousemove(function(){
-                            showTooltip(this.status.text);
-                        });
-                    });
                 }
             }
 
         }
+    };
+
+    timeline.setEvents = function(set) {
+        _.each(set.items, function(item){
+            item.set = set;
+            item.hover(function(){
+                showTooltip(this.set.status.text);
+            }, hideTooltip);
+            item.mousemove(function(){
+                showTooltip(this.set.status.text);
+            });
+
+            if (set.data.items) {
+                
+                item.click(function(){
+
+                    var cx = timeline.paper.canvas.offsetLeft;
+                    var cy = timeline.paper.canvas.offsetTop;
+                    var dv = timeline.paper.canvas.parentElement.getBoundingClientRect();
+                    var dx = dv.left, dy = dv.top;
+                    var bx = this.set[0].getBBox();
+                    var ox = 15, oy = -15;
+                    
+                    // _.each(this.set.data.items, function(item) {
+                    //     item.description = _.chain(defaults.events)
+                    //         .filter(function(e) {
+                    //             return e.id === item.id;
+                    //         }).first().value().text;
+
+                    //     if (!item.status.id) {
+                    //         item.status = _.chain(defaults.status)
+                    //             .filter(function(s) {
+                    //                 return s.id === item.status;
+                    //             }).first().value();
+                    //     }
+                    // });
+
+                    showPopup({ 
+                        coords: { x: dx + bx.x2 + ox, y: dy + bx.y + oy }, 
+                        // events: this.set.data.items,
+                        // product: item.text,
+                        // day: this.set.date,
+                    });
+                });
+            }
+
+        });
     };
 
     timeline.drawDates = function(defaults, start) {
@@ -592,7 +670,7 @@ Timeline.prototype = function() {
     };
 
     var redraw = function() {
-        hideEventip();
+        hidePopup();
         timeline.draw(this.scope, this.canvas);
     };
 
@@ -604,12 +682,12 @@ Timeline.prototype = function() {
         timeline.scope.$emit('TOOLTIP_HIDE');
     };
 
-    var showEventip = function(params) {
-        timeline.scope.$emit('EVENTIP_SHOW', params);
+    var showPopup = function(params) {
+        timeline.scope.$emit('POPUP_SHOW', params);
     };
 
-    var hideEventip = function(params) {
-        timeline.scope.$emit('EVENTIP_HIDE', params);
+    var hidePopup = function(params) {
+        timeline.scope.$emit('POPUP_HIDE', params);
     };
 
     // var getDateRange = function() {
@@ -630,8 +708,8 @@ Timeline.prototype = function() {
         getDays: getDays,
         showTooltip: showTooltip,
         hideTooltip: hideTooltip,
-        showEventip: showEventip,
-        hideEventip: hideEventip,
+        showPopup: showPopup,
+        hidePopup: hidePopup,
     }
 
 }();

@@ -84,14 +84,14 @@
 	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
 }
 
-.eventip.dropdown-menu {
+.popup.dropdown-menu {
 	padding: 2px;
 }
-.eventip.dropdown-menu {
+.popup.dropdown-menu {
 	max-width: none;
 	z-index: 9999999;
 }
-.eventip {
+.popup {
 	position: absolute;
 	background: #fff;
 	top: 100px;
@@ -102,7 +102,7 @@
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
-.eventip.opensright:before {
+.popup.opensright:before {
 	position: absolute;
 	left:-9px;
 	top: 12px;	
@@ -113,7 +113,7 @@
 	border-right-color: #E6E9EC;
 	content: '';
 }
-.eventip.opensright:after {
+.popup.opensright:after {
 	position: absolute;
 	left: -8px;
 	top: 13px;
@@ -123,7 +123,7 @@
 	border-top: 8px solid transparent;
 	content: '';
 }
-.eventip-title {
+.popup-title {
 	position: relative;
 	background-color:#BFCAD1;
 	height:30px;
@@ -132,45 +132,45 @@
 	font-family: "Open Sans";
 	font-style: normal;
 }
-.eventip-title > span {
+.popup-title > span {
     position: absolute;
 	left:25px;
 	top:4px;
 }
-.eventip-icon {
+.popup-icon {
     font-size:16px !important;
 	font-family: FontAwesome;
 	font-style: normal;
 	top:5px;
 }
-.eventip-icon-bolt {
+.popup-icon-bolt {
     position: absolute;
 	left:10px;
 }
-.eventip-icon-bolt:before {
+.popup-icon-bolt:before {
 	content: "\f0e7";
 }
-.eventip-icon-close {
+.popup-icon-close {
     cursor: pointer;
     position: absolute;
 	right:8px;
 }
-.eventip-icon-close:before {
+.popup-icon-close:before {
 	content: "\f00d";
 }
-.eventip-icon-go {
+.popup-icon-go {
     cursor: pointer;
     position: absolute;
 	right:2px;
 }
-.eventip-footer{
+.popup-footer{
     position: relative;
 	cursor: pointer;
 }
-.eventip-footer:hover { 
+.popup-footer:hover { 
 	background-color:#F5F5F5;
 }
-.eventip-footer > a:link, :hover, :visited {
+.popup-footer > a:link, :hover, :visited {
     text-decoration: none;
 }
 
