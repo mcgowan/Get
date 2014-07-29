@@ -1,6 +1,6 @@
 <div class="portlet-body">
-	<div class="popup-title">
-		<i class="popup-icon popup-icon-bolt"></i>
+	<div ng-style="{ backgroundColor: itemType.color }" class="popup-title">
+		<i class="popup-icon popup-icon-shippingorder"></i>
 		<span>{{ title }}</span>
 		<i class="popup-icon popup-icon-close" ng-click="hide()"></i>
 	</div>
@@ -9,38 +9,38 @@
 			<thead>
 				<tr>
 					<th>
-						 Event#
+						 Type
 					</th>
 					<th>
-						 Time
+						 Status
 					</th>
 					<th>
-						 Event Description
+						 Time 1
 					</th>
 					<th>
-						 Product Status
+						 Time 2
 					</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="event in events">
+				<tr ng-repeat="item in items">
 					<td>
-						 <a href="#">{{ event.id }}</a>
+						 <a href="#">{{ item.type.text }}</a>
 					</td>
 					<td>
-						 {{ event.time.format("hh:mm:ss a") }}
+						 <span style="color:#fff;padding:0 3px 0 3px" ng-style="{backgroundColor: item.status.color}">{{ item.status.text }}</span>
 					</td>
 					<td>
-						 {{ event.description }}
+						 {{ item.time1.format("hh:mm:ss a") }}
 					</td>
 					<td>
-						 <span style="color:#fff;padding:0 3px 0 3px" ng-style="{backgroundColor: event.status.color}">{{ event.status.text }}</span>
+						 {{ item.time2.format("hh:mm:ss a") }}
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 	<div class="popup-footer" ng-click="hide()">
-		<a href="#">See all events for this product</a><i class="m-icon-swapright popup-icon-go"></i>
+		<a href="#">See all shipping orders for this customer</a><i class="m-icon-swapright popup-icon-go"></i>
 	</div>
 </div>

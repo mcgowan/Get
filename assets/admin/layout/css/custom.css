@@ -126,29 +126,66 @@
 .popup-title {
 	position: relative;
 	background-color:#BFCAD1;
-	height:30px;
+	height:25px;
 	color: #fff;
-    font-size:16px !important;
+    font-size:14px !important;
 	font-family: "Open Sans";
 	font-style: normal;
 }
 .popup-title > span {
     position: absolute;
 	left:25px;
-	top:4px;
+	top:3px;
 }
 .popup-icon {
-    font-size:16px !important;
+    font-size:14px !important;
 	font-family: FontAwesome;
 	font-style: normal;
-	top:5px;
+	top:3px;
 }
+/*
 .popup-icon-bolt {
     position: absolute;
 	left:10px;
 }
 .popup-icon-bolt:before {
 	content: "\f0e7";
+}
+*/
+.popup-icon-product-event {
+    position: absolute;
+	left:7px;
+}
+.popup-icon-product-event:before {
+	content: "\f017";
+}
+.popup-icon-outage {
+    position: absolute;
+	left:7px;
+}
+.popup-icon-outage:before {
+	content: "\f071";
+}
+.popup-icon-contact {
+    position: absolute;
+	left:7px;
+}
+.popup-icon-contact:before {
+	content: "\f098";
+}
+.popup-icon-workorder {
+    position: absolute;
+	left:7px;
+}
+.popup-icon-workorder:before {
+	content: "\f0ad";
+}
+.popup-icon-shippingorder {
+    position: absolute;
+	left:7px;
+}
+.popup-icon-shippingorder:before {
+	content: "\f0d1";
 }
 .popup-icon-close {
     cursor: pointer;

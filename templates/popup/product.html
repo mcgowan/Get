@@ -1,0 +1,46 @@
+<div class="portlet-body">
+	<div ng-style="{ backgroundColor: itemType.color }" class="popup-title">
+		<i class="popup-icon popup-icon-product-event"></i>
+		<span>{{ title }}</span>
+		<i class="popup-icon popup-icon-close" ng-click="hide()"></i>
+	</div>
+	<div class="table-scrollable table-scrollable-overrides">
+		<table class="table table-striped table-hover" style="font-family:'Open Sans'">
+			<thead>
+				<tr>
+					<th>
+						 Event#
+					</th>
+					<th>
+						 Time
+					</th>
+					<th>
+						 Event Description
+					</th>
+					<th>
+						 Product Status
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in items">
+					<td>
+						 <a href="#">{{ item.type.id }}</a>
+					</td>
+					<td>
+						 {{ item.time.format("hh:mm:ss a") }}
+					</td>
+					<td>
+						 {{ item.type.text }}
+					</td>
+					<td>
+						 <span style="color:#fff;padding:0 3px 0 3px" ng-style="{backgroundColor: item.status.color}">{{ item.status.text }}</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="popup-footer" ng-click="hide()">
+		<a href="#">See all events for this product</a><i class="m-icon-swapright popup-icon-go"></i>
+	</div>
+</div>

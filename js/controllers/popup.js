@@ -10,22 +10,20 @@ App.controller('PopupCtl', function PopupCtl($rootScope, $scope) {
 	    	$scope.hide();
 	    });
 
-	    $scope.selector = '#popupCtl';
-
 	    $scope.$on('$destroy', show);
 	    $scope.$on('$destroy', hide);
+
+	    $scope.selector = '#popupCtl';
+	    $scope.itemType = 'default';
     };
 
 	$scope.show = function(params) {
-		// $scope.title = 'Events for ' + params.product + ' on ' + params.day.format('MMMM Do YYYY');
-		
-		$scope.$apply(
-			$scope.style = { pos: { x: params.coords.x, y: params.coords.y + $scope.scrollTop }, display: 'block' }
-		);
-
-
-
-		// $scope.events = params.events;
+		$scope.$apply(function(){
+			$scope.itemType = params.itemType;
+			$scope.style = { pos: { x: params.coords.x, y: params.coords.y + $scope.scrollTop }, display: 'block' };
+			$scope.title = params.data.title;
+			$scope.items = params.data.items;
+		});
 	};
 
 	$scope.hide = function() {

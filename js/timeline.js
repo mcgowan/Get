@@ -9,7 +9,23 @@ Timeline.prototype = function() {
 
     var timeline = {};
 
-    timeline.itemType = Object.freeze({ contact: {}, product: {}, shippingOrder: {}, workOrder: {}, outage: {} });
+    timeline.itemType = Object.freeze({ 
+        contact: { 
+            color: '#89AFD1',
+            toString: function(){ return 'contact'; },
+        }, product: {
+            color: '#44B6AE',
+            toString: function(){ return 'product'; },
+        }, shippingOrder: {
+            color: '#AA9EC1',
+            toString: function(){ return 'shippingOrder'; },
+        }, workOrder: {
+            color: '#578EBE',
+            toString: function(){ return 'workOrder'; },
+        }, outage: {
+            color: '#EB8B8B',
+            toString: function(){ return 'outage'; },
+        }});
     timeline.matchType = Object.freeze({ range: {}, day: {} });
 
     timeline.data = {
@@ -20,143 +36,133 @@ Timeline.prototype = function() {
             { type: 'item', text: 'Decoder', itemType: timeline.itemType.product, items: [ 
                 { day: -180, status: 1 },
                 { day: -5, status: 2, items: [
-                    { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 2, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 5228, status: 3, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 5228, status: 2, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 5228, status: 3, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ] },
-            // { type: 'item', text: 'HD Decoder', items: [ 
-            //     { day: -8, status: 1 },
-            //     { day: -5, status: 3, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-
-            //     ]},
-            // ] },
-            // { type: 'item', text: 'Smartcard', items: [ 
-            //     { day: -180, status: 1 },
-            //     { day: -22, status: 1, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            //     { day: -12, status: 1, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            //     { day: -5, status: 7, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            //     { day: -4, status: 6, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            //     { day: -3, status: 1, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            //     { day: -2, status: 1, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            // ] },
-            // { type: 'header', text: 'Software Products', drawDates: false },
-            // { type: 'item', text: 'TV Basic', items: [ 
-            //     { day: -180, status: 1 },
-            // ] },
-            // { type: 'item', text: 'TV Gold Package', items: [ 
-            //     { day: -180, status: 1 },
-            //     { day: -10, status: 2, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            //     { day: -9, status: 5, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            //     { day: -4, status: 5, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            //     { day: -3, status: 0 },
-            // ] },
-            // { type: 'item', text: 'TV Silver Package', items: [ 
-            //     { day: -10, status: 4, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            //     { day: -9, status: 1, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            // ] },
-            // { type: 'item', text: 'VoIP Basic', items: [ 
-            //     { day: -10, status: 1, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            //     { day: -7, status: 2, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            //     { day: -6, status: 2, items: [
-            //         { id: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-            //     ]},
-            //     { day: -5, status: 0},
-            // ] },
+            { type: 'item', text: 'HD Decoder', itemType: timeline.itemType.product, items: [ 
+                { day: -8, status: 1 },
+                { day: -5, status: 3, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
+                ]},
+            ] },
+            { type: 'item', text: 'Smartcard', itemType: timeline.itemType.product, items: [ 
+                { day: -180, status: 1 },
+                { day: -22, status: 1, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -12, status: 1, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -5, status: 7, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -4, status: 6, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -3, status: 1, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -2, status: 1, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+            ] },
+            { type: 'header', text: 'Software Products', drawDates: false },
+            { type: 'item', text: 'TV Basic', itemType: timeline.itemType.product, items: [ 
+                { day: -180, status: 1 },
+            ] },
+            { type: 'item', text: 'TV Gold Package', itemType: timeline.itemType.product, items: [ 
+                { day: -180, status: 1 },
+                { day: -10, status: 2, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -9, status: 5, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -4, status: 5, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -3, status: 0 },
+            ] },
+            { type: 'item', text: 'TV Silver Package', itemType: timeline.itemType.product, items: [ 
+                { day: -10, status: 4, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -9, status: 1, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+            ] },
+            { type: 'item', text: 'VoIP Basic', itemType: timeline.itemType.product, items: [ 
+                { day: -10, status: 1, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -7, status: 2, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -6, status: 2, items: [
+                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -5, status: 0},
+            ] },
             { type: 'reserve', lines: 1 }, 
             { type: 'summary', text: 'Contacts', border: 'top', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [
                 { day: -10, status: 1, items: [
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 2, status: 2, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 3, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
                 { day: -5, status: 1, items: [
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
                 { day: -4, status: 1, items: [
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ]},
             { type: 'summary', text: 'Outages', border: 'top', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [
                 { day: -4, status: 2, items: [
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 2, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
                 { day: -3, status: 1, items: [
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ]},
             { type: 'header', text: 'Orders', drawDates: false },
 
             { type: 'item', text: 'Work Orders', border: 'top', itemType: timeline.itemType.workOrder, matchType: timeline.matchType.day, items: [
                 { day: -4, status: 1, items: [
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 1, status: 1, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 2, status: 2, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                    { id: 873465, type: 3, status: 3, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
                 ]},
                 { day: -3, status: 1, items: [
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 1, status: 1, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ]},
             { type: 'item', text: 'Shipping Orders', border: 'both', itemType: timeline.itemType.shippingOrder, matchType: timeline.matchType.day, items: [
                 { day: -4, status: 2, items: [
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
                 { day: -3, status: 2, items: [
-                    { id: 873465, method: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ]},
         ],
@@ -217,10 +223,15 @@ Timeline.prototype = function() {
         ],
         workOrderStatus: [
             { id: 1, color: '#A6D96A', text: 'New order' },
-            { id: 2, color: '#FFFFBF', text: 'Assigned' },
-            { id: 3, color: '#A6D96A', text: 'Complete' },
+            { id: 2, color: '#D73027', text: 'Assigned' },
+            { id: 3, color: '#D9EF8B', text: 'Complete' },
             { id: 4, color: '#F46D43', text: 'Cancelled' },
             { id: 5, color: '#D9EF8B', text: 'Reopened' },
+        ],
+        workOrderTypes: [
+            { id: 1, text: 'Installation' },
+            { id: 2, text: 'Maintenance' },
+            { id: 3, text: 'Trouble Call' },
         ],
         shippingOrderStatus: [
             { id: 1, color: '#A6D96A', text: 'New Order' },
@@ -230,27 +241,36 @@ Timeline.prototype = function() {
             { id: 5, color: '#A6D96A', text: 'Shipped' },
             { id: 6, color: '#A6D96A', text: 'Delivered' },
         ],
+        shippingOrderTypes:  [
+            { id: 1, text: 'Customer Shipping Order' },
+            { id: 2, text: 'Dealer Shipping Order' },
+            { id: 3, text: 'Swop Shipping Order' },
+        ],
         contactStatus: [
             { id: 1, color: '#D73027', text: 'Active' },
             { id: 2, color: '#D9EF8B', text: 'Cancelled' },
             { id: 3, color: '#A6D96A', text: 'Completed' },
         ],
+        contactTypes: [
+            { id: 1, text: 'Telephone' },
+            { id: 2, text: 'Email' },
+            { id: 3, text: 'Visit' },
+            { id: 4, text: 'SMS' },
+            { id: 5, text: 'Telefax' },
+            { id: 6, text: 'Letter' },
+            { id: 7, text: 'Other' },
+        ],
         outageStatus: [
             { id: 1, color: '#D73027', text: 'No Service' },
             { id: 2, color: '#A6D96A', text: 'Resolved' },
         ],
+        outageTypes: [
+            { id: 1, text: 'Type I' },
+            { id: 2, text: 'Type II' },
+        ],
         events: [
             { id: 5228, text: 'Update Product Status' },
             { id: 5228, text: 'Update Product Status' },
-        ],
-        contactMethods: [
-            // Telephone
-            // Email
-            // Visit
-            // SMS
-            // Telefax
-            // Letter
-            // Other
         ],
     };
 
@@ -381,7 +401,6 @@ Timeline.prototype = function() {
                 break;
             }
         }
-
     };
 
     timeline.getItemData = function(items, day, matchType) {
@@ -396,8 +415,123 @@ Timeline.prototype = function() {
             }).first().value();
     };
 
-    timeline.lookupStatus = function(status, itemType) {
+    timeline.drawItems = function(defaults, itemType, matchType, item, start) {
+        var x = defaults.canvas.width - (defaults.days * defaults.cellWidth);
 
+        for (var i = 0; i < defaults.days - 1; i++) {
+            x += defaults.cellWidth;
+            var day = defaults.days * -1 + i; 
+            var data = timeline.getItemData(item.items, day, matchType);
+
+            if (data) {
+                var status = timeline.lookupStatus(data.status, itemType);
+
+                if (status) {
+                    var set = timeline.paper.set();
+                    var rx = x + 3, ry = start + 3, rw = defaults.cellWidth - 6, rh = defaults.lineHeight - 6;
+                    
+                    var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 2, status.color, 1, status.color).attr({
+                        'cursor': day === data.day && data.items && data.items.length > 0 ? 'pointer' : 'default',
+                    });
+
+                    // var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 4, status.color, 1, status.color).attr({
+                    //     'cursor': day === data.day && data.items && data.items.length > 0 ? 'pointer' : 'default',
+                    // });
+
+                    // var el = timeline.paper.circle((rx + rw/2) + .5, (ry + rh/2) + .5, 11.5).attr({                                
+                    //     'fill': status.color,
+                    //     'stroke': '#fff',
+                    // });
+
+                    set.push(el);
+
+                    set.itemType = itemType;
+                    set.text = item.text;
+                    set.data = data;
+                    set.date = moment().add(day + 2, 'day');
+                    set.status = status;
+
+                    if (day === data.day && data.items && data.items.length > 0) {
+                        var px1 = rx + 1, py1 = ry + rh + 1, px2 = rx + rw + 1, py2 = ry + rh + 1, px3 =  rx + rw + 1, py3 = ry + 1;
+                        // set.push(timeline.paper.path('M' + px1 + ',' + py2 + ',' + px2 + ',' + py2 + ',' + px3 + ',' + py3 + 'z').attr({
+                        //     'fill': '#fff',
+                        //     'stroke': '#fff',
+                        //     'cursor': 'pointer',
+                        // }), timeline.paper.text((rx + rw/2) + 5, (ry + rh/2) + 5, data.items.length).attr({
+                        //     'font-family': 'Open Sans',
+                        //     'font-size': '10px',
+                        //     'fill': '#000',
+                        //     'cursor': 'pointer',
+                        // }));
+
+                        // set.push(
+
+                            timeline.paper.text((rx + rw/2) + 1, (ry + rh/2) + 1, data.items.length).attr({
+                                'font-family': 'Open Sans',
+                                // 'font-family': 'RobotoL',
+                                // 'font-family': 'Arial',
+
+                                'font-size': '12px',
+                                // 'font-weight': 'bold',
+                                // 'fill': '#ffffff',
+                                // 'fill': status.color,
+                                'fill': '#000',
+                                // 'fill': '#fff',
+                                
+                                'cursor': 'pointer'
+                            });
+                        // );
+                    }
+
+                    timeline.setEvents(set);
+                }
+            }
+        }
+    };
+
+    timeline.setEvents = function(set) {
+        _.each(set.items, function(item){
+            item.set = set;
+            item.hover(function(){
+                showTooltip(this.set.status.text);
+            }, hideTooltip);
+            item.mousemove(function(){
+                showTooltip(this.set.status.text);
+            });
+
+            if (set.data.items) {
+                item.click(function(){
+                    var data = timeline.prepareData(this.set);
+
+                    var cx = timeline.paper.canvas.offsetLeft;
+                    var cy = timeline.paper.canvas.offsetTop;
+                    var dv = timeline.paper.canvas.parentElement.getBoundingClientRect();
+                    var dx = dv.left, dy = dv.top;
+                    var bx = this.set[0].getBBox();
+                    var ox = 15, oy = -15;
+                    
+                    showPopup({ 
+                        coords: { x: dx + bx.x2 + ox, y: dy + bx.y + oy },
+                        itemType: this.set.itemType,
+                        data: { 
+                            title: data.title, 
+                            date: this.set.date,
+                            items: data.items,
+                        }
+                    });
+                });
+            }
+        });
+    };
+
+    timeline.lookup = function(list, id) {
+        return _.chain(list)
+            .filter(function(item) {
+                return item.id === id;
+            }).first().value();
+    }
+
+    timeline.lookupStatus = function(status, itemType) {
         var getStatusByType = function(type) {
             switch (type) {
                 case timeline.itemType.product:
@@ -419,140 +553,40 @@ Timeline.prototype = function() {
             }).first().value();
     };
 
-    timeline.drawItems = function(defaults, itemType, matchType, item, start) {
-        var x = defaults.canvas.width - (defaults.days * defaults.cellWidth);
-
-        for (var i = 0; i < defaults.days - 1; i++) {
-            x += defaults.cellWidth;
-            var day = defaults.days * -1 + i; 
-            var data = timeline.getItemData(item.items, day, matchType);
-
-            if (data) {
-                var status = timeline.lookupStatus(data.status, itemType);
-
-                if (status) {
-                    var set = timeline.paper.set();
-                    var rx = x + 3, ry = start + 3, rw = defaults.cellWidth - 6, rh = defaults.lineHeight - 6;
-                    var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 0, status.color, 1, status.color).attr({
-                        'cursor': day === data.day && data.items && data.items.length > 0 ? 'pointer' : 'default',
-                    });
-
-                    set.push(el);
-                    set.data = data;
-                    set.date = moment().add(day + 2, 'day');
-                    set.status = status;
-
-                    if (day === data.day && data.items && data.items.length > 0) {
-                        var px1 = rx + 1, py1 = ry + rh + 1, px2 = rx + rw + 1, py2 = ry + rh + 1, px3 =  rx + rw + 1, py3 = ry + 1;
-                        set.push(timeline.paper.path('M' + px1 + ',' + py2 + ',' + px2 + ',' + py2 + ',' + px3 + ',' + py3 + 'z').attr({
-                                'fill': '#fff',
-                                'stroke': '#fff',
-                                'cursor': 'pointer',
-                            }), timeline.paper.text((rx + rw/2) + 5, (ry + rh/2) + 5, data.items.length).attr({
-                                'font-family': 'Open Sans',
-                                'font-size': '10px',
-                                'fill': '#000',
-                                'cursor': 'pointer',
-                            }));
-
-                        
-                        // _.each(set.items, function(element){
-                        //     element.set = set;
-
-                            
-                        //     element.click(function(){
-
-                        //         console.log('element click');
-
-                        //         var cx = timeline.paper.canvas.offsetLeft;
-                        //         var cy = timeline.paper.canvas.offsetTop;
-                        //         var dv = timeline.paper.canvas.parentElement.getBoundingClientRect();
-                        //         var dx = dv.left, dy = dv.top;
-                        //         var bx = this.set[0].getBBox();
-                        //         var ox = 15, oy = -15;
-                                
-                        //         // _.each(this.set.data.items, function(item) {
-                        //         //     item.description = _.chain(defaults.events)
-                        //         //         .filter(function(e) {
-                        //         //             return e.id === item.id;
-                        //         //         }).first().value().text;
-
-                        //         //     if (!item.status.id) {
-                        //         //         item.status = _.chain(defaults.status)
-                        //         //             .filter(function(s) {
-                        //         //                 return s.id === item.status;
-                        //         //             }).first().value();
-                        //         //     }
-                        //         // });
-
-                        //         showPopup({ 
-                        //             coords: { x: dx + bx.x2 + ox, y: dy + bx.y + oy }, 
-                        //             // events: this.set.data.items,
-                        //             // product: item.text,
-                        //             // day: this.set.date,
-                        //         });
-
-                        //     });
-
-
-                        // });
-
-
-                    }
-
-                    timeline.setEvents(set);
-
-                }
+    timeline.lookupType = function(type, itemType) {
+        var getTypeByType = function(type) {
+            switch (type) {
+                case timeline.itemType.product:
+                    return timeline.defaults.events;
+                case timeline.itemType.workOrder:
+                    return timeline.defaults.workOrderTypes;
+                case timeline.itemType.shippingOrder:
+                    return timeline.defaults.shippingOrderTypes;
+                case timeline.itemType.contact:
+                    return timeline.defaults.contactTypes;
+                case timeline.itemType.outage:
+                    return timeline.defaults.outageTypes;
             }
+        };
 
-        }
+        return _.chain(getTypeByType(itemType))
+            .filter(function(s) {
+                return s.id === type;
+            }).first().value();
     };
 
-    timeline.setEvents = function(set) {
-        _.each(set.items, function(item){
-            item.set = set;
-            item.hover(function(){
-                showTooltip(this.set.status.text);
-            }, hideTooltip);
-            item.mousemove(function(){
-                showTooltip(this.set.status.text);
-            });
+    timeline.prepareData = function(set) {
+        set.data.title = set.itemType === timeline.itemType.product ? 'Events for ' + set.text + ' on ' + set.date.format('MMMM Do YYYY') 
+            : set.text + ' on ' + set.date.format('MMMM Do YYYY');
 
-            if (set.data.items) {
-                
-                item.click(function(){
-
-                    var cx = timeline.paper.canvas.offsetLeft;
-                    var cy = timeline.paper.canvas.offsetTop;
-                    var dv = timeline.paper.canvas.parentElement.getBoundingClientRect();
-                    var dx = dv.left, dy = dv.top;
-                    var bx = this.set[0].getBBox();
-                    var ox = 15, oy = -15;
-                    
-                    // _.each(this.set.data.items, function(item) {
-                    //     item.description = _.chain(defaults.events)
-                    //         .filter(function(e) {
-                    //             return e.id === item.id;
-                    //         }).first().value().text;
-
-                    //     if (!item.status.id) {
-                    //         item.status = _.chain(defaults.status)
-                    //             .filter(function(s) {
-                    //                 return s.id === item.status;
-                    //             }).first().value();
-                    //     }
-                    // });
-
-                    showPopup({ 
-                        coords: { x: dx + bx.x2 + ox, y: dy + bx.y + oy }, 
-                        // events: this.set.data.items,
-                        // product: item.text,
-                        // day: this.set.date,
-                    });
-                });
-            }
-
+        _.each(set.data.items, function(item) {
+            if (item.type && !item.type.id)
+                item.type = timeline.lookupType(item.type, set.itemType);
+            if (item.status && !item.status.id)
+                item.status = timeline.lookupStatus(item.status, set.itemType);
         });
+
+        return set.data;
     };
 
     timeline.drawDates = function(defaults, start) {

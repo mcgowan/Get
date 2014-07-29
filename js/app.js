@@ -2,24 +2,24 @@ var App = angular.module('App', [])
 
 
 
-angular.module('ngViewExample', ['ngRoute', 'ngAnimate'])
-  .config(['$routeProvider', '$locationProvider',
-    function($routeProvider, $locationProvider) {
-      $routeProvider
-        .when('/Book/:bookId', {
-          templateUrl: 'book.html',
-          controller: 'BookCtrl',
-          controllerAs: 'book'
-        })
-        .when('/Book/:bookId/ch/:chapterId', {
-          templateUrl: 'chapter.html',
-          controller: 'ChapterCtrl',
-          controllerAs: 'chapter'
-        });
+// angular.module('ngViewExample', ['ngRoute', 'ngAnimate'])
+//   .config(['$routeProvider', '$locationProvider',
+//     function($routeProvider, $locationProvider) {
+//       $routeProvider
+//         .when('/Book/:bookId', {
+//           templateUrl: 'book.html',
+//           controller: 'BookCtrl',
+//           controllerAs: 'book'
+//         })
+//         .when('/Book/:bookId/ch/:chapterId', {
+//           templateUrl: 'chapter.html',
+//           controller: 'ChapterCtrl',
+//           controllerAs: 'chapter'
+//         });
 
-      // configure html5 to get links working on jsfiddle
-      $locationProvider.html5Mode(true);
-  }])
+//       // configure html5 to get links working on jsfiddle
+//       $locationProvider.html5Mode(true);
+//   }])
   
 
 
