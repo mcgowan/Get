@@ -30,9 +30,110 @@ Timeline.prototype = function() {
 
     timeline.data = {
         items: [ 
-            // { type: 'header', text: 'Account Balance', drawDates: true },
-            // { type: 'reserve', lines: 4 }, 
-            { type: 'header', text: 'Hardware Products', drawDates: true },
+            { type: 'header', text: 'Account Balance', drawDates: true },
+            { type: 'balance', lines: 5, balance: { min: 0, max: 500 }, items: [
+                {   day:    -99 , almost:   0   , due:  100 , past: 0   , _30:   0   , _60:   0   , balance:  100 },
+                {   day:    -98 , almost:   0   , due:  100 , past: 0   , _30:   0   , _60:   0   , balance:  100 },
+                {   day:    -97 , almost:   0   , due:  100 , past: 0   , _30:   0   , _60:   0   , balance:  100 },
+                {   day:    -96 , almost:   0   , due:  100 , past: 0   , _30:   0   , _60:   0   , balance:  100 },
+                {   day:    -95 , almost:   100 , due:  100 , past: 0   , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -94 , almost:   100 , due:  100 , past: 0   , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -93 , almost:   100 , due:  100 , past: 0   , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -92 , almost:   100 , due:  100 , past: 0   , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -91 , almost:   100 , due:  100 , past: 0   , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -90 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -89 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -88 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -87 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -86 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -85 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -84 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -83 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -82 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -81 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -80 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -79 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -78 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -77 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -76 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -75 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -74 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -73 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -72 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -71 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -70 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -69 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -68 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -67 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -66 , almost:   0   , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  200 },
+                {   day:    -65 , almost:   100 , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  300 },
+                {   day:    -64 , almost:   100 , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  300 },
+                {   day:    -63 , almost:   100 , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  300 },
+                {   day:    -62 , almost:   100 , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  300 },
+                {   day:    -61 , almost:   100 , due:  100 , past: 100 , _30:   0   , _60:   0   , balance:  300 },
+                {   day:    -60 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -59 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -58 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -57 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -56 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -55 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -54 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -53 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -52 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -51 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -50 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -49 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -48 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -47 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -46 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -45 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -44 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -43 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -42 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -41 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -40 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -39 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -38 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -37 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -36 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  300 },
+                {   day:    -35 , almost:   100 , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  400 },
+                {   day:    -34 , almost:   100 , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  400 },
+                {   day:    -33 , almost:   100 , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  400 },
+                {   day:    -32 , almost:   100 , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  400 },
+                {   day:    -31 , almost:   100 , due:  100 , past: 100 , _30:   100 , _60:   0   , balance:  400 },
+                {   day:    -30 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -29 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -28 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -27 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -26 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -25 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -24 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -23 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -22 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -21 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -20 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -19 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -18 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -17 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -16 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -15 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -14 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -13 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -12 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -11 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -10 , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -9  , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -8  , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -7  , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -6  , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -5  , almost:   0   , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  400 },
+                {   day:    -4  , almost:   100 , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  500 },
+                {   day:    -3  , almost:   100 , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  500 },
+                {   day:    -2  , almost:   100 , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  500 },
+                {   day:    -1  , almost:   100 , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  500 },
+                {   day:    0   , almost:   100 , due:  100 , past: 100 , _30:   100 , _60:   100 , balance:  500 },
+            ]},
+            { type: 'header', text: 'Hardware Products', drawDates: false },
             { type: 'item', text: 'Decoder', itemType: timeline.itemType.product, items: [ 
                 { day: -180, status: 1 },
                 { day: -5, status: 2, items: [
@@ -51,8 +152,6 @@ Timeline.prototype = function() {
                     { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
                     { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
                     { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
                 ]},
             ] },
             { type: 'item', text: 'Smartcard', itemType: timeline.itemType.product, items: [ 
@@ -164,6 +263,9 @@ Timeline.prototype = function() {
                 { day: -3, status: 2, items: [
                     { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
+                { day: -2, status: 1, items: [
+                    { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
             ]},
         ],
     };
@@ -213,20 +315,20 @@ Timeline.prototype = function() {
             { id: 11, text: 'DEC', color: '#7F6CA1' },
         ],
         productStatus: [ 
-            { id: 1, color: '#A6D96A', text: 'Active' },
-            { id: 2, color: '#F46D43', text: 'Cancelled' },
-            { id: 3, color: '#D73027', text: 'Non-pay Disconnect' },
-            { id: 4, color: '#FFFFBF', text: 'Waiting Activation' },
-            { id: 5, color: '#FEE08B', text: 'Pending Removal' },
-            { id: 6, color: '#D9EF8B', text: 'Scheduled Activation' },
-            { id: 7, color: '#FDAE61', text: 'Suspended' },
+            { id: 1, color: '#A6D96A', stroke: '#000', text: 'Active' },
+            { id: 2, color: '#F46D43', stroke: '#fff', text: 'Cancelled' },
+            { id: 3, color: '#D73027', stroke: '#fff', text: 'Non-pay Disconnect' },
+            { id: 4, color: '#FFFFBF', stroke: '#000', text: 'Waiting Activation' },
+            { id: 5, color: '#FEE08B', stroke: '#000', text: 'Pending Removal' },
+            { id: 6, color: '#D9EF8B', stroke: '#000', text: 'Scheduled Activation' },
+            { id: 7, color: '#FDAE61', stroke: '#fff', text: 'Suspended' },
         ],
         workOrderStatus: [
-            { id: 1, color: '#A6D96A', text: 'New order' },
-            { id: 2, color: '#D73027', text: 'Assigned' },
-            { id: 3, color: '#D9EF8B', text: 'Complete' },
-            { id: 4, color: '#F46D43', text: 'Cancelled' },
-            { id: 5, color: '#D9EF8B', text: 'Reopened' },
+            { id: 1, color: '#A6D96A', stroke: '#000', text: 'New order' },
+            { id: 2, color: '#D73027', stroke: '#fff', text: 'Assigned' },
+            { id: 3, color: '#D9EF8B', stroke: '#000', text: 'Complete' },
+            { id: 4, color: '#F46D43', stroke: '#fff', text: 'Cancelled' },
+            { id: 5, color: '#D9EF8B', stroke: '#000', text: 'Reopened' },
         ],
         workOrderTypes: [
             { id: 1, text: 'Installation' },
@@ -234,12 +336,12 @@ Timeline.prototype = function() {
             { id: 3, text: 'Trouble Call' },
         ],
         shippingOrderStatus: [
-            { id: 1, color: '#A6D96A', text: 'New Order' },
-            { id: 2, color: '#A6D96A', text: 'Rejected' },
-            { id: 3, color: '#A6D96A', text: 'Cancelled' },
-            { id: 4, color: '#A6D96A', text: 'Approved' },
-            { id: 5, color: '#A6D96A', text: 'Shipped' },
-            { id: 6, color: '#A6D96A', text: 'Delivered' },
+            { id: 1, color: '#A6D96A', stroke: '#000', text: 'New Order' },
+            { id: 2, color: '#A6D96A', stroke: '#000', text: 'Rejected' },
+            { id: 3, color: '#A6D96A', stroke: '#000', text: 'Cancelled' },
+            { id: 4, color: '#A6D96A', stroke: '#000', text: 'Approved' },
+            { id: 5, color: '#A6D96A', stroke: '#000', text: 'Shipped' },
+            { id: 6, color: '#A6D96A', stroke: '#000', text: 'Delivered' },
         ],
         shippingOrderTypes:  [
             { id: 1, text: 'Customer Shipping Order' },
@@ -247,9 +349,9 @@ Timeline.prototype = function() {
             { id: 3, text: 'Swop Shipping Order' },
         ],
         contactStatus: [
-            { id: 1, color: '#D73027', text: 'Active' },
-            { id: 2, color: '#D9EF8B', text: 'Cancelled' },
-            { id: 3, color: '#A6D96A', text: 'Completed' },
+            { id: 1, color: '#D73027', stroke: '#fff', text: 'Active' },
+            { id: 2, color: '#D9EF8B', stroke: '#000', text: 'Cancelled' },
+            { id: 3, color: '#A6D96A', stroke: '#000', text: 'Completed' },
         ],
         contactTypes: [
             { id: 1, text: 'Telephone' },
@@ -261,13 +363,20 @@ Timeline.prototype = function() {
             { id: 7, text: 'Other' },
         ],
         outageStatus: [
-            { id: 1, color: '#D73027', text: 'No Service' },
-            { id: 2, color: '#A6D96A', text: 'Resolved' },
+            { id: 1, color: '#D73027', stroke: '#fff', text: 'No Service' },
+            { id: 2, color: '#A6D96A', stroke: '#000', text: 'Resolved' },
         ],
         outageTypes: [
             { id: 1, text: 'Type I' },
             { id: 2, text: 'Type II' },
         ],
+        // balanceBuckets: [
+        //     { id: 1, color: '#D73027', text: 'almost' },
+        //     { id: 2, color: '#D73027', text: 'due' },
+        //     { id: 3, color: '#D73027', text: 'past' },
+        //     { id: 4, color: '#D73027', text: '30' },
+        //     { id: 5, color: '#D73027', text: '60' },
+        // ],
         events: [
             { id: 5228, text: 'Update Product Status' },
             { id: 5228, text: 'Update Product Status' },
@@ -363,6 +472,7 @@ Timeline.prototype = function() {
                 timeline.drawText(item.text, defaults.margin.left, y, defaults.fonts.header);
 
                 y = start + defaults.lineHeight - 2;
+
                 timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
                 timeline.drawRect(0, y, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
 
@@ -378,6 +488,7 @@ Timeline.prototype = function() {
                 });
 
                 y = start + defaults.lineHeight;
+
                 timeline.drawLine(0, y, defaults.canvas.width, y, defaults.lineColor);
 
                 if (item.items)
@@ -389,6 +500,7 @@ Timeline.prototype = function() {
                 timeline.drawText(item.text, defaults.margin.left, y, defaults.fonts.summary);
 
                 y = start + defaults.lineHeight - 2;
+
                 if (item.border === 'top' || item.border === 'both' )
                     timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
 
@@ -397,6 +509,50 @@ Timeline.prototype = function() {
 
                 if (item.items)
                     timeline.drawItems(defaults, item.itemType, getMatchType(item), item, start);
+
+                break;
+            }
+            case 'balance': {
+
+                    // TODO: refactor into multiple methods
+
+                    var x = defaults.canvas.width - ((defaults.days - 1) * defaults.cellWidth), 
+                        y = start + 10,
+                        w = defaults.canvas.width - x,
+                        h = (defaults.lineHeight * item.lines) - 20;
+
+                    timeline.drawRect(x, y, w, h, 0, '#eee', 1);
+
+                    var l = h/5;
+                    
+                    for (var i = 1; i < 5; i++) {
+                        var ly = y + (l * i);
+                        timeline.drawLine(x, ly, defaults.canvas.width, ly, '#eee', 1);
+                    }
+
+                    // TODO: create right-align text method
+
+                    // draw scale
+                    timeline.drawText(item.balance.min.toString(), x - 12, y + h, defaults.fonts.summary).attr({
+                        'font-family': 'Open Sans',
+                        'font-style': 'normal',
+                        'font-variant': 'small-caps',
+                        'font-weight': 400,
+                        'font-size': '10px',
+                        'fill': '#74808E',
+                    });
+
+                    timeline.drawText(item.balance.max.toString(), x - 25, y, defaults.fonts.summary).attr({
+                        'font-family': 'Open Sans',
+                        'font-style': 'normal',
+                        'font-variant': 'small-caps',
+                        'font-weight': 400,
+                        'font-size': '10px',
+                        'fill': '#74808E',
+                    });
+
+                    // timeline.drawBarItems = function(defaults, item, bottom, left, height) {
+                    timeline.drawBarItems(defaults, item, y + h, x, h);
 
                 break;
             }
@@ -430,14 +586,12 @@ Timeline.prototype = function() {
                     var set = timeline.paper.set();
                     var rx = x + 3, ry = start + 3, rw = defaults.cellWidth - 6, rh = defaults.lineHeight - 6;
                     
-                    var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 2, status.color, 1, status.color).attr({
+                    // squares
+                    var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 1, status.color, 1, status.color).attr({
                         'cursor': day === data.day && data.items && data.items.length > 0 ? 'pointer' : 'default',
                     });
 
-                    // var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 4, status.color, 1, status.color).attr({
-                    //     'cursor': day === data.day && data.items && data.items.length > 0 ? 'pointer' : 'default',
-                    // });
-
+                    // circles
                     // var el = timeline.paper.circle((rx + rw/2) + .5, (ry + rh/2) + .5, 11.5).attr({                                
                     //     'fill': status.color,
                     //     'stroke': '#fff',
@@ -453,6 +607,8 @@ Timeline.prototype = function() {
 
                     if (day === data.day && data.items && data.items.length > 0) {
                         var px1 = rx + 1, py1 = ry + rh + 1, px2 = rx + rw + 1, py2 = ry + rh + 1, px3 =  rx + rw + 1, py3 = ry + 1;
+                        
+                        // diagonal half-square + num
                         // set.push(timeline.paper.path('M' + px1 + ',' + py2 + ',' + px2 + ',' + py2 + ',' + px3 + ',' + py3 + 'z').attr({
                         //     'fill': '#fff',
                         //     'stroke': '#fff',
@@ -464,27 +620,103 @@ Timeline.prototype = function() {
                         //     'cursor': 'pointer',
                         // }));
 
-                        // set.push(
-
-                            timeline.paper.text((rx + rw/2) + 1, (ry + rh/2) + 1, data.items.length).attr({
+                        // num
+                        set.push(
+                            timeline.paper.text((rx + rw/2) + .6, (ry + rh/2), data.items.length).attr({
                                 'font-family': 'Open Sans',
-                                // 'font-family': 'RobotoL',
-                                // 'font-family': 'Arial',
-
-                                'font-size': '12px',
-                                // 'font-weight': 'bold',
-                                // 'fill': '#ffffff',
-                                // 'fill': status.color,
-                                'fill': '#000',
-                                // 'fill': '#fff',
-                                
+                                'font-size': '11.5px',
+                                'fill': status.stroke,
                                 'cursor': 'pointer'
-                            });
-                        // );
+                            })
+                        );
                     }
 
                     timeline.setEvents(set);
                 }
+            }
+        }
+    };
+
+    timeline.drawBarItems = function(defaults, item, bottom, left, height) {
+        
+        // refactor into iterative method
+
+        var x = defaults.canvas.width - (defaults.days * defaults.cellWidth);
+
+        for (var i = 0; i < defaults.days - 1; i++) {
+            x += defaults.cellWidth;
+            var day = defaults.days * -1 + i; 
+            var data = timeline.getItemData(item.items, day, timeline.matchType.day);
+            if (data) {
+
+                var f = height/item.balance.max;
+                // 1 - almost
+
+                var y = bottom, h = 0;
+
+                var p = 9, w = 7;
+
+                if (data.almost > 0) {
+                    h = data.almost * f;
+
+                    var s1 = timeline.paper.set();
+
+                    s1.push(
+                        timeline.drawRect(x, y - h, defaults.cellWidth, h, 0, '#A6D96A', 1, '#A6D96A').attr({ 'opacity': 0 }),
+                        timeline.drawRect(x + p, y - h, w, h, 0, '#A6D96A', 1, '#A6D96A')
+                    );
+
+                    s1.hover(function(){
+                        showTooltip('It works!');
+                    }, hideTooltip);
+                    s1.mousemove(function(){
+                        showTooltip('Not Yet Due: ' + data.almost);
+                    });
+
+
+                    y -= h;
+                }
+
+                if (data.due > 0) {
+                    h = data.due * f;
+                    timeline.drawRect(x + p, y - h, w, h, 0, '#D9EF8B', 1, '#D9EF8B');
+                    y -= h;
+                }
+
+
+                // {   day:    -96 , almost:   0   , due:  100 , past: 0   , 30:   0   , 60:   0   , balance:  100 },
+
+                if (data.past > 0) {
+                    h = data.past * f;
+                    timeline.drawRect(x + p, y - h, w, h, 0, '#FDAE61', 1, '#FDAE61');
+                    y -= h;
+                }
+
+                if (data._30 > 0) {
+                    h = data._30 * f;
+                    timeline.drawRect(x + p, y - h, w, h, 0, '#F46D43', 1, '#F46D43');
+                    y -= h;
+                }
+                
+                if (data._60 > 0) {
+                    h = data._60 * f;
+                    timeline.drawRect(x + p, y - h, w, h, 0, '#D73027', 1, '#D73027');
+                    y -= h;
+                }
+
+                
+
+
+                // need height, balance.max known
+
+                    // get height of each bucket ()
+
+                    // 1 - almost
+                    // 2 - due
+                    // 3 - past
+                    // 4 - 30
+                    // 5 - 60
+
             }
         }
     };
@@ -661,7 +893,15 @@ Timeline.prototype = function() {
     };
 
     timeline.draw = function(scope, canvas) {
-	    timeline.destroy();
+	    var getLineCount = function() {
+            var result = 0;
+            for (var i = 0; i < timeline.data.items.length; i++) {
+                result = timeline.data.items[i].lines ? result + timeline.data.items[i].lines : result + 1;
+            }
+            return result;
+        };
+
+        timeline.destroy();
 
         timeline.scope = scope;
 
@@ -669,7 +909,7 @@ Timeline.prototype = function() {
 
         tdefs.canvas = {
             width: canvas.clientWidth,
-            height: (timeline.data.items.length * tdefs.lineHeight) + tdefs.margin.top
+            height: (getLineCount() * tdefs.lineHeight) + tdefs.margin.top
         }
 
         var l = tdefs.canvas.width/3; // left
@@ -687,8 +927,11 @@ Timeline.prototype = function() {
 
         timeline.drawVerticalBars(tdefs);
 
+        var line = 0;
+
         for (var i = 0; i < timeline.data.items.length; i++) {
-            timeline.drawItem(tdefs, timeline.data.items[i], (i * tdefs.lineHeight) + tdefs.margin.top)
+            timeline.drawItem(tdefs, timeline.data.items[i], (line * tdefs.lineHeight) + tdefs.margin.top)
+            line = timeline.data.items[i].lines ? line + timeline.data.items[i].lines : line + 1;
         }
     };
 
