@@ -70,7 +70,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <!-- tooltip -->
 <div ng-controller="TooltipCtl" class="tip tip-default tip-shadow" ng-style="{top: style.pos.y + 'px', left:style.pos.x + 'px', display:style.display}" app-mouse-move app-scroll>
-	<div class="tip-content">{{ text }}</div>
+	<!-- <div class="tip-content">{{ text }}</div> -->
+	<div class="tip-content" ng-bind-html="text | unsafe"></div>
 </div>
 
 <!-- popup -->

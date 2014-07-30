@@ -1,6 +1,4 @@
 App.controller('TooltipCtl', function TooltipCtl($rootScope, $scope) {
-    var offset = { x: 0, y: -30 };
-
     $scope.init = function() {
 
 	    var show = $rootScope.$on('TOOLTIP_SHOW', function(event, param){
@@ -15,27 +13,23 @@ App.controller('TooltipCtl', function TooltipCtl($rootScope, $scope) {
 	    $scope.$on('$destroy', hide);
 
 	    $scope.mouse = { x: 0, y: 0 };
+	    $scope.offset = { x: 0, y: -30 };
 
 	    $scope.text = '';
     };
 
-	$scope.show = function(tip) {
-		setText(tip);
+	$scope.show = function(params) {
 		$scope.$apply(function() {
-			$scope.style = { pos: { x: $scope.mouse.x + offset.x, y: $scope.mouse.y + offset.y + $scope.scrollTop }, display: 'block' };
+			$scope.text = params.text ? params.text : '';
+			$scope.offset = params.offset ? params.offset : { x: 0, y: -30 };
+			$scope.style = { pos: { x: $scope.mouse.x + $scope.offset.x, y: $scope.mouse.y + $scope.offset.y + $scope.scrollTop }, display: 'block' };
 		});
 	};
 
 	$scope.hide = function() {
-		setText('');
 		$scope.$apply(function() {
+			$scope.text = '';
 			$scope.style = { pos: { x: 0, y: 0 }, display: 'none' };
-		});
-	};
-
-	var setText = function(tip) {
-		$scope.$apply(function() {
-			$scope.text = tip;
 		});
 	};
 

@@ -31,7 +31,7 @@ Timeline.prototype = function() {
     timeline.data = {
         items: [ 
             { type: 'header', text: 'Account Balance', drawDates: true },
-            { type: 'balance', lines: 5, balance: { min: 0, max: 500 }, items: [
+            { type: 'balance', lines: 4, balance: { min: 0, max: 500 }, items: [
                 {   day:    -99 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
                 {   day:    -98 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
                 {   day:    -97 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
@@ -217,56 +217,108 @@ Timeline.prototype = function() {
                 ]},
                 { day: -5, status: 0},
             ] },
-            { type: 'reserve', lines: 1 }, 
+
+        // contactStatus: [
+        //     { id: 1, color: '#F46D43', stroke: '#fff', text: 'Active' },
+        //     { id: 2, color: '#D9EF8B', stroke: '#000', text: 'Cancelled' },
+        //     { id: 3, color: '#A6D96A', stroke: '#fff', text: 'Completed' },
+        // ],
+        // contactTypes: [
+        //     { id: 1, text: 'Telephone' },
+        //     { id: 2, text: 'Email' },
+        //     { id: 3, text: 'Visit' },
+        //     { id: 4, text: 'SMS' },
+        //     { id: 5, text: 'Telefax' },
+        //     { id: 6, text: 'Letter' },
+        //     { id: 7, text: 'Other' },
+        // ],
+
+            // { type: 'reserve', lines: 1 }, 
             { type: 'summary', text: 'Contacts', border: 'top', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [
-                { day: -10, status: 1, items: [
-                    { id: 873465, type: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, type: 2, status: 2, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { day: -10, status: 3, items: [
+                    { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 2, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 873465, type: 3, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
-                { day: -5, status: 1, items: [
-                    { id: 873465, type: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { day: -5, status: 3, items: [
+                    { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
                 { day: -4, status: 1, items: [
-                    { id: 873465, type: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { id: 873465, type: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ]},
+            // { type: 'reserve', lines: 1 }, 
             { type: 'summary', text: 'Outages', border: 'top', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [
-                { day: -4, status: 2, items: [
-                    { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { day: -13, status: 2, items: [
+                    { type: 1, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { type: 2, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -3, status: 1, items: [
-                    { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-            ]},
-            { type: 'header', text: 'Orders', drawDates: false },
-
-            { type: 'item', text: 'Work Orders', border: 'top', itemType: timeline.itemType.workOrder, matchType: timeline.matchType.day, items: [
-                { day: -4, status: 1, items: [
-                    { id: 873465, type: 1, status: 1, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, type: 2, status: 2, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
-                    { id: 873465, type: 3, status: 3, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
-                ]},
-                { day: -3, status: 1, items: [
-                    { id: 873465, type: 1, status: 1, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-            ]},
-            { type: 'item', text: 'Shipping Orders', border: 'both', itemType: timeline.itemType.shippingOrder, matchType: timeline.matchType.day, items: [
-                { day: -4, status: 2, items: [
-                    { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -3, status: 2, items: [
-                    { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 1, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
                 { day: -2, status: 1, items: [
-                    { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ]},
+            // { type: 'reserve', lines: 1 }, 
+            { type: 'header', text: 'Work Orders', drawDates: false },
+            { type: 'item', text: 'Installation', itemType: timeline.itemType.workOrder, items: [
+                { day: -16, status: 2, items: [
+                    { id: 873465, type: 1, status: 1, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                    { id: 873465, type: 1, status: 2, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                ]},
+                { day: -12, status: 3, items: [
+                    { id: 873465, type: 1, status: 3, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -11, status: 5, items: [
+                    { id: 873465, type: 1, status: 5, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                ]},
+                { day: -10, status: 3, items: [
+                    { id: 873465, type: 1, status: 2, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                    { id: 873465, type: 1, status: 3, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -9, status: 0 },
+            ]},
+            { type: 'item', text: 'Trouble Call', itemType: timeline.itemType.workOrder, items: [
+                { day: -5, status: 1, items: [
+                    { id: 873465, type: 3, status: 1, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                ]},
+                { day: -4, status: 2, items: [
+                    { id: 873465, type: 3, status: 2, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                ]},
+                { day: -3, status: 3, items: [
+                    { id: 873465, type: 3, status: 3, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -2, status: 0 },
+            ]},
+
+        // shippingOrderStatus: [
+        //     { id: 1, color: '#F46D43', stroke: '#fff', text: 'New Order' },
+        //     { id: 2, color: '#D9EF8B', stroke: '#000', text: 'Rejected' },
+        //     { id: 3, color: '#D9EF8B', stroke: '#000', text: 'Cancelled' },
+        //     { id: 4, color: '#FEE08B', stroke: '#000', text: 'Approved' },
+        //     { id: 5, color: '#FFFFBF', stroke: '#000', text: 'Shipped' },
+        //     { id: 6, color: '#A6D96A', stroke: '#fff', text: 'Delivered' },
+        // ],
+        // shippingOrderTypes:  [
+        //     { id: 1, text: 'Customer Shipping Order' },
+        //     { id: 2, text: 'Dealer Shipping Order' },
+        //     { id: 3, text: 'Swop Shipping Order' },
+        // ],
+
+            { type: 'header', text: 'Shipping Orders', drawDates: false },
+            { type: 'item', text: 'Customer Shipping Order', border: 'both', itemType: timeline.itemType.shippingOrder, items: [
+                { day: -8, status: 4, items: [
+                    { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { id: 873465, type: 1, status: 4, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -6, status: 5, items: [
+                    { id: 873465, type: 1, status: 5, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -2, status: 6, items: [
+                    { id: 873465, type: 1, status: 6, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+            ]},
+
         ],
     };
 
@@ -315,7 +367,7 @@ Timeline.prototype = function() {
             { id: 11, text: 'DEC', color: '#7F6CA1' },
         ],
         productStatus: [ 
-            { id: 1, color: '#A6D96A', stroke: '#000', text: 'Active' },
+            { id: 1, color: '#A6D96A', stroke: '#fff', text: 'Active' },
             { id: 2, color: '#F46D43', stroke: '#fff', text: 'Cancelled' },
             { id: 3, color: '#D73027', stroke: '#fff', text: 'Non-pay Disconnect' },
             { id: 4, color: '#FFFFBF', stroke: '#000', text: 'Waiting Activation' },
@@ -324,11 +376,11 @@ Timeline.prototype = function() {
             { id: 7, color: '#FDAE61', stroke: '#fff', text: 'Suspended' },
         ],
         workOrderStatus: [
-            { id: 1, color: '#A6D96A', stroke: '#000', text: 'New order' },
-            { id: 2, color: '#D73027', stroke: '#fff', text: 'Assigned' },
-            { id: 3, color: '#D9EF8B', stroke: '#000', text: 'Complete' },
-            { id: 4, color: '#F46D43', stroke: '#fff', text: 'Cancelled' },
-            { id: 5, color: '#D9EF8B', stroke: '#000', text: 'Reopened' },
+            { id: 1, color: '#F46D43', stroke: '#fff', text: 'New order' },
+            { id: 2, color: '#FEE08B', stroke: '#000', text: 'Assigned' },
+            { id: 3, color: '#A6D96A', stroke: '#fff', text: 'Complete' },
+            { id: 4, color: '#D9EF8B', stroke: '#000', text: 'Cancelled' },
+            { id: 5, color: '#F46D43', stroke: '#fff', text: 'Reopened' },
         ],
         workOrderTypes: [
             { id: 1, text: 'Installation' },
@@ -336,12 +388,12 @@ Timeline.prototype = function() {
             { id: 3, text: 'Trouble Call' },
         ],
         shippingOrderStatus: [
-            { id: 1, color: '#A6D96A', stroke: '#000', text: 'New Order' },
-            { id: 2, color: '#A6D96A', stroke: '#000', text: 'Rejected' },
-            { id: 3, color: '#A6D96A', stroke: '#000', text: 'Cancelled' },
-            { id: 4, color: '#A6D96A', stroke: '#000', text: 'Approved' },
-            { id: 5, color: '#A6D96A', stroke: '#000', text: 'Shipped' },
-            { id: 6, color: '#A6D96A', stroke: '#000', text: 'Delivered' },
+            { id: 1, color: '#F46D43', stroke: '#fff', text: 'New Order' },
+            { id: 2, color: '#D9EF8B', stroke: '#000', text: 'Rejected' },
+            { id: 3, color: '#D9EF8B', stroke: '#000', text: 'Cancelled' },
+            { id: 4, color: '#FDAE61', stroke: '#fff', text: 'Approved' },
+            { id: 5, color: '#FEE08B', stroke: '#000', text: 'Shipped' },
+            { id: 6, color: '#A6D96A', stroke: '#fff', text: 'Delivered' },
         ],
         shippingOrderTypes:  [
             { id: 1, text: 'Customer Shipping Order' },
@@ -349,9 +401,9 @@ Timeline.prototype = function() {
             { id: 3, text: 'Swop Shipping Order' },
         ],
         contactStatus: [
-            { id: 1, color: '#D73027', stroke: '#fff', text: 'Active' },
+            { id: 1, color: '#F46D43', stroke: '#fff', text: 'Active' },
             { id: 2, color: '#D9EF8B', stroke: '#000', text: 'Cancelled' },
-            { id: 3, color: '#A6D96A', stroke: '#000', text: 'Completed' },
+            { id: 3, color: '#A6D96A', stroke: '#fff', text: 'Completed' },
         ],
         contactTypes: [
             { id: 1, text: 'Telephone' },
@@ -501,11 +553,13 @@ Timeline.prototype = function() {
 
                 y = start + defaults.lineHeight - 2;
 
+                if (!item.border) item.border = 'both';
+
                 if (item.border === 'top' || item.border === 'both' )
                     timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
 
                 if (item.border === 'bottom' || item.border === 'both' )
-                    timeline.drawRect(0, y, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
+                    timeline.drawRect(0, y + 1, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
 
                 if (item.items)
                     timeline.drawItems(defaults, item.itemType, getMatchType(item), item, start);
@@ -637,6 +691,28 @@ Timeline.prototype = function() {
                                 'cursor': 'pointer'
                             })
                         );
+
+                        set.click(function(){
+                            var data = timeline.prepareData(this.set);
+
+                            var cx = timeline.paper.canvas.offsetLeft;
+                            var cy = timeline.paper.canvas.offsetTop;
+                            var dv = timeline.paper.canvas.parentElement.getBoundingClientRect();
+                            var dx = dv.left, dy = dv.top;
+                            var bx = this.set[0].getBBox();
+                            var ox = 15, oy = -15;
+                            
+                            showPopup({ 
+                                coords: { x: dx + bx.x2 + ox, y: dy + bx.y + oy },
+                                itemType: this.set.itemType,
+                                data: { 
+                                    title: data.title, 
+                                    date: this.set.date,
+                                    items: data.items,
+                                }
+                            });
+                        });
+
                     }
 
                     timeline.setEvents(set);
@@ -646,7 +722,6 @@ Timeline.prototype = function() {
     };
 
     timeline.drawBarItems = function(defaults, item, bottom, left, height) {
-
         var getBucket = function(id) {
             return _.chain(timeline.defaults.accountBuckets)
                 .filter(function(bucket) {
@@ -676,83 +751,23 @@ Timeline.prototype = function() {
                             );
                             
                             _.each(s.items, function(item){
-                                item.tip = b.text + ': ' + data[prop];
+                                item.tip = '<table>' +
+                                    '<tr class="tip-table-tr"><td>' + b.text + ':</td><td class="tip-table-td-numeric">' + data[prop] + '</td><tr>' + 
+                                    '<tr class="tip-table-tr"><td >Balance:</td><td class="tip-table-td-numeric">' + data.balance + '</td></tr>' + 
+                                    '</table>';
                             });
 
                             s.hover(function(){
-                                showTooltip(this.tip);
+                                showTooltip({ text: this.tip, offset: { x: 0, y: -60 } });
                             }, hideTooltip);
                             s.mousemove(function(){
-                                showTooltip(this.tip);
+                                showTooltip({ text: this.tip, offset: { x: 0, y: -60 } });
                             });
+
                             y -= h;
                         }
                     }
                 }
-
-
-
-                // if (data.almost > 0) {
-                //     h = data.almost * f;
-
-                //     var s1 = timeline.paper.set();
-
-                //     s1.push(
-                //         timeline.drawRect(x, y - h, defaults.cellWidth, h, 0, '#A6D96A', 1, '#A6D96A').attr({ 'opacity': 0 }),
-                //         timeline.drawRect(x + p, y - h, w, h, 0, '#A6D96A', 1, '#A6D96A')
-                //     );
-
-                //     s1.hover(function(){
-                //         showTooltip('It works!');
-                //     }, hideTooltip);
-                //     s1.mousemove(function(){
-                //         showTooltip('Not Yet Due: ' + data.almost);
-                //     });
-
-
-                //     y -= h;
-                // }
-
-                // if (data.due > 0) {
-                //     h = data.due * f;
-                //     timeline.drawRect(x + p, y - h, w, h, 0, '#D9EF8B', 1, '#D9EF8B');
-                //     y -= h;
-                // }
-
-
-                // // {   day:    -96 , almost:   0   , due:  100 , past: 0   , 30:   0   , 60:   0   , balance:  100 },
-
-                // if (data.past > 0) {
-                //     h = data.past * f;
-                //     timeline.drawRect(x + p, y - h, w, h, 0, '#FDAE61', 1, '#FDAE61');
-                //     y -= h;
-                // }
-
-                // if (data._30 > 0) {
-                //     h = data._30 * f;
-                //     timeline.drawRect(x + p, y - h, w, h, 0, '#F46D43', 1, '#F46D43');
-                //     y -= h;
-                // }
-                
-                // if (data._60 > 0) {
-                //     h = data._60 * f;
-                //     timeline.drawRect(x + p, y - h, w, h, 0, '#D73027', 1, '#D73027');
-                //     y -= h;
-                // }
-
-                
-
-
-                // need height, balance.max known
-
-                    // get height of each bucket ()
-
-                    // 1 - almost
-                    // 2 - due
-                    // 3 - past
-                    // 4 - 30
-                    // 5 - 60
-
             }
         }
     };
@@ -761,34 +776,34 @@ Timeline.prototype = function() {
         _.each(set.items, function(item){
             item.set = set;
             item.hover(function(){
-                showTooltip(this.set.status.text);
+                showTooltip({ text: this.set.status.text });
             }, hideTooltip);
             item.mousemove(function(){
-                showTooltip(this.set.status.text);
+                showTooltip({ text: this.set.status.text });
             });
 
-            if (set.data.items) {
-                item.click(function(){
-                    var data = timeline.prepareData(this.set);
+            // if (set.data.items) {
+            //     item.click(function(){
+            //         var data = timeline.prepareData(this.set);
 
-                    var cx = timeline.paper.canvas.offsetLeft;
-                    var cy = timeline.paper.canvas.offsetTop;
-                    var dv = timeline.paper.canvas.parentElement.getBoundingClientRect();
-                    var dx = dv.left, dy = dv.top;
-                    var bx = this.set[0].getBBox();
-                    var ox = 15, oy = -15;
+            //         var cx = timeline.paper.canvas.offsetLeft;
+            //         var cy = timeline.paper.canvas.offsetTop;
+            //         var dv = timeline.paper.canvas.parentElement.getBoundingClientRect();
+            //         var dx = dv.left, dy = dv.top;
+            //         var bx = this.set[0].getBBox();
+            //         var ox = 15, oy = -15;
                     
-                    showPopup({ 
-                        coords: { x: dx + bx.x2 + ox, y: dy + bx.y + oy },
-                        itemType: this.set.itemType,
-                        data: { 
-                            title: data.title, 
-                            date: this.set.date,
-                            items: data.items,
-                        }
-                    });
-                });
-            }
+            //         showPopup({ 
+            //             coords: { x: dx + bx.x2 + ox, y: dy + bx.y + oy },
+            //             itemType: this.set.itemType,
+            //             data: { 
+            //                 title: data.title, 
+            //                 date: this.set.date,
+            //                 items: data.items,
+            //             }
+            //         });
+            //     });
+            // }
         });
     };
 
@@ -987,8 +1002,8 @@ Timeline.prototype = function() {
         timeline.draw(this.scope, this.canvas);
     };
 
-    var showTooltip = function(tip) {
-        timeline.scope.$emit('TOOLTIP_SHOW', tip);
+    var showTooltip = function(params) {
+        timeline.scope.$emit('TOOLTIP_SHOW', params);
     };
 
     var hideTooltip = function() {
@@ -999,8 +1014,8 @@ Timeline.prototype = function() {
         timeline.scope.$emit('POPUP_SHOW', params);
     };
 
-    var hidePopup = function(params) {
-        timeline.scope.$emit('POPUP_HIDE', params);
+    var hidePopup = function() {
+        timeline.scope.$emit('POPUP_HIDE');
     };
 
     // var getDateRange = function() {

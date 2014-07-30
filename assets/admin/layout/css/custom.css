@@ -78,6 +78,17 @@
 	text-align: left;
 	word-wrap: break-word;
 }
+.tip-table-tr {
+	height: 18px;
+	vertical-align: middle;
+}
+.tip-table-tr-head {
+	border-bottom: 1px solid #D7DFE2;
+}
+.tip-table-td-numeric {
+	width: 35px;
+	text-align: right;
+}
 .tip-shadow {
 	-webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
 	-moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
