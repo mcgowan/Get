@@ -535,9 +535,18 @@ Timeline.prototype = function() {
                 break;
             }
             case 'item': {
-                timeline.drawText(item.text, defaults.margin.left, y, defaults.fonts.item).attr({
+                var el = timeline.drawText(item.text, defaults.margin.left, y, defaults.fonts.item).attr({
                     'cursor': 'pointer'
                 });
+
+                // TODO: tooltip event...
+                el.hover(function(){
+                    showTooltip({ text: 'It works!' });
+                }, hideTooltip);
+                el.mousemove(function(){
+                    showTooltip({ text: 'It works!' });
+                });
+
 
                 y = start + defaults.lineHeight;
 
@@ -567,13 +576,24 @@ Timeline.prototype = function() {
                 break;
             }
             case 'balance': {
+                    var text = ['Not Yet Due', 'Due Now', 'Past Due', 'Total Balance'];
 
-                    // TODO: refactor into multiple methods
+                    // var y = start;
+
+                    for (var i = 0; i < text.length; i++) {
+                        timeline.drawText(text[i], defaults.margin.left, y, defaults.fonts.item);
+                        y += timeline.defaults.lineHeight;
+                    }
+
+
+
 
                     var x = defaults.canvas.width - ((defaults.days - 1) * defaults.cellWidth), 
-                        y = start + 10,
                         w = defaults.canvas.width - x,
                         h = (defaults.lineHeight * item.lines) - 20;
+
+                    y = start + 10;
+
 
                     timeline.drawRect(x, y, w, h, 0, '#eee', 1);
 
