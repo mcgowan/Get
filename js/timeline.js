@@ -31,7 +31,7 @@ Timeline.prototype = function() {
     timeline.data = {
         items: [ 
             { type: 'header', text: 'Account Balance', drawDates: true },
-            { type: 'balance', lines: 3, balance: { min: 0, max: 500 }, items: [
+            { type: 'balance', lines: 4, notDue: 0, due: 0, pastDue: 0, balance: { min: 0, max: 500 }, items: [
                 {   day:    -99 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
                 {   day:    -98 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
                 {   day:    -97 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
@@ -233,7 +233,7 @@ Timeline.prototype = function() {
         //     { id: 7, text: 'Other' },
         // ],
 
-            { type: 'reserve', lines: 1 }, 
+            // { type: 'reserve', lines: 1 }, 
             { type: 'summary', text: 'Contacts', border: 'top', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [
                 { day: -10, status: 3, items: [
                     { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
@@ -342,7 +342,7 @@ Timeline.prototype = function() {
             item: {
                 fontFamily: 'Open Sans',
                 fontColor: '#428bca',
-                fontSize: '14px',
+                fontSize: '12px',
                 fontBold: false,
             },
             summary: {
@@ -350,6 +350,12 @@ Timeline.prototype = function() {
                 fontColor: '#000000',
                 fontSize: '14px',
                 fontBold: true,
+            },
+            balance: {
+                fontFamily: 'Open Sans',
+                fontColor: '#428bca',
+                fontSize: '11px',
+                fontBold: false,
             },
         },
         months: [
@@ -578,11 +584,11 @@ Timeline.prototype = function() {
             case 'balance': {
                     var text = ['Not Yet Due', 'Due Now', 'Past Due', 'Total Balance'];
 
-                    // var y = start;
+                    y += 5;
 
                     for (var i = 0; i < text.length; i++) {
-                        timeline.drawText(text[i], defaults.margin.left, y, defaults.fonts.item);
-                        y += timeline.defaults.lineHeight;
+                        timeline.drawText(text[i], defaults.margin.left + 20, y, defaults.fonts.balance);
+                        y += timeline.defaults.lineHeight - 5;
                     }
 
 
