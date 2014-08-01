@@ -26,7 +26,10 @@ Timeline.prototype = function() {
             color: '#EB8B8B',
             toString: function(){ return 'outage'; },
         }});
+
     timeline.matchType = Object.freeze({ range: {}, day: {} });
+
+    timeline.textAlign = Object.freeze({ left: {}, middle: {}, right: {} });
 
     timeline.data = {
         items: [ 
@@ -133,8 +136,18 @@ Timeline.prototype = function() {
                 {   day:    -1  , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  500 },
                 {   day:    0   , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  500 },
             ]},
+            { type: 'summary', text: 'Outages', border: 'top', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [
+                { day: -13, status: 2, items: [
+                    { type: 1, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 2, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    { type: 1, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                ]},
+                { day: -2, status: 1, items: [
+                    { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: undefined },
+                ]},
+            ]},
             { type: 'header', text: 'Hardware Products', drawDates: false },
-            { type: 'item', text: 'Decoder', itemType: timeline.itemType.product, items: [ 
+            { type: 'item', text: 'Decoder', status: 2, itemType: timeline.itemType.product, items: [ 
                 { day: -180, status: 1 },
                 { day: -5, status: 2, items: [
                     { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
@@ -142,7 +155,7 @@ Timeline.prototype = function() {
                     { type: 5228, status: 3, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ] },
-            { type: 'item', text: 'HD Decoder', itemType: timeline.itemType.product, items: [ 
+            { type: 'item', text: 'HD Decoder', status: 3, itemType: timeline.itemType.product, items: [ 
                 { day: -8, status: 1 },
                 { day: -5, status: 3, items: [
                     { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
@@ -154,7 +167,7 @@ Timeline.prototype = function() {
                     { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ] },
-            { type: 'item', text: 'Smartcard', itemType: timeline.itemType.product, items: [ 
+            { type: 'item', text: 'Smartcard', status: 1, itemType: timeline.itemType.product, items: [ 
                 { day: -180, status: 1 },
                 { day: -22, status: 1, items: [
                     { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
@@ -178,7 +191,7 @@ Timeline.prototype = function() {
                 ]},
             ] },
             { type: 'header', text: 'Software Products', drawDates: false },
-            { type: 'item', text: 'TV Basic', itemType: timeline.itemType.product, items: [ 
+            { type: 'item', text: 'TV Basic', status: 1, itemType: timeline.itemType.product, items: [ 
                 { day: -180, status: 1 },
             ] },
             { type: 'item', text: 'TV Gold Package', itemType: timeline.itemType.product, items: [ 
@@ -194,7 +207,7 @@ Timeline.prototype = function() {
                 ]},
                 { day: -3, status: 0 },
             ] },
-            { type: 'item', text: 'TV Silver Package', itemType: timeline.itemType.product, items: [ 
+            { type: 'item', text: 'TV Silver Package', status: 1, itemType: timeline.itemType.product, items: [ 
                 { day: -10, status: 4, items: [
                     { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
@@ -203,7 +216,7 @@ Timeline.prototype = function() {
                     { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
             ] },
-            { type: 'item', text: 'VoIP Basic', itemType: timeline.itemType.product, items: [ 
+            { type: 'item', text: 'VoIP Basic', status: 2, itemType: timeline.itemType.product, items: [ 
                 { day: -10, status: 1, items: [
                     { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
@@ -249,16 +262,6 @@ Timeline.prototype = function() {
                 ]},
             ]},
             // { type: 'reserve', lines: 1 }, 
-            { type: 'summary', text: 'Outages', border: 'top', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [
-                { day: -13, status: 2, items: [
-                    { type: 1, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 2, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 1, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -2, status: 1, items: [
-                    { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: undefined },
-                ]},
-            ]},
             // { type: 'reserve', lines: 1 }, 
             { type: 'header', text: 'Work Orders', drawDates: false },
             { type: 'item', text: 'Installation', itemType: timeline.itemType.workOrder, items: [
@@ -493,7 +496,23 @@ Timeline.prototype = function() {
             }).translate(0.5, 0.5);
     };
 
-    timeline.drawText = function(text, x, y, font) {
+    timeline.drawText = function(text, x, y, font, align, block) {
+
+
+        // TODO: clean this method up
+
+
+        var alignThis = function(align, x, dim) {
+            switch(align) {
+                case timeline.textAlign.middle:
+                    return x;
+                case timeline.textAlign.right:
+                    return x - d.w/2;
+                default:
+                    return x + d.w/2; // left
+            }
+        };
+
         var f = font ? font : {
             fontFamily: 'Arial',
             fontColor: '#000000',
@@ -503,18 +522,46 @@ Timeline.prototype = function() {
 
         var d = text.dim(f.fontSize + ' ' + f.fontFamily);
 
-        // timeline.paper.text(x + d.w/2, y + d.h/2, text).attr({
-        //     'font-family': f.fontFamily,
-        //     'font-size': f.fontSize,
-        //     'font-weight': f.fontBold === true ? 'bold' : 'normal',
-        //     'fill': f.fontColor
-        // });
-        return timeline.paper.text(x + d.w/2, y, text).attr({
+        x = alignThis(align, x, d);
+
+        // if (block) {
+        //     block.padding = block.padding ? block.padding : 2;
+        //     timeline.drawRect(x - block.padding, y, d.w + (block.padding * 2), d.h + (block.padding * 2), 0, block.color, 1, block.color);
+
+        // }
+
+        var el = timeline.paper.text(x, y, text).attr({
             'font-family': f.fontFamily,
             'font-size': f.fontSize,
             'font-weight': f.fontBold === true ? 'bold' : 'normal',
-            'fill': f.fontColor
+            'fill': f.fontColor,
+            'background-color': '#ff0000',
+            // 'opacity': 0,
         });
+
+        var box = el.getBBox();
+
+// cx: 39.5
+// cy: 205.5
+// height: 16.34375
+// toString: function x_y_w_h() {
+// width: 69
+// x: 5
+// x2: 74
+// y: 197.328125
+// y2: 213.671875
+// __proto__: Object                
+
+
+        if (block) {
+            block.padding = block.padding ? block.padding : 2;
+            timeline.drawRect(box.x - 3, box.y, box.width + 6, box.height - 1, 0, block.color, 1, block.color);
+        }
+
+        el.toFront();
+
+        return el;
+
 
     };
 
@@ -554,6 +601,26 @@ Timeline.prototype = function() {
                 });
 
 
+
+                if (item.status) {
+
+                    var box = el.getBBox();
+
+                    var status = timeline.lookupStatus(item.status, item.itemType);
+
+                    var font = jQuery.extend({}, defaults.fonts.item);
+
+                    font.fontColor = status.stroke;
+                    font.fontSize = '10px';
+
+                    timeline.drawText(status.text, box.x2 + 8, y, font, timeline.textAlign.left, { color: status.color, padding: 1 });
+
+                }
+
+
+
+
+
                 y = start + defaults.lineHeight;
 
                 timeline.drawLine(0, y, defaults.canvas.width, y, defaults.lineColor);
@@ -582,21 +649,40 @@ Timeline.prototype = function() {
                 break;
             }
             case 'balance': {
+                    var x = defaults.canvas.width - ((defaults.days - 1) * defaults.cellWidth), 
+                        w = defaults.canvas.width - x,
+                        h = (defaults.lineHeight * item.lines) - 20;
+
+                    // draw account summary
+
+                    var asw = defaults.canvas.width - defaults.margin.left - w,
+                        ash = h, asc = asw/10,
+                        asx = asc;
+
+
+
+
                     var text = ['Not Yet Due', 'Due Now', 'Past Due', 'Total Balance'];
 
                     y += 5;
 
+                    var blah = 10.00;
+
                     for (var i = 0; i < text.length; i++) {
-                        timeline.drawText(text[i], defaults.margin.left + 20, y, defaults.fonts.balance);
+                        
+                        blah *= 10;
+                        timeline.drawText(text[i], asx, y, defaults.fonts.balance);
+                        
+                        timeline.drawText(blah.toString(), asx * 8, y, defaults.fonts.balance, timeline.textAlign.right);
+
+                        if (i !== text.length - 1) timeline.drawLine(asx - 2, y + 10, (asx * 8) + 2, y + 10, i < text.length - 2 ? '#eee' : '#DFE0E0', 1);
+
                         y += timeline.defaults.lineHeight - 5;
                     }
 
 
 
 
-                    var x = defaults.canvas.width - ((defaults.days - 1) * defaults.cellWidth), 
-                        w = defaults.canvas.width - x,
-                        h = (defaults.lineHeight * item.lines) - 20;
 
                     y = start + 10;
 

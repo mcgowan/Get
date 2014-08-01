@@ -1413,11 +1413,51 @@ License: You must have a valid license purchased only from themeforest(the above
  				<div class="col-md-8 col-sm-8">
 
 					<!-- BEGIN PORTLET-->
-					<div class="portlet solid bordered grey-cararra" ng-controller="TimelineCtl">
+					<div class="timeline portlet solid bordered grey-cararra" ng-controller="TimelineCtl">
+
+						<div class="timeline-settings dropdown-menu opensleft" ng-style="{top: style.pos.y + 'px', left:style.pos.x + 'px', display:style.display}" app-click-outside app-esc>
+							<div class="timeline-settings-content">
+
+								<form class="form-horizontal" role="form">
+								  <div class="form-group">
+								    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+								    <div class="col-sm-10">
+										<select class="form-control">
+										  <option>1</option>
+										  <option>2</option>
+										  <option>3</option>
+										  <option>4</option>
+										  <option>5</option>
+										</select>								    
+									</div>
+								  </div>
+								  <div class="form-group">
+								    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+								    <div class="col-sm-10">
+								      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <div class="col-sm-offset-2 col-sm-10">
+								      <div class="checkbox">
+								        <label>
+								          <input type="checkbox"> Remember me
+								        </label>
+								      </div>
+								    </div>
+								  </div>
+								</form>
+
+
+							</div>
+<!-- <div class="daterangepicker_end_input"><label for="daterangepicker_end">To</label><input class="input-mini" type="text" name="daterangepicker_end" value="" disabled="disabled"></div> -->
+<button class="applyBtn btn btn-sm blue" ng-click="apply()">Apply</button>
+<button class="cancelBtn btn btn-sm default" ng-click="cancel()">Cancel</button>
+						</div>
 
 						<div class="portlet-title timeline-title">
 							<div class="timeline-caption">
-								<i class="fa fa-calendar-o"></i> Customer Status Timeline
+								<i class="fa fa-calendar-o" style="cursor:pointer" ng-click="show()"></i> Customer Status Timeline
 							</div>
 							<div class="tools timeline-tools">
 								<ul class="timeline-dropdown">

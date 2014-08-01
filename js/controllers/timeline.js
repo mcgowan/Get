@@ -18,5 +18,28 @@ App.controller('TimelineCtl', function TimelineCtl($rootScope, $scope) {
 		$scope.dateRange = getDateRangeText(days);
 	};
 
+	$scope.show = function() {
+		$scope.style = { pos: { x: 10, y: 47 }, display: 'block' };
+	};
+
+	$scope.apply = function() {
+		// TODO: apply settings
+		$scope.resize();
+
+
+		$scope.cancel();
+	};
+
+	$scope.cancel = function() {
+		$scope.style = { pos: { x: 0, y: 0 }, display: 'none' };
+	};
+
+	$scope.hide = function() {
+		$scope.$apply(function(){
+			// $scope.style = { pos: { x: 0, y: 0 }, display: 'none' };
+			$scope.cancel();
+		});
+	};
+
     $scope.init();
 });
