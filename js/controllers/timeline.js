@@ -1,18 +1,33 @@
 App.controller('TimelineCtl', function TimelineCtl($rootScope, $scope) {
+
     var getDateRangeText = function(days) {
     	return moment().subtract('days', days).format('MMMM D, YYYY').toUpperCase() + ' - ' + moment().format('MMMM D, YYYY').toUpperCase();
     };
 
+    var getParams = function() {
+    	return { 
+    		customerIndex: $scope.customerIndex,
+    		showAccountInfo: $scope.showAccountInfo,
+    		showProductStatus: $scope.showProductStatus,
+    	}
+    };
+
     $scope.init = function() {
+		$scope.customerIndex = 1;
+		$scope.showAccountInfo = true;
+		$scope.showProductStatus = false;
+
 		$scope.timeline = new Timeline($rootScope, 'customer_timeline');
-		$scope.timeline.draw();
+		$scope.timeline.draw(getParams());
+
+	    $scope.selector = '#timelineSettingsCtl';
 
 		var days = $scope.timeline.getDays();
 		$scope.dateRange = getDateRangeText(days);
     };
 
 	$scope.resize = function(event) {
-		$scope.timeline.redraw();
+		$scope.timeline.redraw(getParams());
 
 		var days = $scope.timeline.getDays();
 		$scope.dateRange = getDateRangeText(days);

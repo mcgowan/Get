@@ -31,299 +31,388 @@ Timeline.prototype = function() {
 
     timeline.textAlign = Object.freeze({ left: {}, middle: {}, right: {} });
 
-    timeline.data = {
-        items: [ 
-            { type: 'header', text: 'Account Balance', drawDates: true },
-            { type: 'balance', lines: 4, notDue: 0, due: 0, pastDue: 0, balance: { min: 0, max: 500 }, items: [
-                {   day:    -99 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
-                {   day:    -98 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
-                {   day:    -97 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
-                {   day:    -96 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
-                {   day:    -95 , b1:   100 , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -94 , b1:   100 , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -93 , b1:   100 , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -92 , b1:   100 , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -91 , b1:   100 , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -90 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -89 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -88 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -87 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -86 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -85 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -84 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -83 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -82 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -81 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -80 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -79 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -78 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -77 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -76 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -75 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -74 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -73 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -72 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -71 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -70 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -69 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -68 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -67 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -66 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
-                {   day:    -65 , b1:   100 , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  300 },
-                {   day:    -64 , b1:   100 , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  300 },
-                {   day:    -63 , b1:   100 , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  300 },
-                {   day:    -62 , b1:   100 , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  300 },
-                {   day:    -61 , b1:   100 , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  300 },
-                {   day:    -60 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -59 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -58 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -57 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -56 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -55 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -54 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -53 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -52 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -51 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -50 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -49 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -48 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -47 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -46 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -45 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -44 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -43 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -42 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -41 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -40 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -39 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -38 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -37 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -36 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
-                {   day:    -35 , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  400 },
-                {   day:    -34 , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  400 },
-                {   day:    -33 , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  400 },
-                {   day:    -32 , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  400 },
-                {   day:    -31 , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  400 },
-                {   day:    -30 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -29 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -28 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -27 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -26 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -25 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -24 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -23 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -22 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -21 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -20 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -19 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -18 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -17 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -16 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -15 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -14 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -13 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -12 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -11 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -10 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -9  , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -8  , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -7  , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -6  , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -5  , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
-                {   day:    -4  , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  500 },
-                {   day:    -3  , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  500 },
-                {   day:    -2  , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  500 },
-                {   day:    -1  , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  500 },
-                {   day:    0   , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  500 },
-            ]},
-            { type: 'summary', text: 'Outages', border: 'top', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [
-                { day: -13, status: 2, items: [
-                    { type: 1, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 2, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 1, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+    timeline.customers = [{
+            items: [ 
+                { type: 'header', text: 'Account Balance', drawDates: true },
+                { type: 'balance', lines: 4, notDue: 0, due: 0, pastDue: 0, balance: { min: 0, max: 500 }, items: [
+                    {   day:    -99 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
+                    {   day:    -98 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
+                    {   day:    -97 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
+                    {   day:    -96 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
+                    {   day:    -95 , b1:   100 , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -94 , b1:   100 , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -93 , b1:   100 , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -92 , b1:   100 , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -91 , b1:   100 , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -90 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -89 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -88 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -87 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -86 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -85 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -84 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -83 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -82 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -81 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -80 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -79 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -78 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -77 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -76 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -75 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -74 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -73 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -72 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -71 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -70 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -69 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -68 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -67 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -66 , b1:   0   , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  200 },
+                    {   day:    -65 , b1:   100 , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  300 },
+                    {   day:    -64 , b1:   100 , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  300 },
+                    {   day:    -63 , b1:   100 , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  300 },
+                    {   day:    -62 , b1:   100 , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  300 },
+                    {   day:    -61 , b1:   100 , b2:  100 , b3: 100 , b4:   0   , b5:   0   , balance:  300 },
+                    {   day:    -60 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -59 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -58 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -57 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -56 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -55 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -54 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -53 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -52 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -51 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -50 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -49 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -48 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -47 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -46 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -45 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -44 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -43 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -42 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -41 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -40 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -39 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -38 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -37 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -36 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  300 },
+                    {   day:    -35 , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  400 },
+                    {   day:    -34 , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  400 },
+                    {   day:    -33 , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  400 },
+                    {   day:    -32 , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  400 },
+                    {   day:    -31 , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   0   , balance:  400 },
+                    {   day:    -30 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -29 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -28 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -27 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -26 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -25 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -24 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -23 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -22 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -21 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -20 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -19 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -18 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -17 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -16 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -15 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -14 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -13 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -12 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -11 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -10 , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -9  , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -8  , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -7  , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -6  , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -5  , b1:   0   , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  400 },
+                    {   day:    -4  , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  500 },
+                    {   day:    -3  , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  500 },
+                    {   day:    -2  , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  500 },
+                    {   day:    -1  , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  500 },
+                    {   day:    0   , b1:   100 , b2:  100 , b3: 100 , b4:   100 , b5:   100 , balance:  500 },
                 ]},
-                { day: -2, status: 1, items: [
-                    { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: undefined },
+                { type: 'summary', text: 'Outages', border: 'top', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [
+                    { day: -13, status: 2, items: [
+                        { type: 1, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { type: 2, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { type: 1, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -2, status: 1, items: [
+                        { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: undefined },
+                    ]},
                 ]},
-            ]},
-            { type: 'header', text: 'Hardware Products', drawDates: false },
-            { type: 'item', text: 'Decoder', status: 2, itemType: timeline.itemType.product, items: [ 
-                { day: -180, status: 1 },
-                { day: -5, status: 2, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 5228, status: 2, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 5228, status: 3, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { type: 'header', text: 'Hardware Products', drawDates: false },
+                { type: 'item', text: 'Decoder', status: 2, itemType: timeline.itemType.product, items: [ 
+                    { day: -180, status: 1 },
+                    { day: -5, status: 2, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { type: 5228, status: 2, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { type: 5228, status: 3, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                ] },
+                { type: 'item', text: 'HD Decoder', status: 3, itemType: timeline.itemType.product, items: [ 
+                    { day: -8, status: 1 },
+                    { day: -5, status: 3, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                ] },
+                { type: 'item', text: 'Smartcard', status: 1, itemType: timeline.itemType.product, items: [ 
+                    { day: -180, status: 1 },
+                    { day: -22, status: 1, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -12, status: 1, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -5, status: 7, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -4, status: 6, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -3, status: 1, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -2, status: 1, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                ] },
+                { type: 'header', text: 'Software Products', drawDates: false },
+                { type: 'item', text: 'TV Basic', status: 1, itemType: timeline.itemType.product, items: [ 
+                    { day: -180, status: 1 },
+                ] },
+                { type: 'item', text: 'TV Gold Package', itemType: timeline.itemType.product, items: [ 
+                    { day: -180, status: 1 },
+                    { day: -10, status: 2, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -9, status: 5, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -4, status: 5, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -3, status: 0 },
+                ] },
+                { type: 'item', text: 'TV Silver Package', status: 1, itemType: timeline.itemType.product, items: [ 
+                    { day: -10, status: 4, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -9, status: 1, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                ] },
+                { type: 'item', text: 'VoIP Basic', status: 2, itemType: timeline.itemType.product, items: [ 
+                    { day: -10, status: 1, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -7, status: 2, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -6, status: 2, items: [
+                        { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -5, status: 0},
+                ] },
+                { type: 'summary', text: 'Contacts', border: 'top', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [
+                    { day: -10, status: 3, items: [
+                        { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { id: 873465, type: 2, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { id: 873465, type: 3, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -5, status: 3, items: [
+                        { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -4, status: 1, items: [
+                        { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { id: 873465, type: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
                 ]},
-            ] },
-            { type: 'item', text: 'HD Decoder', status: 3, itemType: timeline.itemType.product, items: [ 
-                { day: -8, status: 1 },
-                { day: -5, status: 3, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 02, 15, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 13, 05, 54, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                // { type: 'reserve', lines: 1 }, 
+                { type: 'header', text: 'Work Orders', drawDates: false },
+                { type: 'item', text: 'Installation', itemType: timeline.itemType.workOrder, items: [
+                    { day: -16, status: 2, items: [
+                        { id: 873465, type: 1, status: 1, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                        { id: 873465, type: 1, status: 2, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                    ]},
+                    { day: -12, status: 3, items: [
+                        { id: 873465, type: 1, status: 3, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -11, status: 5, items: [
+                        { id: 873465, type: 1, status: 5, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                    ]},
+                    { day: -10, status: 3, items: [
+                        { id: 873465, type: 1, status: 2, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                        { id: 873465, type: 1, status: 3, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -9, status: 0 },
                 ]},
-            ] },
-            { type: 'item', text: 'Smartcard', status: 1, itemType: timeline.itemType.product, items: [ 
-                { day: -180, status: 1 },
-                { day: -22, status: 1, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { type: 'item', text: 'Trouble Call', itemType: timeline.itemType.workOrder, items: [
+                    { day: -5, status: 1, items: [
+                        { id: 873465, type: 3, status: 1, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                    ]},
+                    { day: -4, status: 2, items: [
+                        { id: 873465, type: 3, status: 2, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
+                    ]},
+                    { day: -3, status: 3, items: [
+                        { id: 873465, type: 3, status: 3, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -2, status: 0 },
                 ]},
-                { day: -12, status: 1, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                { type: 'header', text: 'Shipping Orders', drawDates: false },
+                { type: 'item', text: 'Customer Shipping Order', border: 'both', itemType: timeline.itemType.shippingOrder, items: [
+                    { day: -8, status: 4, items: [
+                        { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                        { id: 873465, type: 1, status: 4, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -6, status: 5, items: [
+                        { id: 873465, type: 1, status: 5, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
+                    { day: -2, status: 6, items: [
+                        { id: 873465, type: 1, status: 6, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
+                    ]},
                 ]},
-                { day: -5, status: 7, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -4, status: 6, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -3, status: 1, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -2, status: 1, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-            ] },
-            { type: 'header', text: 'Software Products', drawDates: false },
-            { type: 'item', text: 'TV Basic', status: 1, itemType: timeline.itemType.product, items: [ 
-                { day: -180, status: 1 },
-            ] },
-            { type: 'item', text: 'TV Gold Package', itemType: timeline.itemType.product, items: [ 
-                { day: -180, status: 1 },
-                { day: -10, status: 2, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -9, status: 5, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -4, status: 5, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -3, status: 0 },
-            ] },
-            { type: 'item', text: 'TV Silver Package', status: 1, itemType: timeline.itemType.product, items: [ 
-                { day: -10, status: 4, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -9, status: 1, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-            ] },
-            { type: 'item', text: 'VoIP Basic', status: 2, itemType: timeline.itemType.product, items: [ 
-                { day: -10, status: 1, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -7, status: 2, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -6, status: 2, items: [
-                    { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -5, status: 0},
-            ] },
+            ],
+        },
+        {
+            items: [ 
+                { type: 'header', text: 'Account Balance', drawDates: true },
+                { type: 'balance', lines: 4, notDue: 0, due: 0, pastDue: 0, balance: { min: 0, max: 120 }, items: [
+{   day:    -99 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -98 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -97 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -96 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -95 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -94 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -93 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -92 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -91 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -90 ,b1:    0   ,b2:    120 ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -89 ,b1:    0   ,b2:    120 ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -88 ,b1:    0   ,b2:    120 ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -87 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -86 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -85 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -84 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -83 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -82 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -81 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -80 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -79 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -78 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -77 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -76 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -75 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -74 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -73 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -72 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -71 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -70 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -69 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -68 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -67 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -66 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -65 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -64 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -63 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -62 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -61 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -60 ,b1:    0   ,b2:    120 ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -59 ,b1:    0   ,b2:    120 ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -58 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -57 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -56 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -55 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -54 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -53 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -52 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -51 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -50 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -49 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -48 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -47 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -46 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -45 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -44 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -43 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -42 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -41 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -40 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -39 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -38 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -37 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -36 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -35 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -34 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -33 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -32 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -31 ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -30 ,b1:    0   ,b2:    120 ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -29 ,b1:    0   ,b2:    120 ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -28 ,b1:    0   ,b2:    120 ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -27 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -26 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -25 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -24 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -23 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -22 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -21 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -20 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -19 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -18 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -17 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -16 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -15 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -14 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -13 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -12 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -11 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -10 ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -9  ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -8  ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -7  ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -6  ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -5  ,b1:    0   ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  0   },
+{   day:    -4  ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -3  ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -2  ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    -1  ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
+{   day:    0   ,b1:    120 ,b2:    0   ,b3:    0   ,b4:    0   ,b5:    0   , balance:  120 },
 
-        // contactStatus: [
-        //     { id: 1, color: '#F46D43', stroke: '#fff', text: 'Active' },
-        //     { id: 2, color: '#D9EF8B', stroke: '#000', text: 'Cancelled' },
-        //     { id: 3, color: '#A6D96A', stroke: '#fff', text: 'Completed' },
-        // ],
-        // contactTypes: [
-        //     { id: 1, text: 'Telephone' },
-        //     { id: 2, text: 'Email' },
-        //     { id: 3, text: 'Visit' },
-        //     { id: 4, text: 'SMS' },
-        //     { id: 5, text: 'Telefax' },
-        //     { id: 6, text: 'Letter' },
-        //     { id: 7, text: 'Other' },
-        // ],
-
-            // { type: 'reserve', lines: 1 }, 
-            { type: 'summary', text: 'Contacts', border: 'top', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [
-                { day: -10, status: 3, items: [
-                    { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, type: 2, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, type: 3, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                 ]},
-                { day: -5, status: 3, items: [
-                    { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -4, status: 1, items: [
-                    { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, type: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-            ]},
-            // { type: 'reserve', lines: 1 }, 
-            // { type: 'reserve', lines: 1 }, 
-            { type: 'header', text: 'Work Orders', drawDates: false },
-            { type: 'item', text: 'Installation', itemType: timeline.itemType.workOrder, items: [
-                { day: -16, status: 2, items: [
-                    { id: 873465, type: 1, status: 1, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
-                    { id: 873465, type: 1, status: 2, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
-                ]},
-                { day: -12, status: 3, items: [
-                    { id: 873465, type: 1, status: 3, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -11, status: 5, items: [
-                    { id: 873465, type: 1, status: 5, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
-                ]},
-                { day: -10, status: 3, items: [
-                    { id: 873465, type: 1, status: 2, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
-                    { id: 873465, type: 1, status: 3, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -9, status: 0 },
-            ]},
-            { type: 'item', text: 'Trouble Call', itemType: timeline.itemType.workOrder, items: [
-                { day: -5, status: 1, items: [
-                    { id: 873465, type: 3, status: 1, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
-                ]},
-                { day: -4, status: 2, items: [
-                    { id: 873465, type: 3, status: 2, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
-                ]},
-                { day: -3, status: 3, items: [
-                    { id: 873465, type: 3, status: 3, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -2, status: 0 },
-            ]},
-
-        // shippingOrderStatus: [
-        //     { id: 1, color: '#F46D43', stroke: '#fff', text: 'New Order' },
-        //     { id: 2, color: '#D9EF8B', stroke: '#000', text: 'Rejected' },
-        //     { id: 3, color: '#D9EF8B', stroke: '#000', text: 'Cancelled' },
-        //     { id: 4, color: '#FEE08B', stroke: '#000', text: 'Approved' },
-        //     { id: 5, color: '#FFFFBF', stroke: '#000', text: 'Shipped' },
-        //     { id: 6, color: '#A6D96A', stroke: '#fff', text: 'Delivered' },
-        // ],
-        // shippingOrderTypes:  [
-        //     { id: 1, text: 'Customer Shipping Order' },
-        //     { id: 2, text: 'Dealer Shipping Order' },
-        //     { id: 3, text: 'Swop Shipping Order' },
-        // ],
-
-            { type: 'header', text: 'Shipping Orders', drawDates: false },
-            { type: 'item', text: 'Customer Shipping Order', border: 'both', itemType: timeline.itemType.shippingOrder, items: [
-                { day: -8, status: 4, items: [
-                    { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                    { id: 873465, type: 1, status: 4, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -6, status: 5, items: [
-                    { id: 873465, type: 1, status: 5, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-                { day: -2, status: 6, items: [
-                    { id: 873465, type: 1, status: 6, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
-                ]},
-            ]},
-
-        ],
-    };
+                { type: 'header', text: 'Hardware Products', drawDates: false },
+                { type: 'item', text: 'HD Decoder', status: 1, itemType: timeline.itemType.product, items: [ 
+                    { day: -180, status: 1 },
+                ] },
+                { type: 'item', text: 'Smartcard', status: 1, itemType: timeline.itemType.product, items: [ 
+                    { day: -180, status: 1 },
+                ] },
+                { type: 'header', text: 'Software Products', drawDates: false },
+                { type: 'item', text: 'TV Basic', status: 1, itemType: timeline.itemType.product, items: [ 
+                    { day: -180, status: 1 },
+                ] },
+                { type: 'item', text: 'TV Gold Package', status: 1, itemType: timeline.itemType.product, items: [ 
+                    { day: -180, status: 1 },
+                ] },
+            ]
+        },
+    ];
 
     timeline.defaults = {
         margin: { top: 18, left: 5 },
@@ -555,7 +644,7 @@ Timeline.prototype = function() {
 
         if (block) {
             block.padding = block.padding ? block.padding : 2;
-            timeline.drawRect(box.x - 3, box.y, box.width + 6, box.height - 1, 0, block.color, 1, block.color);
+            timeline.drawRect(box.x - 3, box.y, box.width + 6, box.height, 0, block.color, 1, block.color);
         }
 
         el.toFront();
@@ -602,7 +691,7 @@ Timeline.prototype = function() {
 
 
 
-                if (item.status) {
+                if (timeline.showProductStatus && item.status) {
 
                     var box = el.getBBox();
 
@@ -611,7 +700,7 @@ Timeline.prototype = function() {
                     var font = jQuery.extend({}, defaults.fonts.item);
 
                     font.fontColor = status.stroke;
-                    font.fontSize = '10px';
+                    font.fontSize = '11px';
 
                     timeline.drawText(status.text, box.x2 + 8, y, font, timeline.textAlign.left, { color: status.color, padding: 1 });
 
@@ -655,33 +744,29 @@ Timeline.prototype = function() {
 
                     // draw account summary
 
-                    var asw = defaults.canvas.width - defaults.margin.left - w,
-                        ash = h, asc = asw/10,
-                        asx = asc;
+                    if (timeline.showAccountInfo) {
+                        var asw = defaults.canvas.width - defaults.margin.left - w,
+                            ash = h, asc = asw/10,
+                            asx = asc;
 
+                        var text = ['Not Yet Due', 'Due Now', 'Past Due', 'Total Balance'];
 
+                        y += 5;
 
+                        var blah = 10.00;
 
-                    var text = ['Not Yet Due', 'Due Now', 'Past Due', 'Total Balance'];
+                        for (var i = 0; i < text.length; i++) {
+                            
+                            blah *= 10;
+                            timeline.drawText(text[i], asx, y, defaults.fonts.balance);
+                            
+                            timeline.drawText(blah.toString(), asx * 8, y, defaults.fonts.balance, timeline.textAlign.right);
 
-                    y += 5;
+                            if (i !== text.length - 1) timeline.drawLine(asx - 2, y + 10, (asx * 8) + 2, y + 10, i < text.length - 2 ? '#eee' : '#DFE0E0', 1);
 
-                    var blah = 10.00;
-
-                    for (var i = 0; i < text.length; i++) {
-                        
-                        blah *= 10;
-                        timeline.drawText(text[i], asx, y, defaults.fonts.balance);
-                        
-                        timeline.drawText(blah.toString(), asx * 8, y, defaults.fonts.balance, timeline.textAlign.right);
-
-                        if (i !== text.length - 1) timeline.drawLine(asx - 2, y + 10, (asx * 8) + 2, y + 10, i < text.length - 2 ? '#eee' : '#DFE0E0', 1);
-
-                        y += timeline.defaults.lineHeight - 5;
+                            y += timeline.defaults.lineHeight - 5;
+                        }
                     }
-
-
-
 
 
                     y = start + 10;
@@ -726,7 +811,7 @@ Timeline.prototype = function() {
                     });
 
                     // timeline.drawBarItems = function(defaults, item, bottom, left, height) {
-                    timeline.drawBarItems(defaults, item, y + h, x, h);
+                    timeline.drawBarItems(defaults, item, y + h, x, h, b);
 
                 break;
             }
@@ -833,7 +918,7 @@ Timeline.prototype = function() {
         }
     };
 
-    timeline.drawBarItems = function(defaults, item, bottom, left, height) {
+    timeline.drawBarItems = function(defaults, item, bottom, left, height, maxY) {
         var getBucket = function(id) {
             return _.chain(timeline.defaults.accountBuckets)
                 .filter(function(bucket) {
@@ -848,35 +933,56 @@ Timeline.prototype = function() {
             var day = defaults.days * -1 + i; 
             var data = timeline.getItemData(item.items, day, timeline.matchType.day);
             if (data) {
-                var f = height/item.balance.max,
+                
+                
+
+                var f = (item.balance.max/maxY) * 100, //max bal. as a percent of max y
+                // var f = height/item.balance.max,
+
+
                     y = bottom, h = 0, p = 9, w = 7;
                 for (var prop in data) {
                     if (prop.substr(0, 1) === 'b') {
-                        var b = getBucket(parseInt(prop.substr(1, 1)));
-                        if (b) {
-                            h = data[prop] * f;
+                        if (data[prop] > 0) {
+                            var b = getBucket(parseInt(prop.substr(1, 1)));
+                            if (b) {
+                                
+                                // maxY/100
 
-                            var s = timeline.paper.set();
-                            s.push(
-                                timeline.drawRect(x + (p/2), y - h, defaults.cellWidth - ((p/2) * 2), h, 0, b.color, 1, b.color).attr({ 'opacity': 0 }),
-                                timeline.drawRect(x + p, y - h, w, h, 0, b.color, 1, b.color)
-                            );
-                            
-                            _.each(s.items, function(item){
-                                item.tip = '<table>' +
-                                    '<tr class="tip-table-tr"><td>' + b.text + ':</td><td class="tip-table-td-numeric">' + data[prop] + '</td><tr>' + 
-                                    '<tr class="tip-table-tr"><td >Balance:</td><td class="tip-table-td-numeric">' + data.balance + '</td></tr>' + 
-                                    '</table>';
-                            });
+                                if (data[prop] === item.balance.max) {
+                                    // h = data[prop] * f;
+                                    h = height/100 * f;
+                                } else {
+                                    // calc percentage of balance
+                                }
 
-                            s.hover(function(){
-                                showTooltip({ text: this.tip, offset: { x: 0, y: -60 } });
-                            }, hideTooltip);
-                            s.mousemove(function(){
-                                showTooltip({ text: this.tip, offset: { x: 0, y: -60 } });
-                            });
 
-                            y -= h;
+                                // h = data[prop] * f;
+
+
+
+                                var s = timeline.paper.set();
+                                s.push(
+                                    timeline.drawRect(x + (p/2), y - h, defaults.cellWidth - ((p/2) * 2), h, 0, b.color, 1, b.color).attr({ 'opacity': 0 }),
+                                    timeline.drawRect(x + p, y - h, w, h, 0, b.color, 1, b.color)
+                                );
+                                
+                                _.each(s.items, function(item){
+                                    item.tip = '<table>' +
+                                        '<tr class="tip-table-tr"><td>' + b.text + ':</td><td class="tip-table-td-numeric">' + data[prop] + '</td><tr>' + 
+                                        '<tr class="tip-table-tr"><td >Balance:</td><td class="tip-table-td-numeric">' + data.balance + '</td></tr>' + 
+                                        '</table>';
+                                });
+
+                                s.hover(function(){
+                                    showTooltip({ text: this.tip, offset: { x: 0, y: -60 } });
+                                }, hideTooltip);
+                                s.mousemove(function(){
+                                    showTooltip({ text: this.tip, offset: { x: 0, y: -60 } });
+                                });
+
+                                y -= h;
+                            }
                         }
                     }
                 }
@@ -1055,8 +1161,12 @@ Timeline.prototype = function() {
         }
     };
 
-    timeline.draw = function(scope, canvas) {
-	    var getLineCount = function() {
+    timeline.draw = function(scope, canvas, params) {
+        timeline.data = timeline.customers[params.customerIndex];
+        timeline.showAccountInfo = params.showAccountInfo;
+        timeline.showProductStatus = params.showProductStatus;
+	    
+        var getLineCount = function() {
             var result = 0;
             for (var i = 0; i < timeline.data.items.length; i++) {
                 result = timeline.data.items[i].lines ? result + timeline.data.items[i].lines : result + 1;
@@ -1105,13 +1215,13 @@ Timeline.prototype = function() {
         }
     };
 
-    var draw = function() {
-    	timeline.draw(this.scope, this.canvas);
+    var draw = function(params) {
+        timeline.draw(this.scope, this.canvas, params);
     };
 
-    var redraw = function() {
+    var redraw = function(params) {
         hidePopup();
-        timeline.draw(this.scope, this.canvas);
+        timeline.draw(this.scope, this.canvas, params);
     };
 
     var showTooltip = function(params) {
