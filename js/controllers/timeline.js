@@ -14,7 +14,7 @@ App.controller('TimelineCtl', function TimelineCtl($rootScope, $scope) {
     };
 
     $scope.init = function() {
-		$scope.customerIndex = 1;
+		$scope.customerIndex = 0;
 		$scope.balanceLines = 4;
 		$scope.showAccountInfo = true;
 		$scope.showProductStatus = false;

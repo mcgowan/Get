@@ -12,31 +12,39 @@ Timeline.prototype = function() {
     timeline.itemType = Object.freeze({ 
         contact: { 
             color: '#89AFD1',
+            icon: '\uf098',
             toString: function(){ return 'contact'; },
         }, product: {
             color: '#44B6AE',
+            icon: '\uf1b3',
             toString: function(){ return 'product'; },
+        }, balance: {
+            color: '#44B6AE',
+            icon: '\uf19c',
+            toString: function(){ return 'balance'; },
         }, shippingOrder: {
             color: '#AA9EC1',
+            icon: '\uf0d1',
             toString: function(){ return 'shippingOrder'; },
         }, workOrder: {
             color: '#578EBE',
+            icon: '\uf0ad',
             toString: function(){ return 'workOrder'; },
         }, outage: {
             color: '#EB8B8B',
+            icon: '\uf071',
             toString: function(){ return 'outage'; },
         }});
 
     timeline.matchType = Object.freeze({ range: {}, day: {} });
-
     timeline.textAlign = Object.freeze({ left: {}, middle: {}, right: {} });
 
     timeline.customers = [{
             items: [ 
-                { type: 'header', text: 'Account Balance', drawDates: true },
-                // {   day:    0   ,   b1: 129.99  ,   b2: 129.99  ,   b3: 129.99  ,   b4: 129.99  ,   b5: 129.99  ,   balance:    649.95  },                    
+                { type: 'header', icon: timeline.itemType.balance.icon, text: 'Account Balance', drawDates: true },
+                { type: 'reserve', lines: .5 }, 
 
-                { type: 'balance', lines: 4, notDue: 129.99, due: 129.99, pastDue: 389.97, balance: { min: 0, max: 649.95 }, items: [
+                { type: 'balance', itemType: timeline.itemType.balance, lines: 4, notDue: 129.99, due: 129.99, pastDue: 389.97, balance: { min: 0, max: 649.95 }, items: [
                     // {   day:    -99 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
                     // {   day:    -98 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
                     // {   day:    -97 , b1:   0   , b2:  100 , b3: 0   , b4:   0   , b5:   0   , balance:  100 },
@@ -239,7 +247,10 @@ Timeline.prototype = function() {
 {   day:    -1  ,   b1: 129.99  ,   b2: 129.99  ,   b3: 129.99  ,   b4: 129.99  ,   b5: 129.99  ,   balance:    649.95  },
 {   day:    0   ,   b1: 129.99  ,   b2: 129.99  ,   b3: 129.99  ,   b4: 129.99  ,   b5: 129.99  ,   balance:    649.95  },                    
                 ]},
-                { type: 'summary', text: 'Outages', border: 'top', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [
+
+                { type: 'reserve', lines: .5 }, 
+
+                { type: 'summary', icon: timeline.itemType.outage.icon, text: 'Outages', border: 'both', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [
                     { day: -13, status: 2, items: [
                         { type: 1, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
                         { type: 2, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
@@ -249,7 +260,10 @@ Timeline.prototype = function() {
                         { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: undefined },
                     ]},
                 ]},
-                { type: 'header', text: 'Hardware Products', drawDates: false },
+
+                { type: 'reserve', lines: .5 }, 
+
+                { type: 'header', icon: timeline.itemType.product.icon, text: 'Hardware Products', drawDates: false },
                 { type: 'item', text: 'Decoder', status: 2, itemType: timeline.itemType.product, items: [ 
                     { day: -180, status: 1 },
                     { day: -5, status: 2, items: [
@@ -293,7 +307,9 @@ Timeline.prototype = function() {
                         { type: 5228, status: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     ]},
                 ] },
-                { type: 'header', text: 'Software Products', drawDates: false },
+                { type: 'reserve', lines: .5 }, 
+
+                { type: 'header', icon: timeline.itemType.product.icon, text: 'Software Products', drawDates: false },
                 { type: 'item', text: 'TV Basic', status: 1, itemType: timeline.itemType.product, items: [ 
                     { day: -180, status: 1 },
                 ] },
@@ -333,7 +349,8 @@ Timeline.prototype = function() {
                     ]},
                     { day: -5, status: 0},
                 ] },
-                { type: 'summary', text: 'Contacts', border: 'top', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [
+                { type: 'reserve', lines: .5 }, 
+                { type: 'summary', icon: timeline.itemType.contact.icon, text: 'Contacts', border: 'both', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [
                     { day: -10, status: 3, items: [
                         { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                         { id: 873465, type: 2, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
@@ -347,8 +364,9 @@ Timeline.prototype = function() {
                         { id: 873465, type: 1, status: 1, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     ]},
                 ]},
-                // { type: 'reserve', lines: 1 }, 
-                { type: 'header', text: 'Work Orders', drawDates: false },
+                { type: 'reserve', lines: .5 }, 
+
+                { type: 'header', icon: timeline.itemType.workOrder.icon, text: 'Work Orders', drawDates: false },
                 { type: 'item', text: 'Installation', itemType: timeline.itemType.workOrder, items: [
                     { day: -16, status: 2, items: [
                         { id: 873465, type: 1, status: 1, serviceTime: moment([2014, 1, 1, 12, 54, 23, 0]), completedTime: undefined },
@@ -378,7 +396,8 @@ Timeline.prototype = function() {
                     ]},
                     { day: -2, status: 0 },
                 ]},
-                { type: 'header', text: 'Shipping Orders', drawDates: false },
+                { type: 'reserve', lines: .5 }, 
+                { type: 'header', icon: timeline.itemType.shippingOrder.icon, text: 'Shipping Orders', drawDates: false },
                 { type: 'item', text: 'Customer Shipping Order', border: 'both', itemType: timeline.itemType.shippingOrder, items: [
                     { day: -8, status: 4, items: [
                         { id: 873465, type: 1, status: 1, time1: moment([2014, 1, 1, 12, 54, 23, 0]), time2: moment([2014, 1, 1, 12, 54, 23, 0]) },
@@ -519,9 +538,10 @@ Timeline.prototype = function() {
     timeline.defaults = {
         margin: { top: 18, left: 5 },
         days: 14,
-        lineHeight: 25,
-        lineColor: '#eeeeee',
+        lineHeight: 26,
+        lineColor: '#eee',
         // lineColor: '#CCCCCC',
+        // lineColor: '#000',
         
         cellWidth: 25,
         maxDetailWidth: 250,
@@ -529,7 +549,7 @@ Timeline.prototype = function() {
         fonts: {
             header: {
                 fontFamily: 'Open Sans',
-                fontColor: '#000000',
+                fontColor: '#505050',
                 fontSize: '14px',
                 fontBold: true,
             },
@@ -541,7 +561,7 @@ Timeline.prototype = function() {
             },
             summary: {
                 fontFamily: 'Open Sans',
-                fontColor: '#000000',
+                fontColor: '#505050',
                 fontSize: '14px',
                 fontBold: true,
             },
@@ -775,12 +795,33 @@ Timeline.prototype = function() {
 
         switch(item.type){
             case 'header': {
-                timeline.drawText(item.text, defaults.margin.left, y, defaults.fonts.header);
+                timeline.drawText(item.icon, defaults.margin.left, y, defaults.fonts.header).attr({'font-family': 'FontAwesome'});
+                timeline.drawText(item.text, defaults.margin.left + 16, y, defaults.fonts.header);
 
                 y = start + defaults.lineHeight - 2;
 
-                timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
-                timeline.drawRect(0, y, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
+                // timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
+                timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, '#EDF3F9', 1, '#EDF3F9');
+
+                // timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, '#9CA6AD', 1, '#9CA6AD');
+
+                
+                
+                // timeline.drawRect(0, y, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
+                timeline.drawRect(0, y, defaults.canvas.width, 1, 0, '#505050', 1, '#505050');
+                // timeline.drawRect(0, y, defaults.canvas.width, 1, 0, '#9CA6AD', 1, '#9CA6AD');
+                // timeline.drawRect(0, y, defaults.canvas.width, 1, 0, '#558DC0', 1, '#558DC0');
+                // timeline.drawRect(0, y, defaults.canvas.width, 1, 0, '#88AED3', 1, '#88AED3');
+
+
+                
+
+
+
+
+
+                // timeline.drawLine(0, y - defaults.lineHeight + 2, defaults.canvas.width, y - defaults.lineHeight + 2, '#BFCAD1');
+                // timeline.drawLine(0, y + 2, defaults.canvas.width, y + 2, '#BFCAD1');
 
                 if (item.drawDates) {
                     timeline.drawDates(defaults, y);
@@ -820,11 +861,10 @@ Timeline.prototype = function() {
 
 
 
-
-
                 y = start + defaults.lineHeight;
 
-                timeline.drawLine(0, y, defaults.canvas.width, y, defaults.lineColor);
+                // timeline.drawLine(0, y, defaults.canvas.width, y, defaults.lineColor);
+                timeline.drawLine(0, y, defaults.canvas.width, y, '#fff');
 
                 if (item.items)
                     timeline.drawItems(defaults, item.itemType, getMatchType(item), item, start);
@@ -832,17 +872,36 @@ Timeline.prototype = function() {
                 break;
             }
             case 'summary': {
-                timeline.drawText(item.text, defaults.margin.left, y, defaults.fonts.summary);
+                timeline.drawText(item.icon, defaults.margin.left, y, defaults.fonts.header).attr({'font-family': 'FontAwesome'});
+                timeline.drawText(item.text, defaults.margin.left + 16, y, defaults.fonts.summary);
 
                 y = start + defaults.lineHeight - 2;
 
                 if (!item.border) item.border = 'both';
 
                 if (item.border === 'top' || item.border === 'both' )
-                    timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
+                    // timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
+                    
+
+                    // timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, '#EDF3F9', 1, '#EDF3F9');
+                    timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, '#E3E9EF', 1, '#E3E9EF');
+
+                    // timeline.drawRect(0, y - defaults.lineHeight + 2, defaults.canvas.width, 1, 0, '#88AED3', 1, '#88AED3');
+
+
+                    // timeline.drawLine(0, y - defaults.lineHeight + 2, defaults.canvas.width, y - defaults.lineHeight + 2, '#9CA6AD');
+
 
                 if (item.border === 'bottom' || item.border === 'both' )
-                    timeline.drawRect(0, y + 1, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
+                    // timeline.drawRect(0, y + 1, defaults.canvas.width, 1, 0, defaults.lineColor, 1, defaults.lineColor);
+                    timeline.drawRect(0, y + 1, defaults.canvas.width, 1, 0, '#505050', 1, '#505050');
+                    // timeline.drawRect(0, y + 1, defaults.canvas.width, 1, 0, '#88AED3', 1, '#88AED3');
+
+
+
+
+                    // timeline.drawLine(0, y + 2, defaults.canvas.width, y + 2, '#BFCAD1');
+
 
                 if (item.items)
                     timeline.drawItems(defaults, item.itemType, getMatchType(item), item, start);
@@ -870,7 +929,8 @@ Timeline.prototype = function() {
                             timeline.drawText(text[i], asx, y, defaults.fonts.balance);
                             timeline.drawText(getBalanceAmount(item, i).format(2, 3, ',', '.'), asx * 15, y, defaults.fonts.balance, timeline.textAlign.right);
 
-                            if (i !== text.length - 1) timeline.drawLine(asx - 2, y + 10, (asx * 15) + 2, y + 10, i < text.length - 2 ? '#eee' : '#DFE0E0', 1);
+                            // if (i !== text.length - 1) timeline.drawLine(asx - 2, y + 10, (asx * 15) + 2, y + 10, i < text.length - 2 ? '#eee' : '#DFE0E0', 1);
+                            if (i !== text.length - 1) timeline.drawLine(asx - 2, y + 10, (asx * 15) + 2, y + 10, i < text.length - 2 ? '#fff' : '#eee', 1);
 
                             y += timeline.defaults.lineHeight - 5;
                         }
@@ -894,7 +954,8 @@ Timeline.prototype = function() {
                     
                     for (var i = 1; i < d; i++) {
                         var ly = y + (l * i);
-                        timeline.drawLine(x, ly, defaults.canvas.width, ly, '#eee', 1);
+                        // timeline.drawLine(x, ly, defaults.canvas.width, ly, '#eee', 1);
+                        timeline.drawLine(x, ly, defaults.canvas.width, ly, '#fff', 1);
                     }
 
                     // TODO: create right-align text method
@@ -954,7 +1015,16 @@ Timeline.prototype = function() {
                     var rx = x + 3, ry = start + 3, rw = defaults.cellWidth - 6, rh = defaults.lineHeight - 6;
                     
                     // squares
-                    var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 1, status.color, 1, status.color).attr({
+                    // var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 0, status.color, 1, status.color).attr({
+                    //     'cursor': day === data.day && data.items && data.items.length > 0 ? 'pointer' : 'default',
+                    // });
+                    // var el = timeline.drawRect(x + 4, start + 4, defaults.cellWidth - 8, defaults.lineHeight - 8, 0, status.color, 1, status.color).attr({
+                    //     'cursor': day === data.day && data.items && data.items.length > 0 ? 'pointer' : 'default',
+                    // });
+                    // var el = timeline.drawRect(x + 4, start + 4, defaults.cellWidth - 8, defaults.lineHeight - 8, 0, timeline.defaults.lineColor, 1, status.color).attr({
+                    //     'cursor': day === data.day && data.items && data.items.length > 0 ? 'pointer' : 'default',
+                    // });
+                    var el = timeline.drawRect(x + 3, start + 3, defaults.cellWidth - 6, defaults.lineHeight - 6, 0, timeline.defaults.lineColor, 1, status.color).attr({
                         'cursor': day === data.day && data.items && data.items.length > 0 ? 'pointer' : 'default',
                     });
 
@@ -1041,33 +1111,28 @@ Timeline.prototype = function() {
             var day = defaults.days * -1 + i; 
             var data = timeline.getItemData(item.items, day, timeline.matchType.day);
             if (data) {
-                
                 var f = (item.balance.max/maxY) * 100, //max bal. as a percent of max y
-                // var f = height/item.balance.max,
+                    // y = bottom, h = 0, p = 9, w = 7;
+                    y = bottom, h = 0, p = 9, w = 5;
 
-                    y = bottom, h = 0, p = 9, w = 7;
                 for (var prop in data) {
                     if (prop.substr(0, 1) === 'b') {
                         if (data[prop] > 0) {
                             var b = getBucket(parseInt(prop.substr(1, 1)));
                             if (b) {
-                                
-                                // maxY/100
-
                                 if (data[prop] === item.balance.max) {
-                                    // h = data[prop] * f;
                                     h = height/100 * f;
                                 } else {
                                     // calc data[prop] as percentage of balance
                                     var pc = (data[prop]/item.balance.max) * 100;
-                                    h = height/100 * pc;
-
+                                    h = (height/100 * f)/100 * pc;
                                 }
-
 
                                 var s = timeline.paper.set();
                                 s.push(
                                     timeline.drawRect(x + (p/2), y - h, defaults.cellWidth - ((p/2) * 2), h, 0, b.color, 1, b.color).attr({ 'opacity': 0 }),
+                                    // timeline.drawRect(x + (p/2), y - h, defaults.cellWidth - (((p/2) * 2)) - 8, h, 0, b.color, 1, b.color).attr({ 'opacity': 0 }),
+
                                     timeline.drawRect(x + p, y - h, w, h, 0, b.color, 1, b.color)
                                 );
                                 
@@ -1252,16 +1317,35 @@ Timeline.prototype = function() {
     };
 
     timeline.drawVerticalBars = function(defaults) {
-        var x = defaults.canvas.width - (defaults.days * defaults.cellWidth);
+        var el, x = defaults.canvas.width - (defaults.days * defaults.cellWidth);
 
         for (var i = 0; i < defaults.days - 1; i++) {
             x += defaults.cellWidth;
             
-            var color = '#FFFFFF';
+            // var color = '#FFFFFF';
+            // if (i % 2 === 0) {
+            //     timeline.drawRect(x, defaults.margin.top, defaults.cellWidth, defaults.canvas.height, 0, color, 1, color);
+            // }
 
             if (i % 2 === 0) {
-                timeline.drawRect(x, defaults.margin.top, defaults.cellWidth, defaults.canvas.height, 0, color, 1, color);
+                el = timeline.drawRect(x, defaults.margin.top, defaults.cellWidth, defaults.canvas.height, 0, '#fff', 1, '#fff');
+                el.fill = '#fff';
+
+            } else {
+                el = timeline.drawRect(x, defaults.margin.top, defaults.cellWidth, defaults.canvas.height, 0, '#FAFAFA', 1, '#FAFAFA');
+                el.fill = '#FAFAFA';
+
             }
+
+
+            el.hover(function(){
+                this.attr({'fill': '#FAC3C2', 'opacity': .2 }); this.toFront()
+            }, function() {this.attr({'fill': this.fill, 'opacity': 1 }); this.toBack()} );
+            el.mousemove(function(){
+                this.attr({'fill': '#FAC3C2', 'opacity': .2}); this.toFront()
+            });
+
+
         }
     };
 
@@ -1271,10 +1355,19 @@ Timeline.prototype = function() {
         timeline.showAccountInfo = params.showAccountInfo;
         timeline.showProductStatus = params.showProductStatus;
 	    
+        var getLineNumber = function(item) {
+            if (item.lines) {
+                if (item.type === 'balance')
+                    return timeline.balanceLines ? timeline.balanceLines : 1;
+                else 
+                    return item.lines; 
+            } else return 1;
+        };
+
         var getLineCount = function() {
             var result = 0;
             for (var i = 0; i < timeline.data.items.length; i++) {
-                result = timeline.data.items[i].lines ? result + timeline.balanceLines : result + 1;
+                result += getLineNumber(timeline.data.items[i]);
             }
             return result;
         };
@@ -1305,11 +1398,14 @@ Timeline.prototype = function() {
 
         timeline.drawVerticalBars(tdefs);
 
+        
+        // TODO: lines
+
         var line = 0;
 
         for (var i = 0; i < timeline.data.items.length; i++) {
             timeline.drawItem(tdefs, timeline.data.items[i], (line * tdefs.lineHeight) + tdefs.margin.top)
-            line = timeline.data.items[i].lines ? line + timeline.balanceLines : line + 1;
+            line += getLineNumber(timeline.data.items[i]);
         }
     };
 
