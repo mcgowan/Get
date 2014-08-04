@@ -440,7 +440,7 @@ var Layout = function () {
 
         $('.sidebar-option', panel).val("default");
         $('.page-header-option', panel).val("fixed");
-        $('.page-footer-option', panel).val("default");
+        $('.page-footer-option', panel).val("fixed");
         if ($('.sidebar-pos-option').attr("disabled") === false) {
             $('.sidebar-pos-option', panel).val(Metronic.isRTL() ? 'right' : 'left');
         }

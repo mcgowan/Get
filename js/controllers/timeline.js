@@ -10,6 +10,7 @@ App.controller('TimelineCtl', function TimelineCtl($rootScope, $scope) {
     		balanceLines: parseInt($scope.balanceLines), 
     		showAccountInfo: $scope.showAccountInfo,
     		showProductStatus: $scope.showProductStatus,
+    		showAlertCounts: $scope.showAlertCounts,
     	}
     };
 
@@ -18,6 +19,7 @@ App.controller('TimelineCtl', function TimelineCtl($rootScope, $scope) {
 		$scope.balanceLines = 4;
 		$scope.showAccountInfo = true;
 		$scope.showProductStatus = false;
+		$scope.showAlertCounts = true;
 
 		$scope.timeline = new Timeline($rootScope, 'customer_timeline');
 		$scope.timeline.draw(getParams());

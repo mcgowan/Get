@@ -213,11 +213,15 @@
 	word-wrap: break-word;
 }
 .tip-table-tr {
-	height: 18px;
+	height: 22px;
 	vertical-align: middle;
 }
 .tip-table-tr-head {
-	border-bottom: 1px solid #D7DFE2;
+	border-bottom: 1px solid #000;
+}
+.tip-table-td-right {
+	width: 100px;
+	text-align: right;
 }
 .tip-table-td-numeric {
 	width: 45px;
