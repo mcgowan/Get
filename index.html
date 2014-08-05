@@ -1240,14 +1240,8 @@ License: You must have a valid license purchased only from themeforest(the above
 							</li>
 							<li class="color-light tooltips" data-style="light" data-original-title="Light">
 							</li>
- 							
- 							<!--
- 							<li class="color-light2 tooltips" data-style="light2" data-html="true" data-original-title="Light 2">
-							</li>
-							-->
  							<li class="color-get tooltips" data-style="get" data-html="true" data-original-title="Get.no">
 							</li>
- 
  						</ul>
 					</div>
 					<div class="theme-option">
@@ -1296,48 +1290,25 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- BEGIN PAGE HEADER-->
 			<div class="row">
 				<div class="col-md-12">
-					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 					<h3 class="page-title">
-					Dashboard <small>statistics and more</small>
+					James Woods
 					</h3>
-					<ul class="page-breadcrumb breadcrumb">
-						<li>
-							<i class="fa fa-home"></i>
-							<a href="index.html">Home</a>
-							<i class="fa fa-angle-right"></i>
-						</li>
-						<li>
-							<a href="#">Dashboard</a>
-						</li>
-						
-						<!--
-						<li class="pull-right">
-							<div id="ex-dashboard-report-range" class="dashboard-date-range tooltips" data-placement="top" data-original-title="Change dashboard date range">
-								<i class="icon-calendar"></i>
-								<span></span>
-								<i class="fa fa-angle-down"></i>
-							</div>
-						</li>
-						-->
-
-					</ul>
-					<!-- END PAGE TITLE & BREADCRUMB-->
 				</div>
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN DASHBOARD STATS -->
 			<div class="row">
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-					<div class="dashboard-stat blue-madison">
+					<div class="dashboard-stat red-intense">
 						<div class="visual">
-							<i class="fa fa-comments"></i>
+							<i class="fa fa-warning"></i>
 						</div>
 						<div class="details">
 							<div class="number">
-								 1349
+								 2
 							</div>
 							<div class="desc">
-								 New Feedbacks
+								 Network Outages
 							</div>
 						</div>
 						<a class="more" href="#">
@@ -1346,16 +1317,16 @@ License: You must have a valid license purchased only from themeforest(the above
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-					<div class="dashboard-stat red-intense">
+					<div class="dashboard-stat blue-madison">
 						<div class="visual">
-							<i class="fa fa-bar-chart-o"></i>
+							<i class="fa fa-upload"></i>
 						</div>
 						<div class="details">
 							<div class="number">
-								 12,5M$
+								 100%
 							</div>
 							<div class="desc">
-								 Total Profit
+								 Provisioning Accuracy
 							</div>
 						</div>
 						<a class="more" href="#">
@@ -1366,14 +1337,14 @@ License: You must have a valid license purchased only from themeforest(the above
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 					<div class="dashboard-stat green-haze">
 						<div class="visual">
-							<i class="fa fa-shopping-cart"></i>
+							<i class="fa fa-bank"></i>
 						</div>
 						<div class="details">
 							<div class="number">
-								 549
+								 $$$
 							</div>
 							<div class="desc">
-								 New Orders
+								 Balance
 							</div>
 						</div>
 						<a class="more" href="#">
@@ -1384,14 +1355,14 @@ License: You must have a valid license purchased only from themeforest(the above
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 					<div class="dashboard-stat purple-plum">
 						<div class="visual">
-							<i class="fa fa-globe"></i>
+							<i class="fa fa-history"></i>
 						</div>
 						<div class="details">
 							<div class="number">
-								 +89%
+								 3 Years, 6 Months
 							</div>
 							<div class="desc">
-								 Brand Popularity
+								 Customer Loyalty
 							</div>
 						</div>
 						<a class="more" href="#">
@@ -1401,12 +1372,10 @@ License: You must have a valid license purchased only from themeforest(the above
 				</div>
 			</div>
 			<!-- END DASHBOARD STATS -->
+			<!-- 
 			<div class="clearfix">
 			</div>
-
-
-
-
+			-->
 			<!-- over here...! -->
 
 			<div class="row">
@@ -1423,16 +1392,17 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 								<form role="form">
 									<div class="form-group">
-										<label for="customerData">Customer Data:</label>
+										<label for="customerData">Customer Profiles:</label>
 										<select id="customerData" class="form-control" ng-model="customerIndex">
-											<option value="0">Customer 1</option>
-											<option value="1">Customer 2</option>
-											<option value="2">Customer 3</option>
+											<option value="0">Profile 1</option>
+											<option value="1">Profile 2</option>
+											<option value="2">Profile 3</option>
 										</select>
 									</div>
 									<div class="form-group">
 										<label for="balanceLines">Account Balance Height:</label>
 										<select id="balanceLines" class="form-control" ng-model="balanceLines">
+											<option value="3">3</option>
 											<option value="4">4</option>
 											<option value="5">5</option>
 											<option value="6">6</option>
@@ -1469,6 +1439,14 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="timeline-caption">
 								<i class="fa fa-calendar-o" style="cursor:pointer" ng-click="show()"></i> Customer Timeline
 							</div>
+			                
+							<!--
+						    <div class="tools">
+			                    <a href="javascript:;" class="reload">
+			                    </a>
+			                </div>
+							-->
+
 							<div class="tools timeline-tools">
 								<ul class="timeline-dropdown">
 									<li class="pull-right">
@@ -1493,276 +1471,488 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 				</div>
-<!-- 				<div class="col-md-6 col-sm-6">
- -->				<div class="col-md-4 col-sm-4">
-
+					<div class="col-md-4 col-sm-4">
 
 					<!-- BEGIN PORTLET-->
-					<div class="portlet solid grey-cararra bordered">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-bullhorn"></i>Revenue
-							</div>
-						</div>
-						<div class="portlet-body">
-							<div id="activities_content" class="display-none">
-								<div id="activities" style="height: 228px;">
+
+				        <div class="timeline portlet solid bordered grey-cararra">
+				            
+							<div class="portlet-title timeline-title">
+								<div class="timeline-caption">
+									
+									<i class="fa fa-gift"></i>
+									<!-- <i class="popup-icon popup-icon-contact"></i> -->
+
+									<span>Current Offers</span>
+									
+									<div class="portlet-icon-tray">
+										<i class="portlet-icon portlet-icon-collapse"></i>
+										<i class="portlet-icon portlet-icon-refresh"></i>
+									</div>
+
 								</div>
-							</div>
-						</div>
-					</div>
-					<!-- END PORTLET-->
+				                
+			                		<!-- <i class="popup-icon popup-icon-close" ng-click="hide()"></i> -->
 
-
-
-				</div>
-			</div>
-			<div class="clearfix">
-			</div>
-
-
-
-			<div class="row">
-				<div class="col-md-6 col-sm-6">
-
-
-					<!-- BEGIN PORTLET-->
-					<div class="portlet solid bordered grey-cararra">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-bar-chart-o"></i>Site Visits
-							</div>
-							<div class="tools">
-								<div class="btn-group" data-toggle="buttons">
-									<label class="btn grey-steel btn-sm active">
-									<input type="radio" name="options" class="toggle" id="option1">New</label>
-									<label class="btn grey-steel btn-sm">
-									<input type="radio" name="options" class="toggle" id="option2">Returning</label>
-								</div>
-							</div>
-						</div>
-						<div class="portlet-body">
-							<div id="site_statistics_loading">
-								<img src="assets/admin/layout/img/loading.gif" alt="loading"/>
-							</div>
-							<div id="site_statistics_content" class="display-none">
-								<div id="site_statistics" class="chart">
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- END PORTLET-->
-
-
-
-				</div>
-				<div class="col-md-6 col-sm-6">
-
-
-					<!-- BEGIN PORTLET-->
-					<div class="portlet solid grey-cararra bordered">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-bullhorn"></i>Revenue
-							</div>
-							<div class="tools">
-								<div class="btn-group pull-right">
-									<a href="" class="btn grey-steel btn-sm dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-									Filter <span class="fa fa-angle-down">
-									</span>
+				                <!--
+								<div class="tools">
+									<a href="javascript:;" class="collapse">
 									</a>
-									<ul class="dropdown-menu pull-right">
-										<li>
-											<a href="javascript:;">
-											Q1 2014 <span class="label label-sm label-default">
-											past </span>
-											</a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											Q2 2014 <span class="label label-sm label-default">
-											past </span>
-											</a>
-										</li>
-										<li class="active">
-											<a href="javascript:;">
-											Q3 2014 <span class="label label-sm label-success">
-											current </span>
-											</a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											Q4 2014 <span class="label label-sm label-warning">
-											upcoming </span>
-											</a>
-										</li>
-									</ul>
+									<a href="#portlet-config" data-toggle="modal" class="config">
+									</a>
+									<a href="javascript:;" class="reload">
+									</a>
+									<a href="javascript:;" class="remove">
+									</a>
 								</div>
-							</div>
-						</div>
-						<div class="portlet-body">
-							<div id="site_activities_loading">
-								<img src="assets/admin/layout/img/loading.gif" alt="loading"/>
-							</div>
-							<div id="site_activities_content" class="display-none">
-								<div id="site_activities" style="height: 228px;">
+								-->
+
+			                </div>
+
+				            <div class="portlet-body">
+				                <div class="table-scrollable">
+				                    <table class="table table-condensed table-hover">
+				                        <thead>
+				                            <tr>
+				                                <th>
+				                                    #
+				                                </th>
+				                                <th>
+				                                    First Name
+				                                </th>
+				                                <th>
+				                                    Last Name
+				                                </th>
+				                                <th>
+				                                    Username
+				                                </th>
+				                                <th>
+				                                    Status
+				                                </th>
+				                            </tr>
+				                        </thead>
+				                        <tbody>
+				                            <tr>
+				                                <td>
+				                                    1
+				                                </td>
+				                                <td>
+				                                    Mark
+				                                </td>
+				                                <td>
+				                                    Otto
+				                                </td>
+				                                <td>
+				                                    makr124
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-success">
+																				Approved </span>
+				                                </td>
+				                            </tr>
+				                            <tr>
+				                                <td>
+				                                    2
+				                                </td>
+				                                <td>
+				                                    Jacob
+				                                </td>
+				                                <td>
+				                                    Nilson
+				                                </td>
+				                                <td>
+				                                    jac123
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-info">
+																				Pending </span>
+				                                </td>
+				                            </tr>
+				                            <tr>
+				                                <td>
+				                                    3
+				                                </td>
+				                                <td>
+				                                    Larry
+				                                </td>
+				                                <td>
+				                                    Cooper
+				                                </td>
+				                                <td>
+				                                    lar
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-warning">
+																				Suspended </span>
+				                                </td>
+				                            </tr>
+				                            <tr>
+				                                <td>
+				                                    4
+				                                </td>
+				                                <td>
+				                                    Sandy
+				                                </td>
+				                                <td>
+				                                    Lim
+				                                </td>
+				                                <td>
+				                                    sanlim
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-danger">
+																				Blocked </span>
+				                                </td>
+				                            </tr>
+				                            <tr>
+				                                <td>
+				                                    5
+				                                </td>
+				                                <td>
+				                                    Sandy
+				                                </td>
+				                                <td>
+				                                    Lim
+				                                </td>
+				                                <td>
+				                                    sanlim
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-danger">
+																				Blocked </span>
+				                                </td>
+				                            </tr>
+				                        </tbody>
+				                    </table>
+				                </div>
+				            </div>
+				        </div>
+
+
+					<!-- END PORTLET-->
+
+					<!-- BEGIN PORTLET-->
+
+				        <div class="timeline portlet solid bordered grey-cararra">
+				            
+							<div class="portlet-title timeline-title">
+								<div class="timeline-caption">
+									
+									<i class="fa fa-gift"></i>
+									<!-- <i class="popup-icon popup-icon-contact"></i> -->
+
+									<span>Current Offers</span>
+									
+									<div class="portlet-icon-tray">
+										<i class="portlet-icon portlet-icon-collapse"></i>
+										<i class="portlet-icon portlet-icon-refresh"></i>
+									</div>
+
 								</div>
-							</div>
-							<div style="margin: 20px 0 10px 30px">
-								<div class="row">
-									<div class="col-md-3 col-sm-3 col-xs-6 text-stat">
-										<span class="label label-sm label-success">
-										Revenue: </span>
-										<h3>$13,234</h3>
-									</div>
-									<div class="col-md-3 col-sm-3 col-xs-6 text-stat">
-										<span class="label label-sm label-info">
-										Tax: </span>
-										<h3>$134,900</h3>
-									</div>
-									<div class="col-md-3 col-sm-3 col-xs-6 text-stat">
-										<span class="label label-sm label-danger">
-										Shipment: </span>
-										<h3>$1,134</h3>
-									</div>
-									<div class="col-md-3 col-sm-3 col-xs-6 text-stat">
-										<span class="label label-sm label-warning">
-										Orders: </span>
-										<h3>235090</h3>
-									</div>
+				                
+			                		<!-- <i class="popup-icon popup-icon-close" ng-click="hide()"></i> -->
+
+				                <!--
+								<div class="tools">
+									<a href="javascript:;" class="collapse">
+									</a>
+									<a href="#portlet-config" data-toggle="modal" class="config">
+									</a>
+									<a href="javascript:;" class="reload">
+									</a>
+									<a href="javascript:;" class="remove">
+									</a>
 								</div>
-							</div>
-						</div>
-					</div>
+								-->
+
+			                </div>
+
+				            <div class="portlet-body">
+				                <div class="table-scrollable">
+				                    <table class="table table-condensed table-hover">
+				                        <thead>
+				                            <tr>
+				                                <th>
+				                                    #
+				                                </th>
+				                                <th>
+				                                    First Name
+				                                </th>
+				                                <th>
+				                                    Last Name
+				                                </th>
+				                                <th>
+				                                    Username
+				                                </th>
+				                                <th>
+				                                    Status
+				                                </th>
+				                            </tr>
+				                        </thead>
+				                        <tbody>
+				                            <tr>
+				                                <td>
+				                                    1
+				                                </td>
+				                                <td>
+				                                    Mark
+				                                </td>
+				                                <td>
+				                                    Otto
+				                                </td>
+				                                <td>
+				                                    makr124
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-success">
+																				Approved </span>
+				                                </td>
+				                            </tr>
+				                            <tr>
+				                                <td>
+				                                    2
+				                                </td>
+				                                <td>
+				                                    Jacob
+				                                </td>
+				                                <td>
+				                                    Nilson
+				                                </td>
+				                                <td>
+				                                    jac123
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-info">
+																				Pending </span>
+				                                </td>
+				                            </tr>
+				                            <tr>
+				                                <td>
+				                                    3
+				                                </td>
+				                                <td>
+				                                    Larry
+				                                </td>
+				                                <td>
+				                                    Cooper
+				                                </td>
+				                                <td>
+				                                    lar
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-warning">
+																				Suspended </span>
+				                                </td>
+				                            </tr>
+				                            <tr>
+				                                <td>
+				                                    4
+				                                </td>
+				                                <td>
+				                                    Sandy
+				                                </td>
+				                                <td>
+				                                    Lim
+				                                </td>
+				                                <td>
+				                                    sanlim
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-danger">
+																				Blocked </span>
+				                                </td>
+				                            </tr>
+				                            <tr>
+				                                <td>
+				                                    5
+				                                </td>
+				                                <td>
+				                                    Sandy
+				                                </td>
+				                                <td>
+				                                    Lim
+				                                </td>
+				                                <td>
+				                                    sanlim
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-danger">
+																				Blocked </span>
+				                                </td>
+				                            </tr>
+				                        </tbody>
+				                    </table>
+				                </div>
+				            </div>
+				        </div>
+
+
 					<!-- END PORTLET-->
 
 
+					<!-- BEGIN PORTLET-->
+
+				        <div class="timeline portlet solid bordered grey-cararra">
+				            
+							<div class="portlet-title timeline-title">
+								<div class="timeline-caption">
+									
+									<i class="fa fa-gift"></i>
+									<!-- <i class="popup-icon popup-icon-contact"></i> -->
+
+									<span>Current Offers</span>
+									
+									<div class="portlet-icon-tray">
+										<i class="portlet-icon portlet-icon-collapse"></i>
+										<i class="portlet-icon portlet-icon-refresh"></i>
+									</div>
+
+								</div>
+				                
+			                		<!-- <i class="popup-icon popup-icon-close" ng-click="hide()"></i> -->
+
+				                <!--
+								<div class="tools">
+									<a href="javascript:;" class="collapse">
+									</a>
+									<a href="#portlet-config" data-toggle="modal" class="config">
+									</a>
+									<a href="javascript:;" class="reload">
+									</a>
+									<a href="javascript:;" class="remove">
+									</a>
+								</div>
+								-->
+
+			                </div>
+
+				            <div class="portlet-body">
+				                <div class="table-scrollable">
+				                    <table class="table table-condensed table-hover">
+				                        <thead>
+				                            <tr>
+				                                <th>
+				                                    #
+				                                </th>
+				                                <th>
+				                                    First Name
+				                                </th>
+				                                <th>
+				                                    Last Name
+				                                </th>
+				                                <th>
+				                                    Username
+				                                </th>
+				                                <th>
+				                                    Status
+				                                </th>
+				                            </tr>
+				                        </thead>
+				                        <tbody>
+				                            <tr>
+				                                <td>
+				                                    1
+				                                </td>
+				                                <td>
+				                                    Mark
+				                                </td>
+				                                <td>
+				                                    Otto
+				                                </td>
+				                                <td>
+				                                    makr124
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-success">
+																				Approved </span>
+				                                </td>
+				                            </tr>
+				                            <tr>
+				                                <td>
+				                                    2
+				                                </td>
+				                                <td>
+				                                    Jacob
+				                                </td>
+				                                <td>
+				                                    Nilson
+				                                </td>
+				                                <td>
+				                                    jac123
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-info">
+																				Pending </span>
+				                                </td>
+				                            </tr>
+				                            <tr>
+				                                <td>
+				                                    3
+				                                </td>
+				                                <td>
+				                                    Larry
+				                                </td>
+				                                <td>
+				                                    Cooper
+				                                </td>
+				                                <td>
+				                                    lar
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-warning">
+																				Suspended </span>
+				                                </td>
+				                            </tr>
+				                            <tr>
+				                                <td>
+				                                    4
+				                                </td>
+				                                <td>
+				                                    Sandy
+				                                </td>
+				                                <td>
+				                                    Lim
+				                                </td>
+				                                <td>
+				                                    sanlim
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-danger">
+																				Blocked </span>
+				                                </td>
+				                            </tr>
+				                            <tr>
+				                                <td>
+				                                    5
+				                                </td>
+				                                <td>
+				                                    Sandy
+				                                </td>
+				                                <td>
+				                                    Lim
+				                                </td>
+				                                <td>
+				                                    sanlim
+				                                </td>
+				                                <td>
+				                                    <span class="label label-sm label-danger">
+																				Blocked </span>
+				                                </td>
+				                            </tr>
+				                        </tbody>
+				                    </table>
+				                </div>
+				            </div>
+				        </div>
+
+
+					<!-- END PORTLET-->
 
 				</div>
 			</div>
 			<div class="clearfix">
 			</div>
-			
 
-
-
-
-
-			<div class="row ">
-				<div class="col-md-6 col-sm-6">
-					<div class="portlet box purple-wisteria">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-calendar"></i>General Stats
-							</div>
-							<div class="actions">
-								<a href="javascript:;" class="btn btn-sm btn-default easy-pie-chart-reload">
-								<i class="fa fa-repeat"></i> Reload </a>
-							</div>
-						</div>
-						<div class="portlet-body">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="easy-pie-chart">
-										<div class="number transactions" data-percent="55">
-											<span>
-											+55 </span>
-											%
-										</div>
-										<a class="title" href="#">
-										Transactions <i class="icon-arrow-right"></i>
-										</a>
-									</div>
-								</div>
-								<div class="margin-bottom-10 visible-sm">
-								</div>
-								<div class="col-md-4">
-									<div class="easy-pie-chart">
-										<div class="number visits" data-percent="85">
-											<span>
-											+85 </span>
-											%
-										</div>
-										<a class="title" href="#">
-										New Visits <i class="icon-arrow-right"></i>
-										</a>
-									</div>
-								</div>
-								<div class="margin-bottom-10 visible-sm">
-								</div>
-								<div class="col-md-4">
-									<div class="easy-pie-chart">
-										<div class="number bounce" data-percent="46">
-											<span>
-											-46 </span>
-											%
-										</div>
-										<a class="title" href="#">
-										Bounce <i class="icon-arrow-right"></i>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-6">
-					<div class="portlet box red-sunglo">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-calendar"></i>Server Stats
-							</div>
-							<div class="tools">
-								<a href="" class="collapse">
-								</a>
-								<a href="#portlet-config" data-toggle="modal" class="config">
-								</a>
-								<a href="" class="reload">
-								</a>
-								<a href="" class="remove">
-								</a>
-							</div>
-						</div>
-						<div class="portlet-body">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="sparkline-chart">
-										<div class="number" id="sparkline_bar">
-										</div>
-										<a class="title" href="#">
-										Network <i class="icon-arrow-right"></i>
-										</a>
-									</div>
-								</div>
-								<div class="margin-bottom-10 visible-sm">
-								</div>
-								<div class="col-md-4">
-									<div class="sparkline-chart">
-										<div class="number" id="sparkline_bar2">
-										</div>
-										<a class="title" href="#">
-										CPU Load <i class="icon-arrow-right"></i>
-										</a>
-									</div>
-								</div>
-								<div class="margin-bottom-10 visible-sm">
-								</div>
-								<div class="col-md-4">
-									<div class="sparkline-chart">
-										<div class="number" id="sparkline_line">
-										</div>
-										<a class="title" href="#">
-										Load Rate <i class="icon-arrow-right"></i>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix">
-			</div>
 
 
 

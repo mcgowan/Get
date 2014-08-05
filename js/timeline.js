@@ -506,6 +506,8 @@ Timeline.prototype = function() {
         ],
         productStatus: [ 
             { id: 1, color: '#A6D96A', stroke: '#fff', text: 'Active' },
+            // { id: 1, color: '#7BCBC6', stroke: '#fff', text: 'Active' },
+
             { id: 2, color: '#F46D43', stroke: '#fff', text: 'Cancelled' },
             { id: 3, color: '#D73027', stroke: '#fff', text: 'Non-pay Disconnect' },
             { id: 4, color: '#FFFFBF', stroke: '#000', text: 'Waiting Activation' },
@@ -713,8 +715,8 @@ Timeline.prototype = function() {
 
         switch(item.type){
             case 'header': {
-                timeline.drawText(item.icon, defaults.margin.left, y, defaults.fonts.header).attr({'font-family': 'FontAwesome'});
-                var el = timeline.drawText(item.text, defaults.margin.left + 18, y, defaults.fonts.header);
+                timeline.drawText(item.icon, defaults.margin.left, y, defaults.fonts.header).attr({'font-weight': 'normal', 'font-family': 'FontAwesome'});
+                var el = timeline.drawText(item.text, defaults.margin.left + 16, y, defaults.fonts.header);
                 
                 if (item.alert && timeline.showAlertCounts) {
                     var box = el.getBBox();
@@ -807,8 +809,9 @@ Timeline.prototype = function() {
                 break;
             }
             case 'summary': {
-                timeline.drawText(item.icon, defaults.margin.left, y, defaults.fonts.header).attr({'font-family': 'FontAwesome'});
-                var el = timeline.drawText(item.text, defaults.margin.left + 18, y, defaults.fonts.summary);
+                timeline.drawText(item.icon, defaults.margin.left, y, defaults.fonts.header).attr({'font-weight': 'normal', 'font-family': 'FontAwesome'});
+
+                var el = timeline.drawText(item.text, defaults.margin.left + 16, y, defaults.fonts.summary);
 
                 if (item.alert && timeline.showAlertCounts) {
                     var box = el.getBBox();
