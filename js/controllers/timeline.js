@@ -38,7 +38,7 @@ App.controller('TimelineCtl', function TimelineCtl($rootScope, $scope) {
 	};
 
 	$scope.show = function() {
-		$scope.style = { pos: { x: 10, y: 47 }, display: 'block' };
+		$scope.style = { pos: { x: 0, y: 30 }, display: 'block' };
 	};
 
 	$scope.apply = function() {
