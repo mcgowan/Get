@@ -2,7 +2,7 @@
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
 	position: relative;
 	min-height: 1px;
-	padding-right: 5px;
+	padding-right: 25px;
 	padding-left: 10px;
 }
 .radio label, .checkbox label {
@@ -25,12 +25,15 @@
 .theme-panel > .theme-options > .theme-option.theme-colors > ul > li.color-get {
   background: #ECBC29;
 }
+.portlet {
+  /*margin-bottom: 20px;*/
+}
 .portlet.solid {
-	padding: 0px 5px 5px 5px;
+	padding: 0px 0px 0px 5px;
 	border: 0px;
 }
 .portlet.solid.bordered > .portlet-title {
-  margin-bottom: 5px;
+  /*margin-bottom: 2px;*/
 }
 .portlet.solid > .portlet-title > .tools {
 	margin-top: 0px;
@@ -74,17 +77,24 @@
 	/*margin-left: 5px;*/
 }
 .portlet.solid > .portlet-title > .tools > a.collapse {
-	padding: 5px;
+	/*padding: 5px;*/
 	/*background-image: url(../img/portlet-collapse-icon-white.png);*/
 }
 .portlet > .portlet-body {
 	clear: both;
-	padding: 0px 5px 0px 5px;
+	padding: 0 0 0 5px;
+}
+.portlet.solid.bordered > .portlet-title {
+	margin-bottom: 0px;
+}
+.table-scrollable {
+	margin: 5px 0 !important;
 }
 .dropdown-menu {
  /*box-shadow: none;*/
 	/*box-shadow: 5px 5px rgba(102, 102, 102, 0.4); */
 }
+
 
 
 
@@ -151,37 +161,43 @@
 */
 
     top:0px;
-    left:-3px;    
+    left:-6px;    
     bottom:0px;    
-    width: 9px;
+    width: 6px;
 
 }
 .portlet-color-splash.green {
-    background-color: #44B6AE;
+    background-color: #39ABA5;
 }
 .portlet-color-splash.blue {
-    background-color: #578EBE;
+    background-color: #4683BB;
 }
 .portlet-color-splash.purple {
-    background-color: #8775A7;
+    background-color: #7F6BA3;
 }
 .portlet-color-splash.red {
-    /*background-color: #E35B5A;*/
-    background-color: #EB8B8B;
-    
+    background-color: #E24A46;
 }
-.portlet-color-line{
-    background-color: #BFCAD1;
-
+.portlet-color-border{
     position: absolute;
-    top:30px;
-    right:0px;
-    left:-3px;    
+    top:38px;
+    left:-1px;
+    width:6px;
     bottom:-1px;    
-
-
 }
 
+.portlet-color-border.green {
+    background-color: #78CBC7;
+}
+.portlet-color-border.blue {
+    background-color: #88AED3;
+}
+.portlet-color-border.purple {
+    background-color: #AA9DC2;
+}
+.portlet-color-border.red {
+    background-color: #ED8A89;
+}
 
 
 .timeline {
@@ -268,7 +284,9 @@
 	background-color: #bfcad1;
 	color: #fff;
 	cursor: pointer;
-	padding: 5px 5px 5px 5px;
+	padding: 9px;
+
+	/*height:38px;*/
 
 
 	font-weight: normal;
@@ -329,6 +347,7 @@ font-weight: 400;
 .timeline-tools {
 	margin-top: 0px;
 	border: 0px;
+	height:38px;
 }
 
 .tip-default {

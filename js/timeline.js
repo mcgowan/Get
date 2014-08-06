@@ -258,6 +258,7 @@ Timeline.prototype = function() {
                 ] },
                 { type: 'reserve', lines: .5 }, 
                 { type: 'summary', alert: 1, icon: timeline.itemType.contact.icon, text: 'Contacts', border: 'both', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [
+
                     { day: -10, status: 3, items: [
                         { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                         { id: 873465, type: 2, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
