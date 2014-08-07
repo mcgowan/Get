@@ -145,8 +145,10 @@ Timeline.prototype = function() {
                     {   day:    -1  ,   b1: 129.99  ,   b2: 129.99  ,   b3: 129.99  ,   b4: 129.99  ,   b5: 129.99  ,   balance:    649.95  },
                     {   day:    0   ,   b1: 129.99  ,   b2: 129.99  ,   b3: 129.99  ,   b4: 129.99  ,   b5: 129.99  ,   balance:    649.95  },                    
                 ]},
-                { type: 'reserve', lines: .5 }, 
-                { type: 'summary', alert: 1, icon: timeline.itemType.outage.icon, text: 'Outages', border: 'both', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [
+                // { type: 'reserve', lines: .5 }, 
+                // { type: 'summary', alert: 1, icon: timeline.itemType.outage.icon, text: 'Outages', border: 'both', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [
+                { type: 'header', alert: 2, icon: timeline.itemType.outage.icon, text: 'Outages', drawDates: false },
+                { type: 'item', text: 'Network Outages', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [ 
                     { day: -13, status: 2, items: [
                         { type: 1, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
                         { type: 2, status: 2, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: moment([2014, 1, 1, 12, 54, 23, 0]) },
@@ -257,8 +259,9 @@ Timeline.prototype = function() {
                     { day: -5, status: 0},
                 ] },
                 { type: 'reserve', lines: .5 }, 
-                { type: 'summary', alert: 1, icon: timeline.itemType.contact.icon, text: 'Contacts', border: 'both', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [
-
+                // { type: 'summary', alert: 1, icon: timeline.itemType.contact.icon, text: 'Contacts', border: 'both', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [
+                { type: 'header', alert: 1, icon: timeline.itemType.contact.icon, text: 'Contacts', drawDates: false },
+                { type: 'item', text: 'All Contacts', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [ 
                     { day: -10, status: 3, items: [
                         { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                         { id: 873465, type: 2, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
@@ -487,7 +490,7 @@ Timeline.prototype = function() {
             balance: {
                 fontFamily: 'Open Sans',
                 fontColor: '#428bca',
-                fontSize: '11px',
+                fontSize: '12px',
                 fontBold: false,
             },
         },
@@ -667,7 +670,7 @@ Timeline.prototype = function() {
             'font-size': f.fontSize,
             'font-weight': f.fontBold === true ? 'bold' : 'normal',
             'fill': f.fontColor,
-            'background-color': '#ff0000',
+            'background-color': '#F65459',
             // 'opacity': 0,
         });
 
@@ -726,7 +729,7 @@ Timeline.prototype = function() {
                     font.fontColor = '#fff';
                     font.fontSize = '11px';
 
-                    timeline.drawText(item.alert.toString(), box.x2 + 9, y, font, timeline.textAlign.left, { color: '#ff0000', padding: 0 });
+                    timeline.drawText(item.alert.toString(), box.x2 + 9, y, font, timeline.textAlign.left, { color: '#F65459', padding: 0 });
                 }
 
                 y = start + defaults.lineHeight - 2;
@@ -821,7 +824,7 @@ Timeline.prototype = function() {
                     font.fontColor = '#fff';
                     font.fontSize = '11px';
 
-                    timeline.drawText(item.alert.toString(), box.x2 + 9, y, font, timeline.textAlign.left, { color: '#ff0000', padding: 0 });
+                    timeline.drawText(item.alert.toString(), box.x2 + 9, y, font, timeline.textAlign.left, { color: '#F65459', padding: 0 });
                 }
 
                 y = start + defaults.lineHeight - 2;
@@ -871,7 +874,7 @@ Timeline.prototype = function() {
 
                         var text = ['Not Yet Due', 'Due Now', 'Past Due', 'Total Balance'];
 
-                        y += 5;
+                        // y += 5;
 
                         for (var i = 0; i < text.length; i++) {
                             
@@ -1272,7 +1275,7 @@ Timeline.prototype = function() {
 
             if (i === defaults.days - 1) {
                 // var c = '#D73027';
-                var c = '#ff0000';
+                var c = '#F65459';
 
                 timeline.drawRect(x + 3, start - defaults.lineHeight + 5, defaults.cellWidth - 6, defaults.lineHeight - 7, 0, c, 1, c);
 

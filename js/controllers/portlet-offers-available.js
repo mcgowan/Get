@@ -3,7 +3,7 @@ App.controller('PortletOffersAvailableCtl', function PortletOffersAvailableCtl($
     	$scope.expanded = true;
     	$scope.iconSource = 'images/up.svg';
     	$scope.items = [
-			{ Description: 'Triple Play, 15% Off First 6 Months', Expires: moment([2015, 1, 1]).format('MMM Do YYYY') },
+			{ Description: 'Triple Play, 15% Off First 6 Months', Expires: moment([2015, 1, 1]).format('MM-DD-YYYY') },
 			{ Description: 'PPV Package By 5 Get 6', Expires: 'Not Set' }
 		];
     };
