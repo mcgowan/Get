@@ -610,10 +610,10 @@ Timeline.prototype = function() {
     // };
 
     timeline.drawLine = function(x1, y1, x2, y2, color, width) {
-    	return timeline.paper.path('M' + x1 + ' ' + y1 + 'L' + x2 + ' ' + y2).attr({
-	            'stroke': color ? color : '#000000',
-	            'stroke-width': width ? width : 1
-	        }).translate(0.5, 0.5);
+      return timeline.paper.path('M' + x1 + ' ' + y1 + 'L' + x2 + ' ' + y2).attr({
+              'stroke': color ? color : '#000000',
+              'stroke-width': width ? width : 1
+          }).translate(0.5, 0.5);
     };
 
     timeline.drawCell = function(x1, y1, color, fill) {
@@ -1382,7 +1382,7 @@ Timeline.prototype = function() {
         timeline.showAccountInfo = params.showAccountInfo;
         timeline.showProductStatus = params.showProductStatus;
         timeline.showAlertCounts = params.showAlertCounts;
-	    
+
         var getLineNumber = function(item) {
             if (item.lines) {
                 if (item.type === 'balance')

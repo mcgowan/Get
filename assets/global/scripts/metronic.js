@@ -91,11 +91,13 @@ var Metronic = function () {
             $(this).closest(".portlet").remove();
         });
 
-        $('body').on('click', '.portlet > .portlet-title > .tools > a.reload', function (e) {
+        var reload = function(me, e) {
             e.preventDefault();
-            var el = $(this).closest(".portlet").children(".portlet-body");
-            var url = $(this).attr("data-url");
-            var error = $(this).attr("data-error-display");
+            
+            var el = $(me).closest(".portlet").children(".portlet-body");
+
+            var url = $(me).attr("data-url");
+            var error = $(me).attr("data-error-display");
             if (url) {
                 Metronic.blockUI({target: el, iconOnly: true});
                 $.ajax({
@@ -129,6 +131,14 @@ var Metronic = function () {
                     Metronic.unblockUI(el);
                 }, 1000);
             }            
+        };
+
+        $('body').on('click', '.portlet > .portlet-title > .tools > a.reload', function (e) {
+            reload(this, e);
+        });
+
+        $('body').on('click', '.portlet > .portlet-title > .portlet-caption > .reload', function (e) {
+            reload(this, e);
         });
 
         // load ajax data on page init

@@ -1444,12 +1444,6 @@ License: You must have a valid license purchased only from themeforest(the above
 								<i class="fa fa-calendar-o" style="cursor:pointer" ng-click="show()"></i> Customer Timeline
 							</div>
 			                
-							<!--
-						    <div class="tools">
-			                    <a href="javascript:;" class="reload">
-			                    </a>
-			                </div>
-							-->
 
 
 
@@ -1477,9 +1471,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 						</div>
 					</div>
-					
 					<!-- END PORTLET-->
-
 
 					<!-- BEGIN PORTLET-->
 
@@ -1491,14 +1483,21 @@ License: You must have a valid license purchased only from themeforest(the above
 									
 									<i class="fa fa-paw"></i>
 
-									<span>Current Offers</span>
+									<span>Pending Product </span>
 									
 									<div class="portlet-icon portlet-icon-refresh">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" width="100%" height="100%" style="width: 16px; height: 16px; fill:#9CA6AD"><path d="M0 999.936l0 -402.318l402.318 0l-160.146 160.146q107.415 107.415 257.796 107.415 124.992 0 221.666 -75.191t129.875 -192.37l138.663 0q-35.154 173.817 -172.841 288.067t-317.363 114.251q-207.018 0 -353.493 -146.475zm9.765 -597.618q35.154 -173.817 172.841 -288.067t317.363 -114.251q207.018 0 353.493 146.475l146.475 -146.475l0 402.318l-402.318 0l160.146 -160.146q-107.415 -107.415 -257.796 -107.415 -124.992 0 -221.666 75.191t-129.875 192.37l-138.663 0z"></path></svg>
 									</div>
+									
+
+
+								</a>						
+
 									<div class="portlet-icon portlet-icon-collapse">
+									<!-- <a href="javascript:;" class="collapse"> -->
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" width="100%" height="100%" style="width: 16px; height: 16px; fill:#9CA6AD"><path d="M0 324.428 l148.428 -148.428 351.54 351.54 351.54 -351.54 148.428 148.428 -351.54 351.54 -148.428 148.428 -148.428 -148.428z"></path></svg>								
 									</div>
+									<!-- </a> -->
 
 								</div>
 
@@ -1682,54 +1681,37 @@ License: You must have a valid license purchased only from themeforest(the above
 				                </div>
 				            </div>
 				        </div>
-
-
 					<!-- END PORTLET-->
-
 
 				</div>
 					<div class="col-md-4 col-sm-4">
 
 					<!-- BEGIN PORTLET-->
-
-				        <div class="timeline portlet solid bordered grey-cararra">
-				            
+				        <div class="timeline portlet solid bordered grey-cararra" ng-controller="PortletOffersCurrentCtl">
 							<div class="portlet-title timeline-title">
-
-								<div class="timeline-caption">
-
+								<div class="portlet-caption">
 									<i class="fa fa-paw"></i>
-
-									
-									<span> X Current Offers</span>
-									
-									<div class="portlet-icon portlet-icon-refresh">
-										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" width="100%" height="100%" style="width: 14px; height: 14px; fill:#9CA6AD"><path d="M0 999.936l0 -402.318l402.318 0l-160.146 160.146q107.415 107.415 257.796 107.415 124.992 0 221.666 -75.191t129.875 -192.37l138.663 0q-35.154 173.817 -172.841 288.067t-317.363 114.251q-207.018 0 -353.493 -146.475zm9.765 -597.618q35.154 -173.817 172.841 -288.067t317.363 -114.251q207.018 0 353.493 146.475l146.475 -146.475l0 402.318l-402.318 0l160.146 -160.146q-107.415 -107.415 -257.796 -107.415 -124.992 0 -221.666 75.191t-129.875 192.37l-138.663 0z"></path></svg>
+									<span> Current Offers</span>
+									<a href="javascript:;" class="reload" ng-show="expanded">
+										<div class="portlet-icon portlet-icon-refresh">
+											<img src="images/reload.svg" height="14" width="14" onerror="this.onerror=null;">
+										</div>
+									</a>
+									<div class="portlet-icon portlet-icon-collapse" ng-click="toggleShow()">
+										<img ng-src="{{ iconSource }}" height="14" width="14" onerror="this.onerror=null;">
 									</div>
-									<div class="portlet-icon portlet-icon-collapse">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" width="100%" height="100%" style="width: 14px; height: 14px; fill:#9CA6AD"><path d="M0 324.428 l148.428 -148.428 351.54 351.54 351.54 -351.54 148.428 148.428 -351.54 351.54 -148.428 148.428 -148.428 -148.428z"></path></svg>								
+									<div class="portlet-icon portlet-icon-settings" ng-show="expanded">
+										<img src="images/settings.svg" height="14" width="14" onerror="this.onerror=null;">
 									</div>
-
-									<div class="portlet-icon portlet-icon-settings">
-
-										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet" width="100%" height="100%" style="width: 14px; height: 14px; fill:#9CA6AD"><path d="M0 578.088l0 -156.24l150.381 -15.624q13.671 -44.919 37.107 -87.885l-95.697 -117.18 109.368 -109.368 117.18 95.697q41.013 -23.436 87.885 -37.107l15.624 -150.381l156.24 0l15.624 150.381q44.919 13.671 87.885 37.107l117.18 -95.697 109.368 109.368 -95.697 117.18q23.436 42.966 37.107 87.885l150.381 15.624l0 156.24l-150.381 15.624q-13.671 46.872 -37.107 87.885l95.697 117.18 -109.368 109.368 -117.18 -95.697q-42.966 23.436 -87.885 37.107l-15.624 150.381l-156.24 0l-15.624 -150.381q-46.872 -13.671 -87.885 -37.107l-117.18 95.697 -109.368 -109.368 95.697 -117.18q-23.436 -41.013 -37.107 -87.885zm355.446 -78.12q0 60.543 41.989 102.532t102.532 41.989 102.532 -41.989 41.989 -102.532 -41.989 -102.532 -102.532 -41.989 -102.532 41.989 -41.989 102.532z"></path></svg>									
-									</div>
-
 								</div>
-
 								<div class="portlet-color-splash green"></div>
-				                
-
 			                </div>
-
-			                							<div class="portlet-color-border green"></div>
-
-
-				            <div class="portlet-body">
-				                <div class="table-scrollable">
+				            <div class="portlet-color-border green"></div>
+				            <div class="portlet-body" ng-show="expanded">
+				                <div class="table-scrollable show-hide-animation" ng-show="expanded">
 				                    <table class="table table-condensed table-hover">
-<thead>
-<tr>
+										<thead>
+										<tr>
                                             <th>
                                                 Product
                                             </th>
@@ -1739,135 +1721,68 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <th style="text-align: center">
                                                 End Date
                                             </th>
-       
                                         </tr>
                                         </thead>
-<tbody>                                        
-                                            <tr>
+										<tbody>
+                                            <tr ng-repeat="item in items">
                                                 <td>
-                                                    TV Platinum
+                                                    {{ item.Product }}
                                                 </td>
                                                 <td>
-                                                    Early Bird 10% Off
+                                                    {{ item.Description }}
                                                 </td>
                                                 <td style="text-align: center">
-                                                    12/31/2013
+                                                    {{ item.EndDate.format('MMM Do YYYY') }}
                                                 </td>
                                             </tr>
-                                        
-                                    </tbody>
-
-
+	                                    </tbody>
 				                    </table>
 				                </div>
 				            </div>
 				        </div>
-
-
 					<!-- END PORTLET-->
 
-
 					<!-- BEGIN PORTLET-->
-
-				        <div class="timeline portlet solid bordered grey-cararra">
-				            
+				        <div class="timeline portlet solid bordered grey-cararra" ng-controller="PortletOffersAvailableCtl">
 							<div class="portlet-title timeline-title">
-
-								<div class="timeline-caption">
-									
+								<div class="portlet-caption">
 									<i class="fa fa-paw"></i>
-
-									<span>Current Offers</span>
-									
-									<i class="portlet-icon portlet-icon-collapse"></i>
-									<i class="portlet-icon portlet-icon-refresh"></i>
-									
-
+									<span> Available Offers</span>
+									<a href="javascript:;" class="reload" ng-show="expanded">
+										<div class="portlet-icon portlet-icon-refresh">
+											<img src="images/reload.svg" height="14" width="14" onerror="this.onerror=null;">
+										</div>
+									</a>
+									<div class="portlet-icon portlet-icon-collapse" ng-click="toggleShow()">
+										<img ng-src="{{ iconSource }}" height="14" width="14" onerror="this.onerror=null;">
+									</div>
+									<div class="portlet-icon portlet-icon-settings" ng-show="expanded">
+										<img src="images/settings.svg" height="14" width="14" onerror="this.onerror=null;">
+									</div>
 								</div>
-
 								<div class="portlet-color-splash purple"></div>
-				                
-
 			                </div>
-
 							<div class="portlet-color-border purple"></div>
-
-
-				            <div class="portlet-body">
-				                <div class="table-scrollable">
+				            <div class="portlet-body" ng-show="expanded">
+				                <div class="table-scrollable show-hide-animation" ng-show="expanded">
 				                    <table class="table table-condensed table-hover">
-				                        <thead>
-				                            <tr>
-				                                <th>
-				                                    #
-				                                </th>
-				                                <th>
-				                                    First Name
-				                                </th>
-				                                <th>
-				                                    Last Name
-				                                </th>
-				                                <th>
-				                                    Username
-				                                </th>
-				                                <th>
-				                                    Status
-				                                </th>
-				                            </tr>
-				                        </thead>
+										<thead>
+										<tr>
+                                            <th>
+                                                Description
+                                            </th>
+                                            <th style="text-align: center">
+                                                Expires
+                                            </th>
+                                        </tr>
+                                        </thead>
 				                        <tbody>
-				                            <tr>
+				                            <tr ng-repeat="item in items">
 				                                <td>
-				                                    1
+				                                    {{ item.Description }}
 				                                </td>
-				                                <td>
-				                                    Mark
-				                                </td>
-				                                <td>
-				                                    Otto
-				                                </td>
-				                                <td>
-				                                    makr124
-				                                </td>
-				                                <td>
-				                                    <span class="label label-sm label-success">
-																				Approved </span>
-				                                </td>
-				                            </tr>
-				                            <tr>
-				                                <td>
-				                                    2
-				                                </td>
-				                                <td>
-				                                    Jacob
-				                                </td>
-				                                <td>
-				                                    Nilson
-				                                </td>
-				                                <td>
-				                                    jac123
-				                                </td>
-				                                <td>
-				                                    <span class="label label-sm label-info">
-																				Pending </span>
-				                                </td>
-				                            </tr>
-				                            <tr>
-				                                <td>
-				                                    3
-				                                </td>
-				                                <td>
-				                                    Larry
-				                                </td>
-				                                <td>
-				                                    Cooper
-				                                </td>
-				                                <td>
-				                                    lar
-				                                </td>
-				                                <td>
-				                                    <span class="label label-sm label-warning">
-																				Suspended </span>
+				                                <td style="text-align: center">
+				                                    {{ item.Expires }}
 				                                </td>
 				                            </tr>
 				                        </tbody>
@@ -1875,112 +1790,74 @@ License: You must have a valid license purchased only from themeforest(the above
 				                </div>
 				            </div>
 				        </div>
-
-
 					<!-- END PORTLET-->
 
-
 					<!-- BEGIN PORTLET-->
-
-				        <div class="timeline portlet solid bordered grey-cararra">
-				            
+				        <div class="timeline portlet solid bordered grey-cararra" ng-controller="PortletInvoicesRecentCtl">
 							<div class="portlet-title timeline-title">
-
 								<div class="timeline-caption">
-									
 									<i class="fa fa-paw"></i>
-
-									<span>Current Offers</span>
-									
-									<i class="portlet-icon portlet-icon-collapse"></i>
-									<i class="portlet-icon portlet-icon-refresh"></i>
-									
-
+									<span>Recent Invoices</span>
+									<a href="javascript:;" class="reload" ng-show="expanded">
+										<div class="portlet-icon portlet-icon-refresh">
+											<img src="images/reload.svg" height="14" width="14" onerror="this.onerror=null;">
+										</div>
+									</a>
+									<div class="portlet-icon portlet-icon-collapse" ng-click="toggleShow()">
+										<img ng-src="{{ iconSource }}" height="14" width="14" onerror="this.onerror=null;">
+									</div>
+									<div class="portlet-icon portlet-icon-settings" ng-show="expanded">
+										<img src="images/settings.svg" height="14" width="14" onerror="this.onerror=null;">
+									</div>
 								</div>
-
 								<div class="portlet-color-splash red"></div>
-				                
-
 			                </div>
-
-			                							<div class="portlet-color-border red"></div>
-
-
-				            <div class="portlet-body">
-				                <div class="table-scrollable">
+							<div class="portlet-color-border red"></div>
+				            <div class="portlet-body" ng-show="expanded">
+				                <div class="table-scrollable show-hide-animation" ng-show="expanded">
 				                    <table class="table table-condensed table-hover">
 				                        <thead>
 				                            <tr>
 				                                <th>
-				                                    #
+				                                    Invoice#
+				                                </th>
+				                                <th style="text-align: right">
+				                                	Amount
 				                                </th>
 				                                <th>
-				                                    First Name
+				                                    Invoice Date
 				                                </th>
 				                                <th>
-				                                    Last Name
+				                                    Due Date
+				                                </th>
+				                                <th style="text-align: right">
+				                                    Amount Paid
 				                                </th>
 				                                <th>
-				                                    Username
-				                                </th>
-				                                <th>
-				                                    Status
+				                                    View
 				                                </th>
 				                            </tr>
 				                        </thead>
 				                        <tbody>
-				                            <tr>
-				                                <td>
-				                                    1
+				                            <tr ng-repeat="item in items" style="vertical-align: middle">
+				                                <td style="vertical-align: middle">
+				                                    {{ item.InvoiceNumber }}
 				                                </td>
-				                                <td>
-				                                    Mark
+				                                <td style="text-align: right; vertical-align: middle">
+				                                    {{ item.Amount.format(2, 3, ',', '.') }}
 				                                </td>
-				                                <td>
-				                                    Otto
+				                                <td style="vertical-align: middle">
+				                                    {{ item.InvoiceDate.format('MMM Do YYYY') }}
 				                                </td>
-				                                <td>
-				                                    makr124
+				                                <td style="vertical-align: middle">
+				                                    {{ item.DueDate.format('MMM Do YYYY') }}
 				                                </td>
-				                                <td>
-				                                    <span class="label label-sm label-success">
-																				Approved </span>
+				                                <td style="text-align: right; vertical-align: middle">
+				                                    {{ item.AmountPaid.format(2, 3, ',', '.') }}
 				                                </td>
-				                            </tr>
-				                            <tr>
-				                                <td>
-				                                    2
-				                                </td>
-				                                <td>
-				                                    Jacob
-				                                </td>
-				                                <td>
-				                                    Nilson
-				                                </td>
-				                                <td>
-				                                    jac123
-				                                </td>
-				                                <td>
-				                                    <span class="label label-sm label-info">
-																				Pending </span>
-				                                </td>
-				                            </tr>
-				                            <tr>
-				                                <td>
-				                                    3
-				                                </td>
-				                                <td>
-				                                    Larry
-				                                </td>
-				                                <td>
-				                                    Cooper
-				                                </td>
-				                                <td>
-				                                    lar
-				                                </td>
-				                                <td>
-				                                    <span class="label label-sm label-warning">
-																				Suspended </span>
+				                                <td style="text-align: center; vertical-align: middle">
+				                                    <img src="images/pdf.png" width="28px" height="28px"/>
+				                                    <!-- <img src="images/pdf.png"/> -->
 				                                </td>
 				                            </tr>
 				                        </tbody>
@@ -1988,112 +1865,74 @@ License: You must have a valid license purchased only from themeforest(the above
 				                </div>
 				            </div>
 				        </div>
-
-
 					<!-- END PORTLET-->
 
-
 					<!-- BEGIN PORTLET-->
-
-				        <div class="timeline portlet solid bordered grey-cararra">
-				            
+				        <div class="timeline portlet solid bordered grey-cararra" ng-controller="PortletPaymentsRecentCtl">
 							<div class="portlet-title timeline-title">
-
 								<div class="timeline-caption">
-									
 									<i class="fa fa-paw"></i>
-
-									<span>Current Offers</span>
-									
-									<i class="portlet-icon portlet-icon-collapse"></i>
-									<i class="portlet-icon portlet-icon-refresh"></i>
-									
-
+									<span>Recent Payments</span>
+									<a href="javascript:;" class="reload" ng-show="expanded">
+										<div class="portlet-icon portlet-icon-refresh">
+											<img src="images/reload.svg" height="14" width="14" onerror="this.onerror=null;">
+										</div>
+									</a>
+									<div class="portlet-icon portlet-icon-collapse" ng-click="toggleShow()">
+										<img ng-src="{{ iconSource }}" height="14" width="14" onerror="this.onerror=null;">
+									</div>
+									<div class="portlet-icon portlet-icon-settings" ng-show="expanded">
+										<img src="images/settings.svg" height="14" width="14" onerror="this.onerror=null;">
+									</div>
 								</div>
-
 								<div class="portlet-color-splash blue"></div>
-				                
-
 			                </div>
-
-			                							<div class="portlet-color-border blue"></div>
-
-
-				            <div class="portlet-body">
-				                <div class="table-scrollable">
+							<div class="portlet-color-border blue"></div>
+				            <div class="portlet-body" ng-show="expanded">
+				                <div class="table-scrollable show-hide-animation" ng-show="expanded">
 				                    <table class="table table-condensed table-hover">
 				                        <thead>
 				                            <tr>
 				                                <th>
-				                                    #
+				                                    Invoice#
+				                                </th>
+				                                <th style="text-align: right">
+				                                	Amount
 				                                </th>
 				                                <th>
-				                                    First Name
+				                                    Invoice Date
 				                                </th>
 				                                <th>
-				                                    Last Name
+				                                    Due Date
+				                                </th>
+				                                <th style="text-align: right">
+				                                    Amount Paid
 				                                </th>
 				                                <th>
-				                                    Username
-				                                </th>
-				                                <th>
-				                                    Status
+				                                    View
 				                                </th>
 				                            </tr>
 				                        </thead>
 				                        <tbody>
-				                            <tr>
-				                                <td>
-				                                    1
+				                            <tr ng-repeat="item in items" style="vertical-align: middle">
+				                                <td style="vertical-align: middle">
+				                                    {{ item.InvoiceNumber }}
 				                                </td>
-				                                <td>
-				                                    Mark
+				                                <td style="text-align: right; vertical-align: middle">
+				                                    {{ item.Amount.format(2, 3, ',', '.') }}
 				                                </td>
-				                                <td>
-				                                    Otto
+				                                <td style="vertical-align: middle">
+				                                    {{ item.InvoiceDate.format('MMM Do YYYY') }}
 				                                </td>
-				                                <td>
-				                                    makr124
+				                                <td style="vertical-align: middle">
+				                                    {{ item.DueDate.format('MMM Do YYYY') }}
 				                                </td>
-				                                <td>
-				                                    <span class="label label-sm label-success">
-																				Approved </span>
+				                                <td style="text-align: right; vertical-align: middle">
+				                                    {{ item.AmountPaid.format(2, 3, ',', '.') }}
 				                                </td>
-				                            </tr>
-				                            <tr>
-				                                <td>
-				                                    2
-				                                </td>
-				                                <td>
-				                                    Jacob
-				                                </td>
-				                                <td>
-				                                    Nilson
-				                                </td>
-				                                <td>
-				                                    jac123
-				                                </td>
-				                                <td>
-				                                    <span class="label label-sm label-info">
-																				Pending </span>
-				                                </td>
-				                            </tr>
-				                            <tr>
-				                                <td>
-				                                    3
-				                                </td>
-				                                <td>
-				                                    Larry
-				                                </td>
-				                                <td>
-				                                    Cooper
-				                                </td>
-				                                <td>
-				                                    lar
-				                                </td>
-				                                <td>
-				                                    <span class="label label-sm label-warning">
-																				Suspended </span>
+				                                <td style="text-align: center; vertical-align: middle">
+				                                    <img src="images/pdf.png" width="28px" height="28px"/>
+				                                    <!-- <img src="images/pdf.png"/> -->
 				                                </td>
 				                            </tr>
 				                        </tbody>
@@ -2101,122 +1940,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				                </div>
 				            </div>
 				        </div>
-
-
 					<!-- END PORTLET-->
-
-					<!-- BEGIN PORTLET-->
-
-				        <div class="timeline portlet solid bordered grey-cararra">
-				            
-							<div class="portlet-title timeline-title">
-
-								<div class="timeline-caption">
-									
-									<i class="fa fa-paw"></i>
-
-									<span>Current Offers</span>
-									
-									<i class="portlet-icon portlet-icon-collapse"></i>
-									<i class="portlet-icon portlet-icon-refresh"></i>
-									
-
-								</div>
-
-								<div class="portlet-color-splash green"></div>
-				                
-
-			                </div>
-
-			                							<div class="portlet-color-border green"></div>
-
-
-				            <div class="portlet-body">
-				                <div class="table-scrollable">
-				                    <table class="table table-condensed table-hover">
-				                        <thead>
-				                            <tr>
-				                                <th>
-				                                    #
-				                                </th>
-				                                <th>
-				                                    First Name
-				                                </th>
-				                                <th>
-				                                    Last Name
-				                                </th>
-				                                <th>
-				                                    Username
-				                                </th>
-				                                <th>
-				                                    Status
-				                                </th>
-				                            </tr>
-				                        </thead>
-				                        <tbody>
-				                            <tr>
-				                                <td>
-				                                    1
-				                                </td>
-				                                <td>
-				                                    Mark
-				                                </td>
-				                                <td>
-				                                    Otto
-				                                </td>
-				                                <td>
-				                                    makr124
-				                                </td>
-				                                <td>
-				                                    <span class="label label-sm label-success">
-																				Approved </span>
-				                                </td>
-				                            </tr>
-				                            <tr>
-				                                <td>
-				                                    2
-				                                </td>
-				                                <td>
-				                                    Jacob
-				                                </td>
-				                                <td>
-				                                    Nilson
-				                                </td>
-				                                <td>
-				                                    jac123
-				                                </td>
-				                                <td>
-				                                    <span class="label label-sm label-info">
-																				Pending </span>
-				                                </td>
-				                            </tr>
-				                            <tr>
-				                                <td>
-				                                    3
-				                                </td>
-				                                <td>
-				                                    Larry
-				                                </td>
-				                                <td>
-				                                    Cooper
-				                                </td>
-				                                <td>
-				                                    lar
-				                                </td>
-				                                <td>
-				                                    <span class="label label-sm label-warning">
-																				Suspended </span>
-				                                </td>
-				                            </tr>
-				                        </tbody>
-				                    </table>
-				                </div>
-				            </div>
-				        </div>
-
-
-					<!-- END PORTLET-->
-
 
 				</div>
 			</div>
@@ -2941,6 +2665,10 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END PAGE LEVEL SCRIPTS -->
 
 <script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular-animate.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.2/TweenMax.min.js"></script>
+
+
 <script src="lib/raphael/raphael.2.1.2.js"></script>
 <script src="lib/raphael/raphael.connection.js"></script>
 <script src="lib/underscore/underscore-min.js"></script>
@@ -2956,6 +2684,10 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="js/controllers/timeline.js"></script>
 <script src="js/controllers/tooltip.js"></script>
 <script src="js/controllers/popup.js"></script>
+<script src="js/controllers/portlet-offers-available.js"></script>
+<script src="js/controllers/portlet-offers-current.js"></script>
+<script src="js/controllers/portlet-invoices-recent.js"></script>
+<script src="js/controllers/portlet-payments-recent.js"></script>
 
 <script>
 jQuery(document).ready(function() {    

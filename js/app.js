@@ -1,4 +1,4 @@
-var App = angular.module('App', [])
+var App = angular.module('App', ['ngAnimate'])
 .filter('unsafe', function($sce) {
     return function(val) {
         return $sce.trustAsHtml(val);
@@ -56,3 +56,49 @@ var App = angular.module('App', [])
     };
 });
 
+App.animation('.show-hide-animation', function() {
+  /* 
+   * the reason why we're using beforeAddClass and removeClass is because we're working
+   * around the .ng-hide class (which is added when ng-show evaluates to false). The
+   * .ng-hide class sets display:none!important and we want to apply the animation only
+   * when the class is removed (removeClass) or before it's added (beforeAddClass).
+   */
+  return {
+
+    /* 
+     * make sure to call the done() function when your animation is complete.
+     */
+    beforeAddClass : function(element, className, done) {
+      if(className == 'ng-hide') {
+        TweenMax.to(element, .3, { height: 0, onComplete: done });
+
+        //this function is called when the animation ends or is cancelled
+        return function() {
+          element[0].style.height = '';
+        }
+      } else {
+        done();
+      }
+    },
+
+    /* 
+     * make sure to call the done() function when your animation is complete.
+     */
+    removeClass : function(element, className, done) {
+      if(className == 'ng-hide') {
+        //set the height back to zero to make the animation work properly
+        var height = element.height();
+        element.css('height', 0);
+
+        TweenMax.to(element, .3, { height: height, onComplete: done });
+
+        //this function is called when the animation ends or is cancelled
+        return function() {
+          element[0].style.height = '';
+        }
+      } else {
+        done();
+      }
+    }
+  }
+});
