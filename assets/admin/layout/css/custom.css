@@ -16,6 +16,146 @@
 .logo-default {
 	z-index: 9999999;
 }
+
+
+.page-title {
+	padding: 0px;
+	font-size: 36px;
+	letter-spacing: -1px;
+	display: block;
+	color: #666;
+	margin: 0px 0px 2px 0px;
+	font-weight: 300;
+	font-family: RobotoL, "Open Sans", sans-serif;
+	cursor:pointer;
+	height:40px;
+}
+.fa-title {
+	font-size: 38px;
+	padding:5px;
+	
+	color: #D5DADE;
+	/*color: #9CA6AD;*/
+
+	cursor:pointer;
+	background-color: #E9EDEF;
+}
+.cust-info:hover
+{ 
+	color: #666;
+	/*color: #BFCAD1;*/
+}
+
+.cust-info{
+	position:relative;
+}
+
+.cust-info-title{
+	position:absolute;
+	left:50px;
+	top:0px;
+	/*width:45px;*/
+	/*height:45px;*/
+	bottom:0px;
+	right:0px;
+}
+
+.cust-info-panel{
+	background-color: #FAFAFA;
+	/*background-color: #FAFAFA;*/
+	
+	/*height:100px;*/
+	/*margin-bottom:15px;*/
+	/*z-index:9999999;*/
+
+	font-family: RobotoL, "Open Sans";
+}
+
+.cust-info-panel-margin {
+	background-color: #E9EDEF;
+	height:5px;
+	margin-bottom:15px;
+
+}
+
+.cust-info-icon{
+	position:absolute;
+	left:0px;
+	top:-2px;
+	width:45px;
+	bottom:0px;
+	background-color: #E9EDEF;
+
+    font-size:36px !important;
+	font-family: FontAwesome;
+	font-style: normal;
+	padding-top:4px;
+	padding-left:7px;
+	/*color:#9CA6AD;*/
+	/*color:#D5DADE;*/
+	/*color:#f5f5f5;*/
+	/*color:#94A8B7;*/
+
+	color:#BFBFBF;
+
+	/*z-index: -1;*/
+
+}
+.cust-info-icon:before{
+	content: "\f150";
+}
+
+.cust-info-icon:hover
+{ 
+	color: #666;
+}
+
+.cust-info-cell{
+	padding: 10px 20px 10px 20px;
+	/*background-color: #fff;*/
+}
+
+
+
+
+
+.m-page-subtitle {
+	padding:0 3px 0 3px;
+	/*color: #fff;*/
+	/*font-family: "Open Sans", sans-serif;*/
+	/*font-size: 18px;*/
+	/*color: #666;*/
+
+}
+.m-page-subtitle.success {
+	background-color: #45b6af;
+}
+.m-page-subtitle.danger {
+	color: #fff;
+	background-color: #f3565d;
+}
+
+
+
+@media (max-width: 767px) {
+  /* 767px */
+  /* Page content */
+  .page-content-wrapper .page-content {
+    padding: 20px 10px 10px 10px !important;
+    overflow: hidden;
+    /* Page title */
+  }
+  .page-content-wrapper .page-content .page-title {
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+	.fa-title {
+		font-size: 30px;
+	}
+
+}
+
+
 .page-header.navbar .page-logo .logo-default {
 	margin: 9px 0 0 0;
 }
@@ -238,7 +378,7 @@
 }
 .timeline-settings.opensleft:before {
 	position: absolute;
-	left:10px;
+	left:3px;
 	top: -7px;	
 	display: inline-block;
 	border-right: 7px solid transparent;
@@ -249,7 +389,7 @@
 }
 .timeline-settings.opensleft:after {
 	position: absolute;
-	left: 11px;
+	left: 4px;
 	top: -6px;
 	display: inline-block;
 	border-right: 6px solid transparent;
@@ -534,7 +674,7 @@ font-weight: 400;
 }
 
 .table-scrollable-overrides {
-	margin: 5px 0 !important;	
+	margin: 0px !important;	
 }
 
 @font-face {

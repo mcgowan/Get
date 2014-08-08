@@ -509,8 +509,8 @@ Timeline.prototype = function() {
             { id: 11, text: 'DEC', color: '#7F6CA1' },
         ],
         productStatus: [ 
-            { id: 1, color: '#A6D96A', stroke: '#fff', text: 'Active' },
-            // { id: 1, color: '#7BCBC6', stroke: '#fff', text: 'Active' },
+            { id: 1, color: '#A6D96A', stroke: '#000', text: 'Active' },
+            // { id: 1, color: '#B4D989', stroke: '#000', text: 'Active' },
 
             { id: 2, color: '#F46D43', stroke: '#fff', text: 'Cancelled' },
             { id: 3, color: '#D73027', stroke: '#fff', text: 'Non-pay Disconnect' },
@@ -522,7 +522,7 @@ Timeline.prototype = function() {
         workOrderStatus: [
             { id: 1, color: '#F46D43', stroke: '#fff', text: 'New order' },
             { id: 2, color: '#FEE08B', stroke: '#000', text: 'Assigned' },
-            { id: 3, color: '#A6D96A', stroke: '#fff', text: 'Complete' },
+            { id: 3, color: '#A6D96A', stroke: '#000', text: 'Complete' },
             { id: 4, color: '#D9EF8B', stroke: '#000', text: 'Cancelled' },
             { id: 5, color: '#F46D43', stroke: '#fff', text: 'Reopened' },
         ],
@@ -537,7 +537,7 @@ Timeline.prototype = function() {
             { id: 3, color: '#D9EF8B', stroke: '#000', text: 'Cancelled' },
             { id: 4, color: '#FDAE61', stroke: '#fff', text: 'Approved' },
             { id: 5, color: '#FEE08B', stroke: '#000', text: 'Shipped' },
-            { id: 6, color: '#A6D96A', stroke: '#fff', text: 'Delivered' },
+            { id: 6, color: '#A6D96A', stroke: '#000', text: 'Delivered' },
         ],
         shippingOrderTypes:  [
             { id: 1, text: 'Customer Shipping Order' },
@@ -547,7 +547,7 @@ Timeline.prototype = function() {
         contactStatus: [
             { id: 1, color: '#F46D43', stroke: '#fff', text: 'Active' },
             { id: 2, color: '#D9EF8B', stroke: '#000', text: 'Cancelled' },
-            { id: 3, color: '#A6D96A', stroke: '#fff', text: 'Completed' },
+            { id: 3, color: '#A6D96A', stroke: '#000', text: 'Completed' },
         ],
         contactTypes: [
             { id: 1, text: 'Telephone' },
@@ -796,7 +796,11 @@ Timeline.prototype = function() {
                     font.fontColor = status.stroke;
                     font.fontSize = '11px';
 
-                    timeline.drawText(status.text, box.x2 + 8, y, font, timeline.textAlign.left, { color: status.color, padding: 1 });
+
+                    // timeline.drawText(status.text, box.x2 + 8, y, font, timeline.textAlign.left, { color: status.color, padding: 1 });
+
+                    var new_x = defaults.margin.left + 120;
+                    timeline.drawText(status.text, new_x, y, font, timeline.textAlign.left, { color: status.color, padding: 1 });
 
                 }
 

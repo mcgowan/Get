@@ -21,29 +21,29 @@ App.controller('TimelineCtl', function TimelineCtl($rootScope, $scope) {
 		$scope.showProductStatus = false;
 		$scope.showAlertCounts = true;
 
-		$scope.timeline = new Timeline($rootScope, 'customer_timeline');
-		$scope.timeline.draw(getParams());
+		// $scope.timeline = new Timeline($rootScope, 'customer_timeline');
+		// $scope.timeline.draw(getParams());
 
 	    $scope.selector = '#timelineSettingsCtl';
 
-		var days = $scope.timeline.getDays();
-		$scope.dateRange = getDateRangeText(days);
+		// var days = $scope.timeline.getDays();
+		// $scope.dateRange = getDateRangeText(days);
     };
 
 	$scope.resize = function(event) {
-		$scope.timeline.redraw(getParams());
+		// $scope.timeline.redraw(getParams());
 
-		var days = $scope.timeline.getDays();
-		$scope.dateRange = getDateRangeText(days);
+		// var days = $scope.timeline.getDays();
+		// $scope.dateRange = getDateRangeText(days);
 	};
 
 	$scope.show = function() {
-		$scope.style = { pos: { x: 0, y: 30 }, display: 'block' };
+		$scope.style = { pos: { x: 5, y: 36 }, display: 'block' };
 	};
 
 	$scope.apply = function() {
 		// TODO: apply settings
-		$scope.resize();
+		// $scope.resize();
 
 
 		$scope.cancel();

@@ -1224,6 +1224,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- /.modal -->
 			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 			<!-- BEGIN STYLE CUSTOMIZER -->
+			
 			<div class="theme-panel hidden-xs hidden-sm">
 				<div class="toggler">
 				</div>
@@ -1294,9 +1295,110 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- BEGIN PAGE HEADER-->
 			<div class="row">
 				<div class="col-md-12">
-					<h3 class="page-title">
-					James Woods
-					</h3>
+					<div class="cust-info" ng-controller="PortletCustomerDetailCtl">
+						<h3 class="page-title" ng-click="toggleShow()">
+
+							<div class="cust-info-icon"></div>
+
+							<span class="cust-info-title">Charles Sebastian Horner <small>Consumer, Active, <span class="m-page-subtitle danger">VIP</span></small></span>
+						</h3>
+						<div ng-show="expanded">
+							<div>
+								<!-- <div class="cust-info-panel show-hide-animation" ng-show="expanded"> -->
+								<div class="cust-info-panel" ng-show="expanded">
+
+								<!-- <div class="col-md-12"> -->
+									<div class="row">
+
+										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+											<div class="cust-info-cell">
+											<table width="100%">
+											<tr><td colspan="2">Heading</td></tr>
+											<tr>
+											<td>some:</td>
+											<td style="text-align:right">shit</td>
+											</tr>
+											<tr>
+											<td>some:</td>
+											<td style="text-align:right">shit</td>
+											</tr>
+											<tr>
+											<td>some:</td>
+											<td style="text-align:right">shit</td>
+											</tr>
+											</table>
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+											<div class="cust-info-cell">
+
+											<table width="100%">
+											<tr><td colspan="2">Heading</td></tr>
+											<tr>
+											<td>some:</td>
+											<td style="text-align:right">shit</td>
+											</tr>
+											<tr>
+											<td>some:</td>
+											<td style="text-align:right">shit</td>
+											</tr>
+											<tr>
+											<td>some:</td>
+											<td style="text-align:right">shit</td>
+											</tr>
+											</table>
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+											<div class="cust-info-cell">
+
+											<table width="100%">
+											<tr><td colspan="2">Heading</td></tr>
+											<tr>
+											<td>some:</td>
+											<td style="text-align:right">shit</td>
+											</tr>
+											<tr>
+											<td>some:</td>
+											<td style="text-align:right">shit</td>
+											</tr>
+											<tr>
+											<td>some:</td>
+											<td style="text-align:right">shit</td>
+											</tr>
+											</table>
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+											<div class="cust-info-cell">
+											<table width="100%">
+											<tr><td colspan="2">Heading</td></tr>
+											<tr>
+											<td>some:</td>
+											<td style="text-align:right">shit</td>
+											</tr>
+											<tr>
+											<td>some:</td>
+											<td style="text-align:right">shit</td>
+											</tr>
+											<tr>
+											<td>some:</td>
+											<td style="text-align:right">shit</td>
+											</tr>
+											</table>
+											</div>
+										</div>
+									</div>
+								<!-- </div> -->
+
+							</div>
+
+
+						</div>
+						</div>
+						<div class="cust-info-panel-margin">
+						</div>
+					</div>						
 				</div>
 			</div>
 			<!-- END PAGE HEADER-->
@@ -1383,7 +1485,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- over here...! -->
 
 			<div class="row">
- 				<div class="col-md-8 col-sm-8">
+ 				<div class="col-md-7 col-sm-7">
 
 					<!-- BEGIN PORTLET-->
 					<div class="timeline portlet solid bordered grey-cararra" ng-controller="TimelineCtl">
@@ -1513,7 +1615,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         </tr>
                                         </thead>
 										<tbody>
-                                            <tr ng-repeat="item in items">
+	                                            <tr ng-repeat="item in items">
                                                 <td>
                                                     {{ item.Description }}
                                                 </td>
@@ -1541,7 +1643,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!-- END PORTLET-->
 
 				</div>
-					<div class="col-md-4 col-sm-4">
+					<div class="col-md-5 col-sm-5">
 
 					<!-- BEGIN PORTLET-->
 				        <div class="timeline portlet solid bordered grey-cararra" ng-controller="PortletOffersCurrentCtl">
@@ -1744,7 +1846,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				                                    Due Date
 				                                </th>
 				                                <th style="text-align: right">
-				                                    Amount Paid
+				                                    Paid
 				                                </th>
 				                                <th>
 				                                    View
@@ -2599,6 +2701,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="js/controllers/portlet-payments-recent.js"></script>
 <script src="js/controllers/portlet-actions-pending.js"></script>
 <script src="js/controllers/portlet-transactions-recent.js"></script>
+<script src="js/controllers/portlet-customer-detail.js"></script>
 
 <script>
 jQuery(document).ready(function() {    
