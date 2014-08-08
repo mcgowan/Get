@@ -1296,76 +1296,39 @@ License: You must have a valid license purchased only from themeforest(the above
 			<div class="row">
 				<div class="col-md-12">
 					<div class="cust-info" ng-controller="PortletCustomerDetailCtl">
-						<h3 class="page-title" ng-click="toggleShow()">
+						<h3 class="page-title" ng-click="toggleShow()" app-hover>
 
-							<div class="cust-info-icon"></div>
+							<div class="cust-info-icon" ng-style="{ color: hoverColor }"></div>
 
-							<span class="cust-info-title">Charles Sebastian Horner <small>Consumer, Active, <span class="m-page-subtitle danger">VIP</span></small></span>
+							<span class="cust-info-title">Charles Sebastian Westwood <small>Consumer, Active, <span class="m-page-subtitle danger">VIP</span></small></span>
 						</h3>
-						<div ng-show="expanded">
+						<div ng-show="expanded" app-hover>
 							<div>
-								<!-- <div class="cust-info-panel show-hide-animation" ng-show="expanded"> -->
-								<div class="cust-info-panel" ng-show="expanded">
+								<div class="cust-info-panel" ng-show="expanded" ng-click="toggleShow()">
 								<div class="cust-info-panel-margin-top"></div>
-
-								<!-- <div class="col-md-12"> -->
 									<div class="row">
-
 										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 											<div class="cust-info-cell">
 											<table width="100%">
-											<tr><td colspan="2">Heading</td></tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">Customer Number</td>
+											<td class="cust-info-cell-value">116022</td>
 											</tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">Language</td>
+											<td class="cust-info-cell-value">English</td>
 											</tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">Registered Date</td>
+											<td class="cust-info-cell-value">02-01-2015</td>
 											</tr>
-											</table>
-											</div>
-										</div>
-										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-											<div class="cust-info-cell">
-
-											<table width="100%">
-											<tr><td colspan="2">Heading</td></tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">Market Segment</td>
+											<td class="cust-info-cell-value">USA East</td>
 											</tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
-											</tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
-											</tr>
-											</table>
-											</div>
-										</div>
-										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-											<div class="cust-info-cell">
-
-											<table width="100%">
-											<tr><td colspan="2">Heading</td></tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
-											</tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
-											</tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
+											<tr class="cust-info-cell-row last">
+											<td class="cust-info-cell-key">Business Unit</td>
+											<td class="cust-info-cell-value">Pay TV</td>
 											</tr>
 											</table>
 											</div>
@@ -1373,22 +1336,63 @@ License: You must have a valid license purchased only from themeforest(the above
 										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 											<div class="cust-info-cell">
 											<table width="100%">
-											<tr><td colspan="2">Heading</td></tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
+											<tr class="cust-info-cell-row"><td class="cust-info-cell-head" colspan="2">Address</td></tr>
 											</tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">795 Folsom Ave, Unit 600</td>
 											</tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">San Francisco</td>
 											</tr>
-											<tr>
-											<td>some:</td>
-											<td style="text-align:right">shit</td>
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">CA 94107</td>
+											</tr>
+											<tr class="cust-info-cell-row last">
+											<td class="cust-info-cell-key">USA</td>
+											</tr>
+											</table>
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+											<div class="cust-info-cell">
+											<table width="100%">
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">Dealer</td>
+											<td class="cust-info-cell-value">Hi Tech Corp.</td>
+											</tr>
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">Distributor</td>
+											<td class="cust-info-cell-value">Blue Networks</td>
+											</tr>
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">Invoice Profile</td>
+											<td class="cust-info-cell-value">Advanced Monthly</td>
+											</tr>
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">Account Type</td>
+											<td class="cust-info-cell-value">Post-paid</td>
+											</tr>
+											<tr class="cust-info-cell-row last">
+											<td class="cust-info-cell-key">Payment Method</td>
+											<td class="cust-info-cell-value">Credit Card</td>
+											</tr>
+											</table>
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+											<div class="cust-info-cell">
+											<table width="100%">
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">Home Phone</td>
+											<td class="cust-info-cell-value">+1 555-333-4948</td>
+											</tr>
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">Mobile Phone</td>
+											<td class="cust-info-cell-value">+1 555-788-1232</td>
+											</tr>
+											<tr class="cust-info-cell-row">
+											<td class="cust-info-cell-key">Email</td>
+											<td class="cust-info-cell-value">cs@westwood.com</td>
 											</tr>
 											</table>
 											</div>

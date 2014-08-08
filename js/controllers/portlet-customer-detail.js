@@ -1,7 +1,6 @@
 App.controller('PortletCustomerDetailCtl', function PortletCustomerDetailCtl($rootScope, $scope) {
     $scope.init = function() {
-    	$scope.expanded = true;
-    	// $scope.iconSource = 'images/up.svg';
+    	$scope.expanded = false;
         $scope.items =  [
             { ProductName: 'Internet Advanced', Action: 'Wait for Payment', ActionDate: moment([2015, 1, 1]).format('MM-DD-YYYY') },
             { ProductName: 'Internet Modem', Action: 'Shipping Order', ActionDate: 'Pending Payment' },
@@ -11,8 +10,15 @@ App.controller('PortletCustomerDetailCtl', function PortletCustomerDetailCtl($ro
 
     $scope.toggleShow = function() {
     	$scope.expanded = !$scope.expanded;
-		// $scope.expanded ? $scope.iconSource = 'images/up.svg' : $scope.iconSource = 'images/down.svg';
     };
+
+    $scope.mouseEnter = function() {
+        $scope.hoverColor = '#88AED3';
+    }
+
+    $scope.mouseLeave = function() {
+        $scope.hoverColor = '#BFBFBF';
+    }
 
     $scope.init();
 });

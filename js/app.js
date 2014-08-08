@@ -22,6 +22,18 @@ var App = angular.module('App', ['ngAnimate'])
             });
         }
     };
+}).directive('appHover', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, element) {
+            element.on('mouseenter', function() {
+                scope.$apply(scope.mouseEnter());
+            });
+            element.on('mouseleave', function() {
+                element.removeClass(scope.mouseLeave());
+            });
+        }
+    };
 }).directive('appMouseMove', function($document) {
     return {
         restrict: 'A',
