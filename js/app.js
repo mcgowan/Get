@@ -30,7 +30,8 @@ var App = angular.module('App', ['ngAnimate'])
                 scope.$apply(scope.mouseEnter());
             });
             element.on('mouseleave', function() {
-                element.removeClass(scope.mouseLeave());
+                // element.removeClass(scope.mouseLeave());
+                scope.$apply(scope.mouseLeave());
             });
         }
     };
@@ -40,6 +41,15 @@ var App = angular.module('App', ['ngAnimate'])
         link: function(scope, element) {
             angular.element($document).on('mousemove', function(e) {
                 scope.$apply(scope.mouse = { x: e.pageX, y: e.pageY - $(window).scrollTop() });
+            });
+        }
+    };
+}).directive('appMouseLeave', function($document) {
+    return {
+        restrict: 'A',
+        link: function(scope, element) {
+            element.on('mouseleave', function() {
+                scope.$apply(scope.mouseLeave());
             });
         }
     };
@@ -82,7 +92,7 @@ App.animation('.show-hide-animation', function() {
      */
     beforeAddClass : function(element, className, done) {
       if(className == 'ng-hide') {
-        TweenMax.to(element, .3, { height: 0, onComplete: done });
+        TweenMax.to(element, .1, { height: 0, onComplete: done });
 
         //this function is called when the animation ends or is cancelled
         return function() {
@@ -102,7 +112,7 @@ App.animation('.show-hide-animation', function() {
         var height = element.height();
         element.css('height', 0);
 
-        TweenMax.to(element, .3, { height: height, onComplete: done });
+        TweenMax.to(element, .1, { height: height, onComplete: done });
 
         //this function is called when the animation ends or is cancelled
         return function() {

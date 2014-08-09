@@ -162,6 +162,7 @@ Timeline.prototype = function() {
                     ]},
                     { day: -2, status: 1, items: [
                         { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: undefined },
+                        { type: 1, status: 1, reportedTime: moment([2014, 1, 1, 12, 54, 23, 0]), resolvedTime: undefined },
                     ]},
                 ]},
                 { type: 'reserve', lines: .5 }, 
@@ -266,7 +267,7 @@ Timeline.prototype = function() {
                 ] },
                 { type: 'reserve', lines: .5 }, 
                 // { type: 'summary', alert: 1, icon: timeline.itemType.contact.icon, text: 'Contacts', border: 'both', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [
-                { type: 'header', alert: 1, icon: timeline.itemType.contact.icon, text: 'Contacts', drawDates: false },
+                { type: 'header', alert: 2, icon: timeline.itemType.contact.icon, text: 'Contacts', drawDates: false },
                 { type: 'item', text: 'All Contacts', itemType: timeline.itemType.contact, matchType: timeline.matchType.day, items: [ 
                     { day: -10, status: 3, items: [
                         { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
@@ -440,7 +441,9 @@ Timeline.prototype = function() {
                     {   day:    -1  ,   b1: 0   ,   b2: 0  ,   b3: 0   ,   b4: 0   ,   b5: 0   ,   balance:    0  },
                     {   day:    0   ,   b1: 0   ,   b2: 0  ,   b3: 0   ,   b4: 0   ,   b5: 0   ,   balance:    0  },
                 ]},
+                { type: 'header', icon: timeline.itemType.outage.icon, text: 'Outages', drawDates: false },
                 { type: 'reserve', lines: .5 }, 
+
                 { type: 'header', icon: timeline.itemType.product.icon, text: 'Hardware Products', drawDates: false },
                 { type: 'item', text: 'HD Decoder', status: 1, itemType: timeline.itemType.product, items: [ 
                     { day: -180, status: 1 },
@@ -463,6 +466,10 @@ Timeline.prototype = function() {
                         { id: 873465, type: 1, status: 3, category: 1, user: 'admin', time: moment([2014, 1, 1, 12, 54, 23, 0]) },
                     ]},
                 ]},
+                { type: 'reserve', lines: .5 }, 
+                { type: 'header', icon: timeline.itemType.workOrder.icon, text: 'Work Orders', drawDates: false },
+                { type: 'reserve', lines: .5 }, 
+                { type: 'header', icon: timeline.itemType.shippingOrder.icon, text: 'Shipping Orders', drawDates: false },
             ]
         },
         {   // new customer
@@ -571,6 +578,7 @@ Timeline.prototype = function() {
                     {   day:    -1  ,   b1: 0   ,   b2: 129.99  ,   b3: 0   ,   b4: 0   ,   b5: 0   ,   balance:    129.99  },
                     {   day:    0   ,   b1: 0   ,   b2: 129.99  ,   b3: 0   ,   b4: 0   ,   b5: 0   ,   balance:    129.99  },
                 ]},
+                { type: 'header', icon: timeline.itemType.outage.icon, text: 'Outages', drawDates: false },
                 { type: 'reserve', lines: .5 }, 
                 { type: 'header', icon: timeline.itemType.product.icon, text: 'Hardware Products', drawDates: false },
                 { type: 'item', text: 'HD Decoder', status: 3, itemType: timeline.itemType.product, 
@@ -647,6 +655,9 @@ Timeline.prototype = function() {
                     ]},
                     { day: -6, status: 0 },
                 ]},
+                { type: 'reserve', lines: .5 }, 
+                { type: 'header', icon: timeline.itemType.shippingOrder.icon, text: 'Shipping Orders', drawDates: false },
+                { type: 'reserve', lines: .5 }, 
             ]
         },
     ];
