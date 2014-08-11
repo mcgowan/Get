@@ -1422,6 +1422,9 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="desc">
 								 Network Outages		
 							</div>
+							<div class="subtext">
+								 Since 01:59:23
+							</div>
 						</div>
 						<a class="more" href="#" ng-click="toggleShow()">
 						View more <i class="fa spark-icon fa-arrow-circle-o-down"></i>
@@ -1472,6 +1475,9 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 							<div class="desc">
 								 Provisioning Accuracy
+							</div>
+							<div class="subtext">
+								 Total 4 products matched
 							</div>
 						</div>
 						<a class="more" href="#" ng-click="toggleShow()">
@@ -1531,10 +1537,13 @@ License: You must have a valid license purchased only from themeforest(the above
 						</div>
 						<div class="details">
 							<div class="number">
-								 $$$
+								 $649.95
 							</div>
 							<div class="desc">
-								 Balance
+								 Current Balance
+							</div>
+							<div class="subtext">
+								 Last invoice <span class="label label-sm label-pdf">PDF</span>
 							</div>
 						</div>
 						<a class="more" href="#" ng-click="toggleShow()">
@@ -1574,6 +1583,9 @@ License: You must have a valid license purchased only from themeforest(the above
 							</div>
 							<div class="desc">
 								 Customer Loyalty
+							</div>
+							<div class="subtext">
+								 Lifetime Revenue: <span style="background-color:#AA9EC1" class="label label-sm label-pdf">$3,784.51</span>
 							</div>
 						</div>
 						<a class="more" href="#" ng-click="toggleShow()">
@@ -1998,7 +2010,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				                                <th style="text-align: right">
 				                                    Paid
 				                                </th>
-				                                <th>
+				                                <th style="text-align: center">
 				                                    View
 				                                </th>
 				                            </tr>
@@ -2021,11 +2033,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				                                    {{ item.AmountPaid.format(2, 3, ',', '.') }}
 				                                </td>
 				                                <td style="text-align: center; vertical-align: middle">
-				                                    <!-- <img src="images/pdf.png" width="21px" height="25px"/> -->
-				                                    <!-- <img src="images/pdf.png"/> -->
-
-				                                    <i class="fa fa-file-pdf-o"></i>
-
+				                                    <span class="label label-sm label-pdf">PDF</span>
 				                                </td>
 				                            </tr>
 				                        </tbody>
