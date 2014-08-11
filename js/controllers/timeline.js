@@ -20,7 +20,7 @@ App.controller('TimelineCtl', function TimelineCtl($rootScope, $scope) {
     $scope.init = function() {
     	$scope.expanded = true;
     	$scope.iconSource = 'images/up.svg';
-		$scope.customerIndex = 0;
+		$scope.customerIndex = 2;
 		$scope.balanceLines = 4;
 		$scope.showAccountInfo = true;
 		$scope.showProductStatus = false;

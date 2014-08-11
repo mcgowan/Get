@@ -10,9 +10,18 @@
 	padding-right: 10px; 	
 }
 .page-header-border-top {
-	background-color: #434245;
-	height: 3px;
+	/*background-color: #434245;*/
+	/*height: 3px;*/
 }
+.page-header-inner{
+	/*background-color: #434245;*/
+	/*height: 3px;*/
+}
+
+.page-logo{
+	padding-top:3px;
+}
+
 .logo-default {
 	z-index: 9999999;
 }

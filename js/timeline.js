@@ -151,7 +151,7 @@ Timeline.prototype = function() {
                     {   day:    -1  ,   b1: 129.99  ,   b2: 129.99  ,   b3: 129.99  ,   b4: 129.99  ,   b5: 129.99  ,   balance:    649.95  },
                     {   day:    0   ,   b1: 129.99  ,   b2: 129.99  ,   b3: 129.99  ,   b4: 129.99  ,   b5: 129.99  ,   balance:    649.95  },                    
                 ]},
-                // { type: 'reserve', lines: .5 }, 
+                { type: 'reserve', lines: .5 }, 
                 // { type: 'summary', alert: 1, icon: timeline.itemType.outage.icon, text: 'Outages', border: 'both', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [
                 { type: 'header', alert: 2, icon: timeline.itemType.outage.icon, text: 'Outages', drawDates: false },
                 { type: 'item', text: 'Network Outages', itemType: timeline.itemType.outage, matchType: timeline.matchType.day, items: [ 
@@ -441,6 +441,7 @@ Timeline.prototype = function() {
                     {   day:    -1  ,   b1: 0   ,   b2: 0  ,   b3: 0   ,   b4: 0   ,   b5: 0   ,   balance:    0  },
                     {   day:    0   ,   b1: 0   ,   b2: 0  ,   b3: 0   ,   b4: 0   ,   b5: 0   ,   balance:    0  },
                 ]},
+                { type: 'reserve', lines: .5 }, 
                 { type: 'header', icon: timeline.itemType.outage.icon, text: 'Outages', drawDates: false },
                 { type: 'reserve', lines: .5 }, 
 
@@ -578,6 +579,7 @@ Timeline.prototype = function() {
                     {   day:    -1  ,   b1: 0   ,   b2: 129.99  ,   b3: 0   ,   b4: 0   ,   b5: 0   ,   balance:    129.99  },
                     {   day:    0   ,   b1: 0   ,   b2: 129.99  ,   b3: 0   ,   b4: 0   ,   b5: 0   ,   balance:    129.99  },
                 ]},
+                { type: 'reserve', lines: .5 }, 
                 { type: 'header', icon: timeline.itemType.outage.icon, text: 'Outages', drawDates: false },
                 { type: 'reserve', lines: .5 }, 
                 { type: 'header', icon: timeline.itemType.product.icon, text: 'Hardware Products', drawDates: false },
