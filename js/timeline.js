@@ -583,7 +583,7 @@ Timeline.prototype = function() {
                 { type: 'header', icon: timeline.itemType.outage.icon, text: 'Outages', drawDates: false },
                 { type: 'reserve', lines: .5 }, 
                 { type: 'header', icon: timeline.itemType.product.icon, text: 'Hardware Products', drawDates: false },
-                { type: 'item', text: 'HD Decoder', status: 3, itemType: timeline.itemType.product, 
+                { type: 'item', text: 'HD Decoder', status: 1, itemType: timeline.itemType.product, 
                     properties: [ 
                         { text: 'String 1', value: 'Some Value' },
                         { text: 'String 2', value: 'Some Value' },
