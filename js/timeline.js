@@ -1699,10 +1699,15 @@ Timeline.prototype = function() {
         return timeline.defaults.days - 2;
     };
 
+    var getClientWidth = function() {
+        return timeline.defaults.canvas.width;
+    };
+
     return {
         draw: draw,
         redraw: redraw,
         getDays: getDays,
+        getClientWidth: getClientWidth,
         showTooltip: showTooltip,
         hideTooltip: hideTooltip,
         showPopup: showPopup,

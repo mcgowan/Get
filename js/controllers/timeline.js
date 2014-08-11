@@ -1,7 +1,10 @@
 App.controller('TimelineCtl', function TimelineCtl($rootScope, $scope) {
 
-    var getDateRangeText = function(days) {
-    	return moment().subtract('days', days).format('MMMM D, YYYY').toUpperCase() + ' - ' + moment().format('MMMM D, YYYY').toUpperCase();
+    var setDateRangeText = function() {
+		var padding = 55;
+		var days = $scope.timeline.getDays();
+		$scope.dateRange = moment().subtract('days', days).format('MMMM D, YYYY').toUpperCase() + ' - ' + moment().format('MMMM D, YYYY').toUpperCase();
+		$scope.rangeTextWidth = $scope.dateRange.dim('15px "Open Sans"').w + padding;
     };
 
     var getParams = function() {
@@ -15,6 +18,8 @@ App.controller('TimelineCtl', function TimelineCtl($rootScope, $scope) {
     };
 
     $scope.init = function() {
+    	$scope.expanded = true;
+    	$scope.iconSource = 'images/up.svg';
 		$scope.customerIndex = 0;
 		$scope.balanceLines = 4;
 		$scope.showAccountInfo = true;
@@ -26,19 +31,25 @@ App.controller('TimelineCtl', function TimelineCtl($rootScope, $scope) {
 
 	    $scope.selector = '#timelineSettingsCtl';
 
-		var days = $scope.timeline.getDays();
-		$scope.dateRange = getDateRangeText(days);
+	    setDateRangeText();
+    };
+
+    $scope.toggleShow = function() {
+    	$scope.expanded = !$scope.expanded;
+		$scope.expanded ? $scope.iconSource = 'images/up.svg' : $scope.iconSource = 'images/down.svg';
     };
 
 	$scope.resize = function(event) {
 		$scope.timeline.redraw(getParams());
-
-		var days = $scope.timeline.getDays();
-		$scope.dateRange = getDateRangeText(days);
+	    setDateRangeText();
 	};
 
 	$scope.show = function() {
-		$scope.style = { pos: { x: 5, y: 36 }, display: 'block' };
+
+		var x = $scope.timeline.getClientWidth() - 265;
+		
+
+		$scope.style = { pos: { x: x, y: 36 }, display: 'block' };
 	};
 
 	$scope.apply = function() {

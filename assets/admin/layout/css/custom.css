@@ -228,7 +228,7 @@
 .spark-detail{
 	color:#fff;
 	position:absolute;
-	opacity:.96;
+	opacity:.99;
 	top:122px;
 	left:10px;
 	right:15px;
@@ -323,7 +323,6 @@
   left: 4px;
 }
 
-
 .portlet-caption {
 	float: left;
 	display: inline-block;
@@ -332,8 +331,20 @@
 	font-weight: 400;
 	padding: 5px;
 	background-color: #E9EDEF;
+	height:38px;
 }
 
+.portlet-caption-time-range{
+    position: absolute;
+    top:0px;
+    left:0px;    
+    bottom:0px;    
+    padding:9px 0px 5px 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;    
+	background-color: #D5DADE;
+	cursor:pointer;
+}
 
 .portlet-icon {
     cursor: pointer;
@@ -424,7 +435,7 @@
 }
 .timeline-settings.opensleft:before {
 	position: absolute;
-	left:3px;
+	left:233px;
 	top: -7px;	
 	display: inline-block;
 	border-right: 7px solid transparent;
@@ -435,7 +446,7 @@
 }
 .timeline-settings.opensleft:after {
 	position: absolute;
-	left: 4px;
+	left: 234px;
 	top: -6px;
 	display: inline-block;
 	border-right: 6px solid transparent;
@@ -484,7 +495,7 @@
 	background-color: #bfcad1;
 	color: #fff;
 	cursor: pointer;
-	padding: 9px;
+	/*padding: 9px;*/
 
 	/*height:38px;*/
 
@@ -504,21 +515,14 @@
 }
 
 .timeline-caption-grid {
-	    
-
 	float: left;
 	display: inline-block;
-/*	font-size: 18px;
-	line-height: 18px;
-*/	
 	font-size: 15px;
 	line-height: 20px;
-
-font-weight: 400;
+	font-weight: 400;
 	padding: 5px;
 	background-color: #BFCAD1;
 }
-
 
 .timeline-title {
 	background-color: #E9EDEF;
@@ -530,6 +534,9 @@ font-weight: 400;
 }
 .timeline-dropdown{
 	list-style: none;
+	position:absolute;
+	left:0px;
+	top:0px;
 }
 .timeline-tools {
 	margin-top: 0px;
