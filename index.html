@@ -1379,7 +1379,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- BEGIN DASHBOARD STATS -->
 			<div class="row">
 
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 spark" ng-style="{ zIndex: zIndex }" app-mouse-leave app-esc app-hover ng-controller="SparkOutagesCtl">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 spark" app-mouse-leave app-esc app-hover ng-controller="SparkOutagesCtl">
 					<div class="dashboard-stat red-intense">
 						<div class="visual">
 							<i class="fa fa-warning"></i>
@@ -1399,7 +1399,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						View more <i class="fa spark-icon fa-arrow-circle-o-down"></i>
 						</a>
 					</div>
-					<div class="spark-detail red show-hide-animation" ng-show="expanded">
+					<div class="spark-detail red show-hide-animation" ng-style="{ zIndex: zIndex }" ng-show="expanded">
 						<table id="table" width="100%">
 						<tr class="spark-detail-cell-row red">
 						<td class="spark-detail-cell-key">Customer Number</td>
@@ -1433,7 +1433,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					</div>
 				</div>
 
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 spark" ng-style="{ zIndex: zIndex }" app-mouse-leave app-esc app-hover ng-controller="SparkProvisioningCtl">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 spark" app-mouse-leave app-esc app-hover ng-controller="SparkProvisioningCtl">
 					<div class="dashboard-stat blue-madison">
 						<div class="visual">
 							<i class="fa fa-upload"></i>
@@ -1453,7 +1453,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						View more <i class="fa spark-icon fa-arrow-circle-o-down"></i>
 						</a>
 					</div>
-					<div class="spark-detail blue show-hide-animation" ng-show="expanded">
+					<div class="spark-detail blue show-hide-animation" ng-style="{ zIndex: zIndex }" ng-show="expanded">
 						<table id="table" width="100%">
 						<tr class="spark-detail-cell-row blue">
 						<td class="spark-detail-cell-key">Customer Number</td>
@@ -1499,7 +1499,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					</div>
 				</div>
 
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 spark" ng-style="{ zIndex: zIndex }" app-mouse-leave app-esc app-hover ng-controller="SparkBalanceCtl">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 spark" app-mouse-leave app-esc app-hover ng-controller="SparkBalanceCtl">
 					<div class="dashboard-stat green-haze">
 						<div class="visual">
 							<i class="fa fa-bank"></i>
@@ -1512,14 +1512,14 @@ License: You must have a valid license purchased only from themeforest(the above
 								 Current Balance
 							</div>
 							<div class="subtext">
-								 Last invoice <span class="label label-sm label-pdf">PDF</span>
+								 <a class="pdf" href="#large" data-toggle="modal">Last invoice <span class="label label-sm label-pdf">PDF</span></a>
 							</div>
 						</div>
 						<a class="more" href="#" ng-click="toggleShow()">
 						View more <i class="fa spark-icon fa-arrow-circle-o-down"></i>
 						</a>
 					</div>
-					<div class="spark-detail green show-hide-animation" ng-show="expanded">
+					<div class="spark-detail green show-hide-animation" ng-style="{ zIndex: zIndex }" ng-show="expanded">
 						<table id="table" width="100%">
 						<tr class="spark-detail-cell-row green">
 						<td class="spark-detail-cell-key">Customer Number</td>
@@ -1539,9 +1539,28 @@ License: You must have a valid license purchased only from themeforest(the above
 						</tr>
 						</table>
 					</div>
+
+					<div class="modal fade bs-modal-lg" id="large" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+					                <h4 class="modal-title">Invoice PDF Viewer</h4>
+					            </div>
+					            <div class="modal-body" style="max-height:480px;overflow:hidden;overflow-y:scroll;">
+					                <div>
+						                <img width="900px" height="1250px" src="images/get-invoice.png">
+					                </div>
+					            </div>
+					            <div class="modal-footer">
+					                <button type="button" class="btn default blue" data-dismiss="modal">Close</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
 				</div>
 
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 spark" ng-style="{ zIndex: zIndex }" app-mouse-leave app-esc app-hover ng-controller="SparkLifetimeCtl">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 spark" app-mouse-leave app-esc app-hover ng-controller="SparkLifetimeCtl">
 					<div class="dashboard-stat purple-plum">
 						<div class="visual">
 							<i class="fa fa-history"></i>
@@ -1561,7 +1580,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						View more <i class="fa spark-icon fa-arrow-circle-o-down"></i>
 						</a>
 					</div>
-					<div class="spark-detail purple show-hide-animation" ng-show="expanded">
+					<div class="spark-detail purple show-hide-animation" ng-style="{ zIndex: zIndex }" ng-show="expanded">
 						<table id="table" width="100%">
 						<tr class="spark-detail-cell-row purple">
 						<td class="spark-detail-cell-key">Customer Number</td>
@@ -1594,9 +1613,6 @@ License: You must have a valid license purchased only from themeforest(the above
 						</table>
 					</div>
 				</div>
-
-
-
 			</div>
 			<!-- END DASHBOARD STATS -->
 			<!-- 
@@ -1662,12 +1678,9 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 							</div>
 						</div>
-
-
 							<div class="portlet-title timeline-title">
 								<div class="portlet-caption">
 									<span></span>
-
 									<a href="javascript:;" class="reload" ng-show="expanded">
 										<div class="portlet-icon portlet-icon-refresh">
 											<img src="images/reload.svg" height="14" width="14" onerror="this.onerror=null;">

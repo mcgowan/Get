@@ -251,7 +251,12 @@
 	padding-top: 3px;
 }
 .label-pdf {
-  background-color: #F46D43;
+	background-color: #F46D43;
+	/*background-color: #7BCBC6;*/
+}
+.dashboard-stat .pdf {
+	color:#fff;
+    text-decoration: none;
 }
 
 .spark{

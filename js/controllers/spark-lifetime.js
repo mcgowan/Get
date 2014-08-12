@@ -4,24 +4,27 @@ App.controller('SparkLifetimeCtl', function SparkLifetimeCtl($rootScope, $scope)
     };
 
     $scope.toggleShow = function() {
-        $scope.expanded = !$scope.expanded;
+        if ($scope.expanded) {
+            $scope.hide();
+        } else {
+            $scope.show();
+        }
     };
 
     $scope.show = function() {
+        $scope.zIndex = 1000;
         $scope.expanded = true;
     };
 
     $scope.hide = function() {
+        $scope.zIndex = 0;
         $scope.expanded = false;
     };
 
     $scope.mouseEnter = function() {
-        $scope.zIndex = 9999999;
     };
 
     $scope.mouseLeave = function() {
-        $scope.zIndex = 0;
-
         $scope.hide();
     };
 
