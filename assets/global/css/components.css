@@ -1844,6 +1844,9 @@ Form Layouts
 .form-bordered .form-group .form-control {
   margin: 0;
 }
+.form-group .form-control {
+  -webkit-appearance: none;
+}
 .form-bordered .form-body {
   margin: 0;
   padding: 0;

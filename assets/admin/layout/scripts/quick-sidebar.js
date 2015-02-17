@@ -7,9 +7,13 @@ var QuickSidebar = function () {
     var handleQuickSidebarToggler = function () {
         // quick sidebar toggler
         $('.top-menu .dropdown-quick-sidebar-toggler a, .page-quick-sidebar-toggler').click(function (e) {
-            $('body').toggleClass('page-quick-sidebar-open'); 
+            $('body').toggleClass('page-quick-sidebar-open');
+
+            setTimeout(function(){
+                $(window).trigger('resize');    
+            }, 200);            
         });
-    }
+    };
 
     // Handles quick sidebar chats
     var handleQuickSidebarChat = function () {
@@ -34,7 +38,7 @@ var QuickSidebar = function () {
             Metronic.destroySlimScroll(chatMessages);
             chatMessages.attr("data-height", chatMessagesHeight);
             Metronic.initSlimScroll(chatMessages);
-        }
+        };
 
         initChatSlimScroll();
         Metronic.addResizeHandler(initChatSlimScroll); // reinitialize on window resize
@@ -58,10 +62,10 @@ var QuickSidebar = function () {
                 return;
             }
 
-            var preparePost = function(dir, time, name, avatar, message) {
+            var preparePost = function (dir, time, name, avatar, message) {
                 var tpl = '';
-                tpl += '<div class="post '+ dir +'">';
-                tpl += '<img class="avatar" alt="" src="' + Layout.getLayoutImgPath() + avatar +'.jpg"/>';
+                tpl += '<div class="post ' + dir + '">';
+                tpl += '<img class="avatar" alt="" src="' + Layout.getLayoutImgPath() + avatar + '.jpg"/>';
                 tpl += '<div class="message">';
                 tpl += '<span class="arrow"></span>';
                 tpl += '<a href="#" class="name">Bob Nilson</a>&nbsp;';
@@ -81,14 +85,14 @@ var QuickSidebar = function () {
             message = $(message);
             chatContainer.append(message);
 
-            var getLastPostPos = function() {
+            var getLastPostPos = function () {
                 var height = 0;
-                chatContainer.find(".post").each(function() {
+                chatContainer.find(".post").each(function () {
                     height = height + $(this).outerHeight();
                 });
 
                 return height;
-            }           
+            }
 
             chatContainer.slimScroll({
                 scrollTo: getLastPostPos()
@@ -97,7 +101,7 @@ var QuickSidebar = function () {
             input.val("");
 
             // simulate reply
-            setTimeout(function(){
+            setTimeout(function () {
                 var time = new Date();
                 var message = preparePost('in', (time.getHours() + ':' + time.getMinutes()), "Ella Wong", 'avatar2', 'Lorem ipsum doloriam nibh...');
                 message = $(message);
@@ -119,12 +123,12 @@ var QuickSidebar = function () {
     }
 
     // Handles quick sidebar tasks
-    var handleQuickSidebarAlerts = function () {
+    var handleQuickSidebarContacts = function () {
         var wrapper = $('.page-quick-sidebar-wrapper');
-        var wrapperAlerts = wrapper.find('.page-quick-sidebar-alerts');
+        var wrapperContacts = wrapper.find('.page-quick-sidebar-contacts-list');
 
         var initAlertsSlimScroll = function () {
-            var alertList = wrapper.find('.page-quick-sidebar-alerts-list');
+            var alertList = wrapper.find('.page-quick-sidebar-contacts');
             var alertListHeight;
 
             alertListHeight = wrapper.height() - wrapper.find('.nav-justified > .nav-tabs').outerHeight();
@@ -133,18 +137,44 @@ var QuickSidebar = function () {
             Metronic.destroySlimScroll(alertList);
             alertList.attr("data-height", alertListHeight);
             Metronic.initSlimScroll(alertList);
-        }
+
+            var contactForm = wrapper.find('.page-quick-sidebar-contact');
+            var contactFormHeight;
+
+            contactFormHeight = wrapper.height() - wrapper.find('.nav-justified > .nav-tabs').outerHeight();
+
+            // alerts list 
+            Metronic.destroySlimScroll(contactForm);
+            contactForm.attr("data-height", contactFormHeight);
+            Metronic.initSlimScroll(contactForm);
+
+        };
+
+        wrapper.find('.page-quick-sidebar-contacts .media-list > .media').click(function () {
+            wrapper.find('.page-quick-sidebar-item .page-quick-sidebar-contact .list-heading').html('Edit Contact');
+            wrapperContacts.addClass("page-quick-sidebar-content-item-shown");
+        });
+
+        wrapper.find('.page-quick-sidebar-contacts .btn').click(function () {
+            wrapper.find('.page-quick-sidebar-item .page-quick-sidebar-contact .list-heading').html('New Contact');
+            wrapperContacts.addClass("page-quick-sidebar-content-item-shown");
+        });
+
+        wrapper.find('.page-quick-sidebar-contact .btn').click(function () {
+            wrapperContacts.removeClass("page-quick-sidebar-content-item-shown");
+        });
 
         initAlertsSlimScroll();
         Metronic.addResizeHandler(initAlertsSlimScroll); // reinitialize on window resize
-    }
+    };
+
 
     // Handles quick sidebar settings
     var handleQuickSidebarSettings = function () {
         var wrapper = $('.page-quick-sidebar-wrapper');
         var wrapperAlerts = wrapper.find('.page-quick-sidebar-settings');
 
-        var initSettingsSlimScroll = function () {
+        var initSettingsSlimScroll = function() {
             var settingsList = wrapper.find('.page-quick-sidebar-settings-list');
             var settingsListHeight;
 
@@ -154,7 +184,7 @@ var QuickSidebar = function () {
             Metronic.destroySlimScroll(settingsList);
             settingsList.attr("data-height", settingsListHeight);
             Metronic.initSlimScroll(settingsList);
-        }
+        };
 
         initSettingsSlimScroll();
         Metronic.addResizeHandler(initSettingsSlimScroll); // reinitialize on window resize
@@ -166,9 +196,9 @@ var QuickSidebar = function () {
             //layout handlers
             handleQuickSidebarToggler(); // handles quick sidebar's toggler
             handleQuickSidebarChat(); // handles quick sidebar's chats
-            handleQuickSidebarAlerts(); // handles quick sidebar's alerts
+            handleQuickSidebarContacts(); // handles quick sidebar's alerts
             handleQuickSidebarSettings(); // handles quick sidebar's setting
         }
     };
 
-}();
+} ();
